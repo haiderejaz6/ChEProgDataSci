@@ -1,7 +1,0 @@
-notebook==6.5.7
-rise==5.7.1
-jupyterlab==3.6.7
-ipykernel
-numpy
-matplotlib
-pandas
