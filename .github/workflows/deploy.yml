@@ -24,6 +24,8 @@ jobs:
             jupyter nbconvert --to slides "$nb" --output-dir _site
           done
           cp index.html _site/index.html
+          echo "=== Files in _site ==="
+          ls -la _site/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
