@@ -264,6 +264,16 @@
      color: #5b21b6;
    }
 
+   .nb-colab-link {
+     color: #b45309;
+     border-color: #fde68a;
+   }
+
+   .nb-colab-link:hover {
+     background: #fffbeb;
+     color: #92400e;
+   }
+
   /* ── Footer ── */
   footer {
     max-width: 900px;
@@ -282,8 +292,18 @@
   footer a:hover { text-decoration: underline; }
 
   @media (max-width: 600px) {
-    .nb-row { grid-template-columns: 2.8rem 1fr; }
-    .nb-tags { display: none; }
+    .nb-row {
+      grid-template-columns: 2.8rem 1fr;
+      grid-template-areas: "num info" "gap tags";
+      row-gap: 0.5rem;
+    }
+    .nb-num { grid-area: num; }
+    .nb-info { grid-area: info; }
+    .nb-tags {
+      grid-area: tags;
+      justify-content: flex-start;
+    }
+    .tag { display: none; }
     .clo-row { grid-template-columns: 2.5rem 1fr; }
     .plo-badge, .level-badge { display: none; }
   }
@@ -370,7 +390,7 @@
          <div class="nb-title"><a href="T1_ChemEng_Intro_Commented.slides.html" target="_blank">Introduction to Chemical Engineering &amp; Python</a></div>
          <div class="nb-desc">Python environment, Jupyter basics, and the ChE context</div>
        </div>
-       <div class="nb-tags"><span class="tag">python</span><span class="tag">jupyter</span><a class="nb-notebook-link" href="T1_ChemEng_Intro_Commented.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">python</span><span class="tag">jupyter</span><a class="nb-notebook-link" href="T1_ChemEng_Intro_Commented.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T1_ChemEng_Intro_Commented.ipynb" target="_blank">colab</a></div>
      </div>
 
      <div class="nb-row">
@@ -379,7 +399,7 @@
          <div class="nb-title"><a href="T2_Python_Programming_Basics.slides.html" target="_blank">Python Programming Basics</a></div>
          <div class="nb-desc">Variables, data types, operators, expressions</div>
        </div>
-       <div class="nb-tags"><span class="tag">data-types</span><span class="tag">operators</span><a class="nb-notebook-link" href="T2_Python_Programming_Basics.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">data-types</span><span class="tag">operators</span><a class="nb-notebook-link" href="T2_Python_Programming_Basics.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T2_Python_Programming_Basics.ipynb" target="_blank">colab</a></div>
      </div>
 
      <div class="nb-row">
@@ -388,7 +408,7 @@
          <div class="nb-title"><a href="T3_Programming_Logic_and_Control_Statements.slides.html" target="_blank">Programming Logic &amp; Control Statements</a></div>
          <div class="nb-desc">if/elif/else, for loops, while loops, break and continue</div>
        </div>
-       <div class="nb-tags"><span class="tag">loops</span><span class="tag">conditionals</span><a class="nb-notebook-link" href="T3_Programming_Logic_and_Control_Statements.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">loops</span><span class="tag">conditionals</span><a class="nb-notebook-link" href="T3_Programming_Logic_and_Control_Statements.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T3_Programming_Logic_and_Control_Statements.ipynb" target="_blank">colab</a></div>
      </div>
 
      <div class="nb-row">
@@ -397,7 +417,7 @@
          <div class="nb-title"><a href="T4_Functions_in_Python.slides.html" target="_blank">Functions in Python</a></div>
          <div class="nb-desc">Defining functions, arguments, return values, lambda, scope</div>
        </div>
-       <div class="nb-tags"><span class="tag">functions</span><a class="nb-notebook-link" href="T4_Functions_in_Python.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">functions</span><a class="nb-notebook-link" href="T4_Functions_in_Python.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T4_Functions_in_Python.ipynb" target="_blank">colab</a></div>
      </div>
 
      <div class="nb-row">
@@ -406,7 +426,7 @@
          <div class="nb-title"><a href="T5_Sequences_Lists_and_Tuples.slides.html" target="_blank">Sequences — Lists &amp; Tuples</a></div>
          <div class="nb-desc">Creating, indexing, slicing, and manipulating sequences</div>
        </div>
-       <div class="nb-tags"><span class="tag">lists</span><span class="tag">tuples</span><a class="nb-notebook-link" href="T5_Sequences_Lists_and_Tuples.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">lists</span><span class="tag">tuples</span><a class="nb-notebook-link" href="T5_Sequences_Lists_and_Tuples.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T5_Sequences_Lists_and_Tuples.ipynb" target="_blank">colab</a></div>
      </div>
 
      <div class="nb-row">
@@ -415,7 +435,7 @@
          <div class="nb-title"><a href="T6_Dictionaries_and_Sets.slides.html" target="_blank">Dictionaries &amp; Sets</a></div>
          <div class="nb-desc">Key-value stores, set operations, comprehensions</div>
        </div>
-       <div class="nb-tags"><span class="tag">dicts</span><span class="tag">sets</span><a class="nb-notebook-link" href="T6_Dictionaries_and_Sets.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">dicts</span><span class="tag">sets</span><a class="nb-notebook-link" href="T6_Dictionaries_and_Sets.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T6_Dictionaries_and_Sets.ipynb" target="_blank">colab</a></div>
      </div>
 
   </div>
@@ -430,7 +450,7 @@
          <div class="nb-title"><a href="T7_Array_Oriented_Programming_with_NumPy.slides.html" target="_blank">Array-Oriented Programming with NumPy</a></div>
          <div class="nb-desc">Arrays, broadcasting, vectorised operations, linear algebra</div>
        </div>
-       <div class="nb-tags"><span class="tag">numpy</span><a class="nb-notebook-link" href="T7_Array_Oriented_Programming_with_NumPy.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">numpy</span><a class="nb-notebook-link" href="T7_Array_Oriented_Programming_with_NumPy.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T7_Array_Oriented_Programming_with_NumPy.ipynb" target="_blank">colab</a></div>
      </div>
 
      <div class="nb-row">
@@ -439,7 +459,7 @@
          <div class="nb-title"><a href="T8_Strings_Processing.slides.html" target="_blank">String Processing</a></div>
          <div class="nb-desc">String methods, formatting, parsing, regular expressions</div>
        </div>
-       <div class="nb-tags"><span class="tag">strings</span><a class="nb-notebook-link" href="T8_Strings_Processing.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">strings</span><a class="nb-notebook-link" href="T8_Strings_Processing.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T8_Strings_Processing.ipynb" target="_blank">colab</a></div>
      </div>
 
      <div class="nb-row">
@@ -448,7 +468,7 @@
          <div class="nb-title"><a href="T9_Files_and_Exceptions.slides.html" target="_blank">Files &amp; Exceptions</a></div>
          <div class="nb-desc">Reading/writing files, CSV, error handling, try/except</div>
        </div>
-       <div class="nb-tags"><span class="tag">file-io</span><span class="tag">exceptions</span><a class="nb-notebook-link" href="T9_Files_and_Exceptions.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">file-io</span><span class="tag">exceptions</span><a class="nb-notebook-link" href="T9_Files_and_Exceptions.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T9_Files_and_Exceptions.ipynb" target="_blank">colab</a></div>
      </div>
 
   </div>
@@ -463,7 +483,7 @@
          <div class="nb-title"><a href="T10_Linear_Regression.slides.html" target="_blank">Linear Regression</a></div>
          <div class="nb-desc">Fitting models to data, R², residuals, sklearn, ChE applications</div>
        </div>
-       <div class="nb-tags"><span class="tag">regression</span><span class="tag">sklearn</span><a class="nb-notebook-link" href="T10_Linear_Regression.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">regression</span><span class="tag">sklearn</span><a class="nb-notebook-link" href="T10_Linear_Regression.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T10_Linear_Regression.ipynb" target="_blank">colab</a></div>
      </div>
 
      <div class="nb-row">
@@ -472,7 +492,7 @@
          <div class="nb-title"><a href="T15_Machine_Learning.slides.html" target="_blank">Machine Learning</a></div>
          <div class="nb-desc">Classification, clustering, decision trees, Random Forest — process data examples</div>
        </div>
-       <div class="nb-tags"><span class="tag">ML</span><span class="tag">sklearn</span><a class="nb-notebook-link" href="T15_Machine_Learning.ipynb" target="_blank">notebook</a></div>
+       <div class="nb-tags"><span class="tag">ML</span><span class="tag">sklearn</span><a class="nb-notebook-link" href="T15_Machine_Learning.html" target="_blank">read</a><a class="nb-notebook-link nb-colab-link" href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T15_Machine_Learning.ipynb" target="_blank">colab</a></div>
      </div>
 
   </div>

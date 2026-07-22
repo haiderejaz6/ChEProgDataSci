@@ -20,11 +20,19 @@ jobs:
       - name: Install dependencies
         run: pip install jupyter nbconvert
 
-      - name: Convert notebooks to slides
+      - name: Convert notebooks to slides, HTML, and copy raw notebooks
         run: |
           mkdir -p _site
           for nb in *.ipynb; do
+            # Reveal.js slideshow (e.g. T1_ChemEng_Intro_Commented.slides.html)
             jupyter nbconvert --to slides "$nb" --output-dir _site
+
+            # Static rendered "read" page (e.g. T1_ChemEng_Intro_Commented.html)
+            jupyter nbconvert --to html "$nb" --output-dir _site \
+              --HTMLExporter.theme=light
+
+            # Raw notebook, downloadable / openable in Colab or JupyterLite
+            cp "$nb" "_site/$nb"
           done
           cp index.html _site/index.html
           echo "=== Files in _site ==="
