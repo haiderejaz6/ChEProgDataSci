@@ -201,45 +201,68 @@
     transition: background 0.12s;
   }
 
-  .nb-row:hover { background: #f0f5ff; }
+   .nb-row:hover { background: #f0f5ff; }
 
-  .nb-num {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    color: var(--accent);
-    font-weight: 600;
-    text-align: right;
-    white-space: nowrap;
-  }
+   .nb-num {
+     font-family: var(--mono);
+     font-size: 0.72rem;
+     color: var(--accent);
+     font-weight: 600;
+     text-align: right;
+     white-space: nowrap;
+   }
 
-  .nb-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.12rem;
-  }
+   .nb-title {
+     font-size: 0.9rem;
+     font-weight: 600;
+     color: var(--text);
+     margin-bottom: 0.12rem;
+   }
 
-  .nb-desc { font-size: 0.78rem; color: var(--muted); }
+   .nb-title a {
+     color: inherit;
+     text-decoration: none;
+   }
 
-  .nb-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-    justify-content: flex-end;
-  }
+   .nb-row:hover .nb-title a { color: var(--accent); }
 
-  .tag {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    padding: 0.15rem 0.4rem;
-    border-radius: 3px;
-    white-space: nowrap;
-    border: 1px solid var(--tag-border);
-  }
+   .nb-desc { font-size: 0.78rem; color: var(--muted); }
 
-  .nb-row:hover .nb-title { color: var(--accent); }
+   .nb-tags {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 0.3rem;
+     align-items: center;
+     justify-content: flex-end;
+   }
+
+   .tag {
+     font-family: var(--mono);
+     font-size: 0.6rem;
+     background: var(--tag-bg);
+     color: var(--tag-text);
+     padding: 0.15rem 0.4rem;
+     border-radius: 3px;
+     white-space: nowrap;
+     border: 1px solid var(--tag-border);
+   }
+
+   .nb-notebook-link {
+     font-family: var(--mono);
+     font-size: 0.6rem;
+     color: var(--accent2);
+     text-decoration: none;
+     white-space: nowrap;
+     border: 1px solid var(--border2);
+     padding: 0.15rem 0.4rem;
+     border-radius: 3px;
+     transition: background 0.12s, color 0.12s;
+   }
+
+   .nb-notebook-link:hover {
+     background: var(--plo4);
+     color: #5b21b6;
+   }
 
   /* ── Footer ── */
   footer {
@@ -341,59 +364,59 @@
   <p class="section-label">Module 1 — Python Foundations</p>
   <div class="notebook-list">
 
-    <a class="nb-row" href="T1_ChemEng_Intro_Commented.slides.html" target="_blank">
-      <span class="nb-num">T1</span>
-      <div class="nb-info">
-        <div class="nb-title">Introduction to Chemical Engineering &amp; Python</div>
-        <div class="nb-desc">Python environment, Jupyter basics, and the ChE context</div>
-      </div>
-      <div class="nb-tags"><span class="tag">python</span><span class="tag">jupyter</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T1</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T1_ChemEng_Intro_Commented.slides.html" target="_blank">Introduction to Chemical Engineering &amp; Python</a></div>
+         <div class="nb-desc">Python environment, Jupyter basics, and the ChE context</div>
+       </div>
+       <div class="nb-tags"><span class="tag">python</span><span class="tag">jupyter</span><a class="nb-notebook-link" href="T1_ChemEng_Intro_Commented.ipynb" target="_blank">notebook</a></div>
+     </div>
 
-    <a class="nb-row" href="T2_Python_Programming_Basics.slides.html" target="_blank">
-      <span class="nb-num">T2</span>
-      <div class="nb-info">
-        <div class="nb-title">Python Programming Basics</div>
-        <div class="nb-desc">Variables, data types, operators, expressions</div>
-      </div>
-      <div class="nb-tags"><span class="tag">data-types</span><span class="tag">operators</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T2</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T2_Python_Programming_Basics.slides.html" target="_blank">Python Programming Basics</a></div>
+         <div class="nb-desc">Variables, data types, operators, expressions</div>
+       </div>
+       <div class="nb-tags"><span class="tag">data-types</span><span class="tag">operators</span><a class="nb-notebook-link" href="T2_Python_Programming_Basics.ipynb" target="_blank">notebook</a></div>
+     </div>
 
-    <a class="nb-row" href="T3_Programming_Logic_and_Control_Statements.slides.html" target="_blank">
-      <span class="nb-num">T3</span>
-      <div class="nb-info">
-        <div class="nb-title">Programming Logic &amp; Control Statements</div>
-        <div class="nb-desc">if/elif/else, for loops, while loops, break and continue</div>
-      </div>
-      <div class="nb-tags"><span class="tag">loops</span><span class="tag">conditionals</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T3</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T3_Programming_Logic_and_Control_Statements.slides.html" target="_blank">Programming Logic &amp; Control Statements</a></div>
+         <div class="nb-desc">if/elif/else, for loops, while loops, break and continue</div>
+       </div>
+       <div class="nb-tags"><span class="tag">loops</span><span class="tag">conditionals</span><a class="nb-notebook-link" href="T3_Programming_Logic_and_Control_Statements.ipynb" target="_blank">notebook</a></div>
+     </div>
 
-    <a class="nb-row" href="T4_Functions_in_Python.slides.html" target="_blank">
-      <span class="nb-num">T4</span>
-      <div class="nb-info">
-        <div class="nb-title">Functions in Python</div>
-        <div class="nb-desc">Defining functions, arguments, return values, lambda, scope</div>
-      </div>
-      <div class="nb-tags"><span class="tag">functions</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T4</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T4_Functions_in_Python.slides.html" target="_blank">Functions in Python</a></div>
+         <div class="nb-desc">Defining functions, arguments, return values, lambda, scope</div>
+       </div>
+       <div class="nb-tags"><span class="tag">functions</span><a class="nb-notebook-link" href="T4_Functions_in_Python.ipynb" target="_blank">notebook</a></div>
+     </div>
 
-    <a class="nb-row" href="T5_Sequences_Lists_and_Tuples.slides.html" target="_blank">
-      <span class="nb-num">T5</span>
-      <div class="nb-info">
-        <div class="nb-title">Sequences — Lists &amp; Tuples</div>
-        <div class="nb-desc">Creating, indexing, slicing, and manipulating sequences</div>
-      </div>
-      <div class="nb-tags"><span class="tag">lists</span><span class="tag">tuples</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T5</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T5_Sequences_Lists_and_Tuples.slides.html" target="_blank">Sequences — Lists &amp; Tuples</a></div>
+         <div class="nb-desc">Creating, indexing, slicing, and manipulating sequences</div>
+       </div>
+       <div class="nb-tags"><span class="tag">lists</span><span class="tag">tuples</span><a class="nb-notebook-link" href="T5_Sequences_Lists_and_Tuples.ipynb" target="_blank">notebook</a></div>
+     </div>
 
-    <a class="nb-row" href="T6_Dictionaries_and_Sets.slides.html" target="_blank">
-      <span class="nb-num">T6</span>
-      <div class="nb-info">
-        <div class="nb-title">Dictionaries &amp; Sets</div>
-        <div class="nb-desc">Key-value stores, set operations, comprehensions</div>
-      </div>
-      <div class="nb-tags"><span class="tag">dicts</span><span class="tag">sets</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T6</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T6_Dictionaries_and_Sets.slides.html" target="_blank">Dictionaries &amp; Sets</a></div>
+         <div class="nb-desc">Key-value stores, set operations, comprehensions</div>
+       </div>
+       <div class="nb-tags"><span class="tag">dicts</span><span class="tag">sets</span><a class="nb-notebook-link" href="T6_Dictionaries_and_Sets.ipynb" target="_blank">notebook</a></div>
+     </div>
 
   </div>
 
@@ -401,32 +424,32 @@
   <p class="section-label">Module 2 — Scientific Computing</p>
   <div class="notebook-list">
 
-    <a class="nb-row" href="T7_Array_Oriented_Programming_with_NumPy.slides.html" target="_blank">
-      <span class="nb-num">T7</span>
-      <div class="nb-info">
-        <div class="nb-title">Array-Oriented Programming with NumPy</div>
-        <div class="nb-desc">Arrays, broadcasting, vectorised operations, linear algebra</div>
-      </div>
-      <div class="nb-tags"><span class="tag">numpy</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T7</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T7_Array_Oriented_Programming_with_NumPy.slides.html" target="_blank">Array-Oriented Programming with NumPy</a></div>
+         <div class="nb-desc">Arrays, broadcasting, vectorised operations, linear algebra</div>
+       </div>
+       <div class="nb-tags"><span class="tag">numpy</span><a class="nb-notebook-link" href="T7_Array_Oriented_Programming_with_NumPy.ipynb" target="_blank">notebook</a></div>
+     </div>
 
-    <a class="nb-row" href="T8_Strings_Processing.slides.html" target="_blank">
-      <span class="nb-num">T8</span>
-      <div class="nb-info">
-        <div class="nb-title">String Processing</div>
-        <div class="nb-desc">String methods, formatting, parsing, regular expressions</div>
-      </div>
-      <div class="nb-tags"><span class="tag">strings</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T8</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T8_Strings_Processing.slides.html" target="_blank">String Processing</a></div>
+         <div class="nb-desc">String methods, formatting, parsing, regular expressions</div>
+       </div>
+       <div class="nb-tags"><span class="tag">strings</span><a class="nb-notebook-link" href="T8_Strings_Processing.ipynb" target="_blank">notebook</a></div>
+     </div>
 
-    <a class="nb-row" href="T9_Files_and_Exceptions.slides.html" target="_blank">
-      <span class="nb-num">T9</span>
-      <div class="nb-info">
-        <div class="nb-title">Files &amp; Exceptions</div>
-        <div class="nb-desc">Reading/writing files, CSV, error handling, try/except</div>
-      </div>
-      <div class="nb-tags"><span class="tag">file-io</span><span class="tag">exceptions</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T9</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T9_Files_and_Exceptions.slides.html" target="_blank">Files &amp; Exceptions</a></div>
+         <div class="nb-desc">Reading/writing files, CSV, error handling, try/except</div>
+       </div>
+       <div class="nb-tags"><span class="tag">file-io</span><span class="tag">exceptions</span><a class="nb-notebook-link" href="T9_Files_and_Exceptions.ipynb" target="_blank">notebook</a></div>
+     </div>
 
   </div>
 
@@ -434,23 +457,23 @@
   <p class="section-label">Module 3 — Data Science</p>
   <div class="notebook-list">
 
-    <a class="nb-row" href="T10_Linear_Regression.slides.html" target="_blank">
-      <span class="nb-num">T10</span>
-      <div class="nb-info">
-        <div class="nb-title">Linear Regression</div>
-        <div class="nb-desc">Fitting models to data, R², residuals, sklearn, ChE applications</div>
-      </div>
-      <div class="nb-tags"><span class="tag">regression</span><span class="tag">sklearn</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T10</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T10_Linear_Regression.slides.html" target="_blank">Linear Regression</a></div>
+         <div class="nb-desc">Fitting models to data, R², residuals, sklearn, ChE applications</div>
+       </div>
+       <div class="nb-tags"><span class="tag">regression</span><span class="tag">sklearn</span><a class="nb-notebook-link" href="T10_Linear_Regression.ipynb" target="_blank">notebook</a></div>
+     </div>
 
-    <a class="nb-row" href="T15_Machine_Learning.slides.html" target="_blank">
-      <span class="nb-num">T15</span>
-      <div class="nb-info">
-        <div class="nb-title">Machine Learning</div>
-        <div class="nb-desc">Classification, clustering, decision trees, Random Forest — process data examples</div>
-      </div>
-      <div class="nb-tags"><span class="tag">ML</span><span class="tag">sklearn</span></div>
-    </a>
+     <div class="nb-row">
+       <span class="nb-num">T15</span>
+       <div class="nb-info">
+         <div class="nb-title"><a href="T15_Machine_Learning.slides.html" target="_blank">Machine Learning</a></div>
+         <div class="nb-desc">Classification, clustering, decision trees, Random Forest — process data examples</div>
+       </div>
+       <div class="nb-tags"><span class="tag">ML</span><span class="tag">sklearn</span><a class="nb-notebook-link" href="T15_Machine_Learning.ipynb" target="_blank">notebook</a></div>
+     </div>
 
   </div>
 
