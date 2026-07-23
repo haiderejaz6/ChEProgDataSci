@@ -35,6 +35,7 @@ jobs:
             cp "$nb" "_site/$nb"
           done
           cp index.html _site/index.html
+          cp favicon.png _site/favicon.png
           echo "=== Files in _site ==="
           ls -la _site/
 
