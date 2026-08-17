@@ -1,0 +1,13 @@
+{
+  "name": "cheprogdatasci-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing page build tooling for the CHE-226 course site.",
+  "scripts": {
+    "build:css": "node node_modules/tailwindcss/lib/cli.js -i ./src/input.css -o ./assets/css/site.css --minify",
+    "watch:css": "node node_modules/tailwindcss/lib/cli.js -i ./src/input.css -o ./assets/css/site.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}

@@ -36,6 +36,8 @@ jobs:
           done
           cp index.html _site/index.html
           cp favicon.png _site/favicon.png
+          cp -r images _site/images
+          cp -r assets _site/assets
           echo "=== Files in _site ==="
           ls -la _site/
 

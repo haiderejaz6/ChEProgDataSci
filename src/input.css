@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: 247 248 250;
+  --color-surface: 255 255 255;
+  --color-surface-hover: 240 245 255;
+  --color-border: 226 230 237;
+  --color-border2: 208 215 226;
+  --color-accent: 26 86 219;
+  --color-accent2: 109 40 217;
+  --color-text: 17 24 39;
+  --color-muted: 107 114 128;
+
+  --color-tag-bg: 239 246 255;
+  --color-tag-text: 30 64 175;
+  --color-tag-border: 191 219 254;
+
+  --color-colab-text: 180 83 9;
+  --color-colab-border: 253 230 138;
+  --color-colab-hover-bg: 255 251 235;
+  --color-colab-hover-text: 146 64 14;
+
+  --color-plo5-bg: 224 242 254;
+  --color-plo5-text: 3 105 161;
+  --color-plo4-bg: 237 233 254;
+  --color-plo4-text: 91 33 182;
+  --color-plo9-bg: 254 249 195;
+  --color-plo9-text: 133 77 14;
+  --color-plo2-bg: 220 252 231;
+  --color-plo2-text: 22 101 52;
+
+  --color-level-low-bg: 240 253 244;
+  --color-level-low-text: 21 128 61;
+  --color-level-low-border: 187 247 208;
+  --color-level-med-bg: 255 251 235;
+  --color-level-med-text: 180 83 9;
+  --color-level-med-border: 253 230 138;
+  --color-level-high-bg: 254 242 242;
+  --color-level-high-text: 185 28 28;
+  --color-level-high-border: 252 165 165;
+}
+
+.dark {
+  --color-bg: 11 15 25;
+  --color-surface: 19 26 41;
+  --color-surface-hover: 27 36 54;
+  --color-border: 35 44 63;
+  --color-border2: 44 54 80;
+  --color-accent: 59 130 246;
+  --color-accent2: 139 92 246;
+  --color-text: 229 231 235;
+  --color-muted: 148 163 184;
+
+  --color-tag-bg: 30 42 68;
+  --color-tag-text: 147 197 253;
+  --color-tag-border: 44 66 112;
+
+  --color-colab-text: 251 191 36;
+  --color-colab-border: 120 69 15;
+  --color-colab-hover-bg: 58 47 12;
+  --color-colab-hover-text: 253 230 138;
+
+  --color-plo5-bg: 12 43 61;
+  --color-plo5-text: 125 211 252;
+  --color-plo4-bg: 46 31 77;
+  --color-plo4-text: 196 181 253;
+  --color-plo9-bg: 58 47 12;
+  --color-plo9-text: 253 230 138;
+  --color-plo2-bg: 15 46 29;
+  --color-plo2-text: 134 239 172;
+
+  --color-level-low-bg: 15 46 29;
+  --color-level-low-text: 74 222 128;
+  --color-level-low-border: 22 101 52;
+  --color-level-med-bg: 58 47 12;
+  --color-level-med-text: 251 191 36;
+  --color-level-med-border: 146 64 14;
+  --color-level-high-bg: 58 20 20;
+  --color-level-high-text: 248 113 113;
+  --color-level-high-border: 153 27 27;
+}
+
+@layer base {
+  body {
+    font-weight: 300;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-[0.65rem] tracking-widest uppercase text-muted border-b border-border pb-2 mb-4;
+  }
+
+  .tag-pill {
+    @apply font-mono text-[0.6rem] rounded border whitespace-nowrap bg-tag-bg text-tag-text border-tag-border px-1.5 py-0.5;
+  }
+
+  .nb-action {
+    @apply font-mono text-[0.65rem] rounded border border-border2 px-2 py-1 whitespace-nowrap text-accent2 transition-colors hover:bg-plo4-bg hover:text-plo4-text;
+  }
+
+  .nb-action-colab {
+    @apply text-colab-text border-colab-border hover:bg-colab-hover-bg hover:text-colab-hover-text;
+  }
+
+  .plo-badge {
+    @apply font-mono text-[0.62rem] font-semibold rounded px-1.5 py-0.5 text-center whitespace-nowrap;
+  }
+
+  .level-badge {
+    @apply font-mono text-[0.6rem] rounded border px-1.5 py-0.5 text-center whitespace-nowrap;
+  }
+
+  .filter-chip {
+    @apply inline-flex items-center rounded-full border border-border bg-surface px-3 py-1 text-xs font-mono text-muted transition-colors hover:border-accent/50;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
