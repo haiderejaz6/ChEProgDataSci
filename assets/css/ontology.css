@@ -1,0 +1,256 @@
+/* ── Reference ontology page ─────────────────────────────────────
+   Plain CSS (not Tailwind-generated) so this page doesn't depend on
+   rerunning the Tailwind build. Reuses the same CSS custom properties
+   defined in site.css (:root / .dark), so it stays in sync with the
+   rest of the site's light/dark theme automatically.
+------------------------------------------------------------------ */
+
+.ont-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  color: rgb(var(--color-muted));
+}
+.ont-stats b {
+  color: rgb(var(--color-ink, var(--color-text)));
+  font-weight: 600;
+}
+
+.ont-search-wrap {
+  position: relative;
+}
+.ont-search {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid rgb(var(--color-border));
+  background: rgb(var(--color-surface));
+  color: rgb(var(--color-text));
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.ont-search::placeholder { color: rgb(var(--color-muted)); }
+.ont-search:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(var(--color-accent) / 0.4);
+}
+.ont-hits {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  color: rgb(var(--color-muted));
+  white-space: nowrap;
+}
+
+.ont-spotlight {
+  border: 1px solid rgb(var(--color-accent) / 0.35);
+  background: rgb(var(--color-accent) / 0.06);
+  border-radius: 0.6rem;
+  padding: 1rem 1.1rem 1.2rem;
+}
+.ont-spotlight-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgb(var(--color-accent));
+  margin-bottom: 0.35rem;
+}
+
+.ont-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1.25rem 0 0.75rem;
+}
+.ont-btn {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  border: 1px solid rgb(var(--color-border));
+  background: rgb(var(--color-surface));
+  color: rgb(var(--color-muted));
+  border-radius: 0.375rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.ont-btn:hover { border-color: rgb(var(--color-accent) / 0.5); }
+.ont-btn.active {
+  background: rgb(var(--color-accent));
+  border-color: rgb(var(--color-accent));
+  color: #fff;
+}
+
+/* Area */
+.ont-area {
+  border: 1px solid rgb(var(--color-border));
+  border-left: 3px solid var(--area-color, rgb(var(--color-accent)));
+  border-radius: 0.5rem;
+  background: rgb(var(--color-surface));
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+}
+.ont-area-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+  user-select: none;
+}
+.ont-area-head:hover { background: rgb(var(--color-surface-hover)); }
+.ont-chev {
+  font-size: 0.6rem;
+  color: rgb(var(--color-muted));
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+.ont-area.open > .ont-area-head .ont-chev { transform: rotate(90deg); }
+.ont-area-id {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--area-color, rgb(var(--color-accent)));
+  border-radius: 0.25rem;
+  padding: 0.12rem 0.4rem;
+  flex-shrink: 0;
+}
+.ont-area-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgb(var(--color-text));
+  flex: 1;
+}
+.ont-area-meta {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  color: rgb(var(--color-muted));
+  white-space: nowrap;
+}
+.ont-area-body {
+  display: none;
+  padding: 0 0.85rem 0.85rem;
+}
+.ont-area.open > .ont-area-body { display: block; }
+.ont-area-desc {
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: rgb(var(--color-muted));
+  margin-bottom: 0.6rem;
+}
+
+/* Unit */
+.ont-unit {
+  border: 1px solid rgb(var(--color-border));
+  border-radius: 0.4rem;
+  margin-bottom: 0.4rem;
+  background: rgb(var(--color-bg));
+}
+.ont-unit-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+}
+.ont-unit-head:hover { background: rgb(var(--color-surface-hover)); }
+.ont-unit-id {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  color: rgb(var(--color-muted));
+}
+.ont-unit-name {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgb(var(--color-text));
+  flex: 1;
+  min-width: 8rem;
+}
+.ont-badge {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.58rem;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.35rem;
+  white-space: nowrap;
+}
+.ont-badge.core {
+  background: rgb(var(--color-level-low-bg));
+  color: rgb(var(--color-level-low-text));
+  border: 1px solid rgb(var(--color-level-low-border));
+}
+.ont-badge.elective {
+  background: rgb(var(--color-tag-bg));
+  color: rgb(var(--color-muted));
+  border: 1px solid rgb(var(--color-border2));
+}
+.ont-badge.bloom {
+  background: rgb(var(--color-plo4-bg));
+  color: rgb(var(--color-plo4-text));
+}
+.ont-unit-body {
+  display: none;
+  padding: 0 0.7rem 0.65rem;
+}
+.ont-unit.open > .ont-unit-body { display: block; }
+.ont-unit-desc {
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: rgb(var(--color-muted));
+  margin-bottom: 0.5rem;
+}
+
+/* Topic */
+.ont-topic {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.3rem 0;
+  border-top: 1px dashed rgb(var(--color-border));
+}
+.ont-topic:first-of-type { border-top: none; }
+.ont-topic-id {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.58rem;
+  color: rgb(var(--color-muted));
+  flex-shrink: 0;
+}
+.ont-topic-name {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: rgb(var(--color-text));
+}
+.ont-topic-desc {
+  font-size: 0.7rem;
+  color: rgb(var(--color-muted));
+  flex-basis: 100%;
+  line-height: 1.45;
+}
+.ont-topic-link {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  border: 1px solid rgb(var(--color-colab-border));
+  color: rgb(var(--color-colab-text));
+  border-radius: 0.25rem;
+  padding: 0.06rem 0.4rem;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+.ont-topic-link:hover {
+  background: rgb(var(--color-colab-hover-bg));
+  color: rgb(var(--color-colab-hover-text));
+}
+
+.ont-empty {
+  font-size: 0.8rem;
+  color: rgb(var(--color-muted));
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.ont-highlight { background: rgb(var(--color-plo9-bg)); border-radius: 0.15rem; }
