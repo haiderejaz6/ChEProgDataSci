@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reference Ontology · CHE-226</title>
+<meta name="description" content="Reference ontology for CHE-226 Programming & Data Science — the department's body-of-knowledge map for chemical engineering, used to ground new examples and to show students how this course connects to the rest of the curriculum." />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
+<script>
+  (function () {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (stored ? stored === 'dark' : prefersDark) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="assets/css/site.css" />
+<link rel="stylesheet" href="assets/css/ontology.css" />
+</head>
+<body class="min-h-screen bg-bg font-sans font-light text-ink antialiased">
+
+<header class="sticky top-0 z-30 border-b border-border bg-surface/90 backdrop-blur">
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="index.html" class="truncate font-mono text-[0.65rem] uppercase tracking-widest text-accent">CHE-226 · SCME · NUST Islamabad</a>
+    <div class="flex shrink-0 items-center gap-3">
+      <a href="index.html" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        ← Course home
+      </a>
+      <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        GitHub ↗
+      </a>
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle color theme"
+        class="flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted transition-colors hover:border-accent/50 hover:text-accent"
+      >
+        <svg class="block h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="hidden h-4 w-4 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Intro ── -->
+  <section class="mx-auto max-w-5xl px-4 pb-6 pt-10 sm:px-6">
+    <p class="font-mono text-[0.68rem] uppercase tracking-widest text-accent">Reference ontology</p>
+    <h1 class="mt-3 text-2xl font-semibold leading-tight text-ink sm:text-3xl">
+      What chemical engineering covers — and where this course fits
+    </h1>
+    <p class="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
+      This is the School's reference body-of-knowledge for chemical engineering: 16 knowledge areas, grounded
+      in the PEC 2023–2024 accreditation guidelines read alongside AIChE/ABET programme criteria, broken down
+      into knowledge units and topics. It's maintained separately from any one course's syllabus, so it can be
+      used as a yardstick — a map of the discipline, not a description of what's already being taught.
+    </p>
+    <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+      On this site it does two jobs. For a new notebook, it's a place to find a real chemical-engineering topic
+      — a reactor, a distillation column, a heat exchanger — to build a programming example around, instead of
+      reaching for a generic dataset. For students, it's a map back from "why am I learning NumPy in a
+      programming course" to the rest of the curriculum this feeds into.
+    </p>
+    <div id="ont-stats" class="ont-stats mt-5"></div>
+  </section>
+
+  <!-- ── Spotlight: KA-01, where CHE-226 lives ── -->
+  <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
+    <h2 class="section-label">This course's home area</h2>
+    <div id="ont-spotlight" class="ont-spotlight">
+      <p class="ont-empty">Loading…</p>
+    </div>
+  </section>
+
+  <!-- ── Adding a new example ── -->
+  <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
+    <h2 class="section-label">Adding a new example</h2>
+    <div class="rounded-lg border border-border bg-surface p-4 text-sm leading-relaxed text-muted">
+      <p>Pick a topic above still marked <span class="ont-topic-link" style="opacity:.6;cursor:default;border-style:dashed;">no notebook yet</span>,
+      then search the domain areas below for a concrete process context to hang it on — a unit operation, a
+      reaction, a property calculation. Build the notebook around that pairing, add it to the catalog on the
+      <a class="text-accent hover:underline" href="index.html#notebooks">course home page</a>, and register the
+      pairing in <code class="font-mono text-xs">assets/js/ontology.js</code> (the <code class="font-mono text-xs">NOTEBOOK_TOPICS</code> map
+      near the top) so it shows up here and the coverage count updates.</p>
+    </div>
+  </section>
+
+  <!-- ── Full outline ── -->
+  <section class="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+    <h2 class="section-label">Full reference ontology (16 areas)</h2>
+
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div class="ont-search-wrap w-full sm:max-w-xs">
+        <input id="ont-search" class="ont-search" type="search" placeholder="Search areas, units, topics…" autocomplete="off" />
+      </div>
+      <span id="ont-hits" class="ont-hits"></span>
+    </div>
+
+    <div class="ont-toolbar">
+      <button id="ont-expand-btn" class="ont-btn" type="button">Expand all</button>
+      <button id="ont-collapse-btn" class="ont-btn" type="button">Collapse all</button>
+      <button id="ont-core-btn" class="ont-btn" type="button">Core units only</button>
+    </div>
+
+    <div id="ont-outline" class="mt-3">
+      <p class="ont-empty">Loading reference ontology…</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mx-auto mt-10 max-w-5xl border-t border-border px-4 py-8 sm:px-6">
+  <div class="flex flex-col gap-3 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+    <span>School of Chemical &amp; Materials Engineering · NUST Islamabad</span>
+    <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-accent hover:underline">View source on GitHub ↗</a>
+  </div>
+  <p class="mt-4 max-w-3xl text-[0.7rem] leading-relaxed text-muted">
+    Reference ontology data (<code class="font-mono">data/reference_ontology.json</code>) is maintained in the
+    department's curriculum project and generated independently of any course's CLOs, from the PEC 2023–2024
+    guidelines and AIChE/ABET programme criteria — it is a first-pass, pending-validation reference for faculty
+    review, not an accredited standard on its own.
+  </p>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/ontology.js" defer></script>
+</body>
+</html>

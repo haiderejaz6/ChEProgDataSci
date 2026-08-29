@@ -35,9 +35,11 @@ jobs:
             cp "$nb" "_site/$nb"
           done
           cp index.html _site/index.html
+          cp ontology.html _site/ontology.html
           cp favicon.png _site/favicon.png
           cp -r images _site/images
           cp -r assets _site/assets
+          cp -r data _site/data
           echo "=== Files in _site ==="
           ls -la _site/
 
