@@ -17,8 +17,17 @@ jobs:
         with:
           python-version: '3.11'
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Install dependencies
         run: pip install jupyter nbconvert
+
+      - name: Convert Marp lecture decks to standalone HTML
+        run: |
+          mkdir -p _site/lectures
+          npx --yes @marp-team/marp-cli@latest --input-dir lectures --html -o _site/lectures
 
       - name: Convert notebooks to slides, HTML, and copy raw notebooks
         run: |
