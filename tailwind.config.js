@@ -5,7 +5,7 @@ function withOpacity(variable) {
 
 module.exports = {
   darkMode: 'class',
-  content: ['./index.html', './ontology.html', './assets/js/**/*.js'],
+  content: ['./index.html', './outline.html', './ontology.html', './assets/js/**/*.js'],
   theme: {
     extend: {
       fontFamily: {

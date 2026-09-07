@@ -35,6 +35,7 @@ jobs:
             cp "$nb" "_site/$nb"
           done
           cp index.html _site/index.html
+          cp outline.html _site/outline.html
           cp ontology.html _site/ontology.html
           cp favicon.png _site/favicon.png
           cp -r images _site/images

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Course Outline · CHE-226</title>
+<meta name="description" content="Course outline for CHE-226 Programming & Data Science for Chemical Engineers — NUST SCME. Credit hours, course contents, learning outcomes, weekly schedule, assessment breakdown and reference texts." />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
+<script>
+  (function () {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (stored ? stored === 'dark' : prefersDark) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="min-h-screen bg-bg font-sans font-light text-ink antialiased">
+
+<header class="sticky top-0 z-30 border-b border-border bg-surface/90 backdrop-blur">
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="index.html" class="truncate font-mono text-[0.65rem] uppercase tracking-widest text-accent">CHE-226 · SCME · NUST Islamabad</a>
+    <div class="flex shrink-0 items-center gap-3">
+      <a href="index.html" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        ← Course home
+      </a>
+      <a href="ontology.html" class="hidden font-mono text-xs text-muted transition-colors hover:text-accent sm:inline">
+        Reference Ontology
+      </a>
+      <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        GitHub ↗
+      </a>
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle color theme"
+        class="flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted transition-colors hover:border-accent/50 hover:text-accent"
+      >
+        <svg class="block h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="hidden h-4 w-4 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Intro ── -->
+  <section class="mx-auto max-w-5xl px-4 pb-6 pt-10 sm:px-6">
+    <p class="font-mono text-[0.68rem] uppercase tracking-widest text-accent">Course outline</p>
+    <h1 class="mt-3 text-2xl font-semibold leading-tight text-ink sm:text-3xl">
+      Programming &amp; Data Science <span class="text-accent2">(CHE-226)</span>
+    </h1>
+    <p class="mt-4 max-w-2xl text-sm text-muted">
+      Dr. Haider Ejaz · Assistant Professor — School of Chemical &amp; Materials Engineering, NUST Islamabad
+    </p>
+
+    <!-- Quick facts -->
+    <dl class="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-4">
+      <div class="bg-surface p-4">
+        <dt class="font-mono text-[0.6rem] uppercase tracking-widest text-muted">Credit hours</dt>
+        <dd class="mt-1 text-sm text-ink">3 <span class="text-muted">total</span></dd>
+        <dd class="mt-1 font-mono text-[0.65rem] text-muted">Theory 2 · Practical 1</dd>
+      </div>
+      <div class="bg-surface p-4">
+        <dt class="font-mono text-[0.6rem] uppercase tracking-widest text-muted">Contact hours</dt>
+        <dd class="mt-1 text-sm text-ink">80 <span class="text-muted">total</span></dd>
+        <dd class="mt-1 font-mono text-[0.65rem] text-muted">Theory 32 · Practical 48</dd>
+      </div>
+      <div class="bg-surface p-4">
+        <dt class="font-mono text-[0.6rem] uppercase tracking-widest text-muted">Pre-requisites</dt>
+        <dd class="mt-1 text-sm text-ink">None</dd>
+      </div>
+      <div class="bg-surface p-4">
+        <dt class="font-mono text-[0.6rem] uppercase tracking-widest text-muted">Programme LO</dt>
+        <dd class="mt-1 text-sm text-ink">PLO-5</dd>
+        <dd class="mt-1 font-mono text-[0.65rem] text-muted">Modern Tool Usage</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ── Mode of teaching ── -->
+  <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
+    <h2 class="section-label">Mode of teaching</h2>
+    <div class="grid gap-3 sm:grid-cols-2">
+      <div class="rounded-lg border border-border bg-surface p-4">
+        <p class="text-sm font-medium text-ink">Instruction</p>
+        <p class="mt-1 text-[0.82rem] leading-relaxed text-muted">Two hours of lecture per week.</p>
+      </div>
+      <div class="rounded-lg border border-border bg-surface p-4">
+        <p class="text-sm font-medium text-ink">Practical / laboratory demonstration</p>
+        <p class="mt-1 text-[0.82rem] leading-relaxed text-muted">Three hours of lab work per week.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Description ── -->
+  <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
+    <h2 class="section-label">Course description</h2>
+    <p class="max-w-3xl text-sm leading-relaxed text-muted">
+      This course provides a practical introduction to programming and data science using Python. Students will
+      gain hands-on experience in programming fundamentals, logic building, and the application of data science
+      tools relevant to chemical engineering. Emphasis is placed on developing competency in using modern software
+      tools for solving problems and analyzing data.
+    </p>
+  </section>
+
+  <!-- ── Contents ── -->
+  <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
+    <h2 class="section-label">Course contents</h2>
+    <div class="flex flex-col gap-px overflow-hidden rounded-lg border border-border bg-border">
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">01</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">Introduction to Computers and Python</span>
+          <span class="text-muted"> — hardware, software, OS, programming languages, Internet &amp; WWW, software technologies, big data.</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">02</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">Python Programming Basics</span>
+          <span class="text-muted"> — variables, assignment, arithmetic operators, print function, strings, user input.</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">03</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">Programming Logic</span>
+          <span class="text-muted"> — flow charts, program structure, logic building, algorithms.</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">04</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">Conditional Statements</span>
+          <span class="text-muted"> — Boolean operators, if/else, comparison operators, pseudocode, control statements.</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">05</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">Repetition Structures</span>
+          <span class="text-muted"> — for/while loops, sentinel-controlled iteration, break/continue, nested loops.</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">06</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">Functions</span>
+          <span class="text-muted"> — defining functions, parameters, return values, default arguments, scope, imports, call stack.</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">07</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">Sequences: Lists &amp; Tuples</span>
+          <span class="text-muted"> — creation, slicing, passing to functions, sorting/searching, 2D lists.</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">08</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">Dictionaries &amp; Sets</span>
+          <span class="text-muted"> — creation, methods, comparisons, mathematical operations, comprehensions.</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">09</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">NumPy Arrays</span>
+          <span class="text-muted"> — creating arrays, attributes, indexing, slicing, reshaping, performance, transposing.</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">10</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">Strings</span>
+          <span class="text-muted"> — formatting, concatenation, manipulation.</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2rem_1fr] items-start gap-3 bg-surface p-4">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">11</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          <span class="font-medium">Files and Exceptions</span>
+          <span class="text-muted"> — reading/writing files, text processing, JSON, pickling, error handling.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CLOs ── -->
+  <section id="clos" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-4 sm:px-6">
+    <h2 class="section-label">Course learning outcomes</h2>
+
+    <div class="flex flex-col gap-px overflow-hidden rounded-lg border border-border bg-border">
+      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">CLO-1</span>
+        <span class="plo-badge hidden bg-plo5-bg text-plo5-text sm:inline-block">PLO-5</span>
+        <span class="level-badge hidden border-level-low-border bg-level-low-bg text-level-low-text sm:inline-block">C-2</span>
+        <div class="text-[0.82rem] leading-relaxed text-ink">
+          Explain fundamental programming concepts and tools (Python, NumPy, pandas) to solve data-driven problems.
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt-6 font-mono text-[0.65rem] uppercase tracking-widest text-muted">Outcome detail by learning domain</h3>
+    <div class="mt-3 flex flex-col gap-px overflow-hidden rounded-lg border border-border bg-border">
+
+      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">C-2</span>
+        <span class="plo-badge hidden bg-plo5-bg text-plo5-text sm:inline-block">PLO-5</span>
+        <span class="level-badge hidden border-level-low-border bg-level-low-bg text-level-low-text sm:inline-block">Low</span>
+        <div>
+          <div class="text-[0.82rem] leading-relaxed text-ink">Comprehend the fundamentals of introductory programming, data science concepts, and the application of associated tools.</div>
+          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Cognitive · Remember / Understand</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">C-3</span>
+        <span class="plo-badge hidden bg-plo4-bg text-plo4-text sm:inline-block">PLO-4</span>
+        <span class="level-badge hidden border-level-med-border bg-level-med-bg text-level-med-text sm:inline-block">Medium</span>
+        <div>
+          <div class="text-[0.82rem] leading-relaxed text-ink">Compute engineering problems and mathematical results using Python for chemical engineering data.</div>
+          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Cognitive · Apply</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">C-6</span>
+        <span class="plo-badge hidden bg-plo5-bg text-plo5-text sm:inline-block">PLO-5</span>
+        <span class="level-badge hidden border-level-high-border bg-level-high-bg text-level-high-text sm:inline-block">High</span>
+        <div>
+          <div class="text-[0.82rem] leading-relaxed text-ink">Write Python programs for data analysis and visualization of chemical processes data sets.</div>
+          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Cognitive · Create</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">A-2</span>
+        <span class="plo-badge hidden bg-plo9-bg text-plo9-text sm:inline-block">PLO-9</span>
+        <span class="level-badge hidden border-level-low-border bg-level-low-bg text-level-low-text sm:inline-block">Low</span>
+        <div>
+          <div class="text-[0.82rem] leading-relaxed text-ink">Perform assigned programming and data analysis lab tasks effectively.</div>
+          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Affective · Respond</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
+        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">P-3</span>
+        <span class="plo-badge hidden bg-plo2-bg text-plo2-text sm:inline-block">PLO-2</span>
+        <span class="level-badge hidden border-level-med-border bg-level-med-bg text-level-med-text sm:inline-block">Medium</span>
+        <div>
+          <div class="text-[0.82rem] leading-relaxed text-ink">Follow standard algorithms and coding practices in chemical engineering applications.</div>
+          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Psychomotor · Guided Response</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Weekly schedule ── -->
+  <section id="schedule" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-4 sm:px-6">
+    <h2 class="section-label">Weekly schedule (theory)</h2>
+    <div class="overflow-x-auto rounded-lg border border-border">
+      <table class="w-full min-w-[34rem] border-collapse text-left">
+        <thead>
+          <tr class="bg-surface-hover">
+            <th scope="col" class="border-b border-border px-4 py-2 font-mono text-[0.6rem] uppercase tracking-widest text-muted">Week</th>
+            <th scope="col" class="border-b border-border px-4 py-2 font-mono text-[0.6rem] uppercase tracking-widest text-muted">Topic</th>
+            <th scope="col" class="border-b border-border px-4 py-2 font-mono text-[0.6rem] uppercase tracking-widest text-muted">CLO</th>
+            <th scope="col" class="border-b border-border px-4 py-2 font-mono text-[0.6rem] uppercase tracking-widest text-muted">Domain</th>
+            <th scope="col" class="border-b border-border px-4 py-2 font-mono text-[0.6rem] uppercase tracking-widest text-muted">Level</th>
+          </tr>
+        </thead>
+        <tbody class="text-[0.82rem] text-ink">
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">1</td><td class="border-b border-border px-4 py-2">Introduction to Computers, Python, and Data Science</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">2</td><td class="border-b border-border px-4 py-2">Python Basics: variables, I/O, arithmetic</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">3</td><td class="border-b border-border px-4 py-2">Programming Logic: algorithms, flowcharts</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">4</td><td class="border-b border-border px-4 py-2">Conditional Statements</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">5</td><td class="border-b border-border px-4 py-2">Repetition Structures</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">6</td><td class="border-b border-border px-4 py-2">Functions &amp; modular programming</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">7</td><td class="border-b border-border px-4 py-2">Lists &amp; Tuples</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface-hover"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">8</td><td class="border-b border-border px-4 py-2 font-medium">Mid Term Exam</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">—</td><td class="border-b border-border px-4 py-2 text-xs text-muted">—</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">—</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">9</td><td class="border-b border-border px-4 py-2">Dictionaries &amp; Sets</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">10</td><td class="border-b border-border px-4 py-2">NumPy Arrays</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">11</td><td class="border-b border-border px-4 py-2">Strings</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">12</td><td class="border-b border-border px-4 py-2">File I/O</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">13</td><td class="border-b border-border px-4 py-2">Error Handling &amp; Debugging</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">14</td><td class="border-b border-border px-4 py-2">Data Science Tools (pandas, simple datasets)</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">15</td><td class="border-b border-border px-4 py-2">Mini Project Workshop</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">16</td><td class="border-b border-border px-4 py-2">Project Presentations + Review</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">1</td><td class="border-b border-border px-4 py-2 text-xs text-muted">Cognitive</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">C-2</td></tr>
+          <tr class="bg-surface-hover"><td class="border-b border-border px-4 py-2 font-mono text-xs text-accent">17</td><td class="border-b border-border px-4 py-2 font-medium">Final Exam Review Week</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">—</td><td class="border-b border-border px-4 py-2 text-xs text-muted">—</td><td class="border-b border-border px-4 py-2 font-mono text-xs text-muted">—</td></tr>
+          <tr class="bg-surface-hover"><td class="px-4 py-2 font-mono text-xs text-accent">18</td><td class="px-4 py-2 font-medium">End Semester Exam</td><td class="px-4 py-2 font-mono text-xs text-muted">—</td><td class="px-4 py-2 text-xs text-muted">—</td><td class="px-4 py-2 font-mono text-xs text-muted">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-3 text-xs leading-relaxed text-muted">
+      Lecture slides and notebooks for each week are on the
+      <a class="text-accent hover:underline" href="index.html#notebooks">course home page</a>.
+    </p>
+  </section>
+
+  <!-- ── Assessment ── -->
+  <section id="assessment" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-4 sm:px-6">
+    <h2 class="section-label">Assessment system — theory (75% of course)</h2>
+    <div class="flex flex-col gap-px overflow-hidden rounded-lg border border-border bg-border">
+
+      <div class="flex items-center justify-between gap-4 bg-surface p-4">
+        <span class="text-[0.82rem] text-ink">Assignments</span>
+        <span class="font-mono text-xs font-semibold text-accent">10%</span>
+      </div>
+      <div class="flex items-center justify-between gap-4 bg-surface p-4">
+        <span class="text-[0.82rem] text-ink">Quizzes</span>
+        <span class="font-mono text-xs font-semibold text-accent">10%</span>
+      </div>
+      <div class="flex items-center justify-between gap-4 bg-surface p-4">
+        <span class="text-[0.82rem] text-ink">Midterm exam</span>
+        <span class="font-mono text-xs font-semibold text-accent">25%</span>
+      </div>
+      <div class="flex items-center justify-between gap-4 bg-surface p-4">
+        <span class="text-[0.82rem] text-ink">Project</span>
+        <span class="font-mono text-xs font-semibold text-accent">15%</span>
+      </div>
+      <div class="flex items-center justify-between gap-4 bg-surface p-4">
+        <span class="text-[0.82rem] text-ink">Final exam</span>
+        <span class="font-mono text-xs font-semibold text-accent">40%</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Texts ── -->
+  <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
+    <h2 class="section-label">Textbooks &amp; references</h2>
+    <div class="flex flex-col gap-px overflow-hidden rounded-lg border border-border bg-border">
+      <div class="bg-surface p-4">
+        <p class="text-[0.82rem] leading-relaxed text-ink">
+          <em>Intro to Python for Computer Science and Data Science: Learning to Program with AI, Big Data and the Cloud</em>
+        </p>
+        <p class="mt-1 font-mono text-[0.65rem] text-muted">Paul &amp; Harvey Deitel · 2021</p>
+      </div>
+      <div class="bg-surface p-4">
+        <p class="text-[0.82rem] leading-relaxed text-ink"><em>Python for Data Analysis</em></p>
+        <p class="mt-1 font-mono text-[0.65rem] text-muted">Wes McKinney · O'Reilly · 2018</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Office hours ── -->
+  <section id="office-hours" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-4 sm:px-6">
+    <h2 class="section-label">Office hours</h2>
+    <div class="flex flex-col gap-4 rounded-lg border border-border bg-surface p-5 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p class="text-sm font-medium text-ink">Dr. Haider Ejaz · Office 220, SCME</p>
+        <p class="mt-1 text-[0.82rem] leading-relaxed text-muted">
+          Book a slot online and the meeting invite is sent to you automatically.
+        </p>
+      </div>
+      <a
+        href="https://outlook.office.com/bookwithme/user/728ff09128fe4c2383aa8979be54f802@scme.nust.edu.pk/meetingtype/YV4ue-tEFk6kyAszXORPxw2?anonymous&amp;ismsaljsauthenabled&amp;ep=mlink"
+        target="_blank"
+        rel="noopener"
+        class="shrink-0 self-start rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:self-auto"
+      >
+        Book office hours ↗
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mx-auto mt-10 max-w-5xl border-t border-border px-4 py-8 sm:px-6">
+  <div class="flex flex-col gap-3 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+    <span>School of Chemical &amp; Materials Engineering · NUST Islamabad</span>
+    <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-accent hover:underline">View source on GitHub ↗</a>
+  </div>
+  <p class="mt-4 max-w-3xl text-[0.7rem] leading-relaxed text-muted">
+    This page reproduces the approved CHE-226 course outline (Instructor: Dr. Haider Ejaz · HoD: Dr. Iftikhar Ahmad).
+    The signed document held by the department remains the authoritative version.
+  </p>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
