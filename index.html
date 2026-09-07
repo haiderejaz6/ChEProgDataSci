@@ -29,7 +29,10 @@
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
     <p class="truncate font-mono text-[0.65rem] uppercase tracking-widest text-accent">CHE-226 · SCME · NUST Islamabad</p>
     <div class="flex shrink-0 items-center gap-3">
-      <a href="ontology.html" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+      <a href="outline.html" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        Course Outline
+      </a>
+      <a href="ontology.html" class="hidden font-mono text-xs text-muted transition-colors hover:text-accent sm:inline">
         Reference Ontology
       </a>
       <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-xs text-muted transition-colors hover:text-accent">
@@ -80,73 +83,24 @@
     </dl>
   </section>
 
-  <!-- ── CLOs ── -->
-  <section class="mx-auto max-w-5xl px-4 py-6 sm:px-6">
-    <h2 class="section-label">Course Learning Outcomes</h2>
-    <div class="flex flex-col gap-px overflow-hidden rounded-lg border border-border bg-border">
-
-      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
-        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">C-2</span>
-        <span class="plo-badge hidden bg-plo5-bg text-plo5-text sm:inline-block">PLO-5</span>
-        <span class="level-badge hidden border-level-low-border bg-level-low-bg text-level-low-text sm:inline-block">Low</span>
-        <div>
-          <div class="text-[0.82rem] leading-relaxed text-ink">Comprehend the fundamentals of introductory programming, data science concepts, and the application of associated tools.</div>
-          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Cognitive · Remember / Understand</div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
-        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">C-3</span>
-        <span class="plo-badge hidden bg-plo4-bg text-plo4-text sm:inline-block">PLO-4</span>
-        <span class="level-badge hidden border-level-med-border bg-level-med-bg text-level-med-text sm:inline-block">Medium</span>
-        <div>
-          <div class="text-[0.82rem] leading-relaxed text-ink">Compute engineering problems and mathematical results using Python for chemical engineering data.</div>
-          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Cognitive · Apply</div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
-        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">C-6</span>
-        <span class="plo-badge hidden bg-plo5-bg text-plo5-text sm:inline-block">PLO-5</span>
-        <span class="level-badge hidden border-level-high-border bg-level-high-bg text-level-high-text sm:inline-block">High</span>
-        <div>
-          <div class="text-[0.82rem] leading-relaxed text-ink">Write Python programs for data analysis and visualization of chemical processes data sets.</div>
-          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Cognitive · Create</div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
-        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">A-2</span>
-        <span class="plo-badge hidden bg-plo9-bg text-plo9-text sm:inline-block">PLO-9</span>
-        <span class="level-badge hidden border-level-low-border bg-level-low-bg text-level-low-text sm:inline-block">Low</span>
-        <div>
-          <div class="text-[0.82rem] leading-relaxed text-ink">Perform assigned programming and data analysis lab tasks effectively.</div>
-          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Affective · Respond</div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
-        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">P-3</span>
-        <span class="plo-badge hidden bg-plo2-bg text-plo2-text sm:inline-block">PLO-2</span>
-        <span class="level-badge hidden border-level-med-border bg-level-med-bg text-level-med-text sm:inline-block">Medium</span>
-        <div>
-          <div class="text-[0.82rem] leading-relaxed text-ink">Follow standard algorithms and coding practices in chemical engineering applications.</div>
-          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Psychomotor · Guided Response</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Reference ontology callout ── -->
+  <!-- ── Course pages ── -->
   <section class="mx-auto max-w-5xl px-4 py-2 sm:px-6">
-    <a href="ontology.html" class="flex flex-col gap-1 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/40 hover:bg-surface-hover sm:flex-row sm:items-center sm:justify-between">
-      <span class="text-sm text-ink">
-        <span class="font-medium">Reference ontology</span>
-        <span class="text-muted"> — see how these notebooks map onto the department's body of knowledge for chemical engineering, and where the gaps still are.</span>
-      </span>
-      <span class="nb-action shrink-0">Browse ↗</span>
-    </a>
+    <div class="grid gap-3 sm:grid-cols-2">
+      <a href="outline.html" class="flex items-center justify-between gap-3 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/40 hover:bg-surface-hover">
+        <span class="text-sm text-ink">
+          <span class="font-medium">Course outline</span>
+          <span class="text-muted"> — outcomes, weekly schedule, assessment and texts.</span>
+        </span>
+        <span class="nb-action shrink-0">Open ↗</span>
+      </a>
+      <a href="ontology.html" class="flex items-center justify-between gap-3 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/40 hover:bg-surface-hover">
+        <span class="text-sm text-ink">
+          <span class="font-medium">Reference ontology</span>
+          <span class="text-muted"> — how these notebooks map onto the ChE body of knowledge.</span>
+        </span>
+        <span class="nb-action shrink-0">Browse ↗</span>
+      </a>
+    </div>
   </section>
 
   <!-- ── Notebook catalog ── -->
@@ -377,6 +331,29 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- ── Office hours ── -->
+  <section id="office-hours" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-8 sm:px-6">
+    <h2 class="section-label">Office hours</h2>
+    <div class="flex flex-col gap-4 rounded-lg border border-border bg-surface p-5 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p class="text-sm font-medium text-ink">Dr. Haider Ejaz</p>
+        <p class="mt-1 font-mono text-xs text-muted">Office 220 · School of Chemical &amp; Materials Engineering</p>
+        <p class="mt-2 max-w-xl text-[0.82rem] leading-relaxed text-muted">
+          Questions on the lectures, the notebooks or the project? Book a slot and the meeting invite
+          reaches you automatically — or drop by office 220.
+        </p>
+      </div>
+      <a
+        href="https://outlook.office.com/bookwithme/user/728ff09128fe4c2383aa8979be54f802@scme.nust.edu.pk/meetingtype/YV4ue-tEFk6kyAszXORPxw2?anonymous&amp;ismsaljsauthenabled&amp;ep=mlink"
+        target="_blank"
+        rel="noopener"
+        class="shrink-0 self-start rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:self-auto"
+      >
+        Book office hours ↗
+      </a>
+    </div>
   </section>
 
 </main>
