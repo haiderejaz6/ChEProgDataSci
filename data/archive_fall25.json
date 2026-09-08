@@ -1,0 +1,101 @@
+{
+  "term": {
+    "id": "fall25",
+    "label": "Fall 2025",
+    "note": "Frozen copies of the notebooks as they were taught in Fall 2025. The live notebooks on the course home page are being revised topic by topic; these ones never change, so links given out during Fall 2025 keep working and students can still practise on the version they sat the exams on."
+  },
+  "repo": "haiderejaz6/ChEProgDataSci",
+  "branch": "main",
+  "path": "archive/fall25",
+  "exams": [],
+  "notebooks": [
+    {
+      "code": "T1",
+      "file": "T1_ChemEng_Intro_Commented",
+      "title": "Introduction to Chemical Engineering & Python",
+      "blurb": "Python environment, Jupyter basics, and the ChE context",
+      "tags": ["python", "jupyter"],
+      "keywords": "introduction chemical engineering python environment jupyter basics"
+    },
+    {
+      "code": "T2",
+      "file": "T2_Python_Programming_Basics",
+      "title": "Python Programming Basics",
+      "blurb": "Variables, data types, operators, expressions",
+      "tags": ["data-types", "operators"],
+      "keywords": "python programming basics variables data types operators expressions"
+    },
+    {
+      "code": "T3",
+      "file": "T3_Programming_Logic_and_Control_Statements",
+      "title": "Programming Logic & Control Statements",
+      "blurb": "if/elif/else, for loops, while loops, break and continue",
+      "tags": ["loops", "conditionals"],
+      "keywords": "programming logic control statements if elif else for while loops break continue conditionals"
+    },
+    {
+      "code": "T4",
+      "file": "T4_Functions_in_Python",
+      "title": "Functions in Python",
+      "blurb": "Defining functions, arguments, return values, lambda, scope",
+      "tags": ["functions"],
+      "keywords": "functions in python defining arguments return values lambda scope"
+    },
+    {
+      "code": "T5",
+      "file": "T5_Sequences_Lists_and_Tuples",
+      "title": "Sequences — Lists & Tuples",
+      "blurb": "Creating, indexing, slicing, and manipulating sequences",
+      "tags": ["lists", "tuples"],
+      "keywords": "sequences lists and tuples creating indexing slicing manipulating"
+    },
+    {
+      "code": "T6",
+      "file": "T6_Dictionaries_and_Sets",
+      "title": "Dictionaries & Sets",
+      "blurb": "Key-value stores, set operations, comprehensions",
+      "tags": ["dicts", "sets"],
+      "keywords": "dictionaries and sets key value stores set operations comprehensions"
+    },
+    {
+      "code": "T7",
+      "file": "T7_Array_Oriented_Programming_with_NumPy",
+      "title": "Array-Oriented Programming with NumPy",
+      "blurb": "Arrays, broadcasting, vectorised operations, linear algebra",
+      "tags": ["numpy"],
+      "keywords": "array oriented programming with numpy arrays broadcasting vectorised operations linear algebra"
+    },
+    {
+      "code": "T8",
+      "file": "T8_Strings_Processing",
+      "title": "String Processing",
+      "blurb": "String methods, formatting, parsing, regular expressions",
+      "tags": ["strings"],
+      "keywords": "string processing methods formatting parsing regular expressions"
+    },
+    {
+      "code": "T9",
+      "file": "T9_Files_and_Exceptions",
+      "title": "Files & Exceptions",
+      "blurb": "Reading/writing files, CSV, error handling, try/except",
+      "tags": ["file-io", "exceptions"],
+      "keywords": "files and exceptions reading writing csv error handling try except file io"
+    },
+    {
+      "code": "T10",
+      "file": "T10_Linear_Regression",
+      "title": "Linear Regression",
+      "blurb": "Fitting models to data, R², residuals, sklearn, ChE applications",
+      "tags": ["regression", "sklearn"],
+      "keywords": "linear regression fitting models r squared residuals sklearn che applications"
+    },
+    {
+      "code": "T15",
+      "file": "T15_Machine_Learning",
+      "title": "Machine Learning",
+      "blurb": "Classification, clustering, decision trees, Random Forest — process data examples",
+      "tags": ["ML", "sklearn"],
+      "keywords": "machine learning classification clustering decision trees random forest process data examples"
+    }
+  ]
+}

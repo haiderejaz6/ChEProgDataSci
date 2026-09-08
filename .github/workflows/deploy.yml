@@ -46,12 +46,40 @@ jobs:
           cp index.html _site/index.html
           cp outline.html _site/outline.html
           cp ontology.html _site/ontology.html
+          cp archive.html _site/archive.html
           cp favicon.png _site/favicon.png
           cp -r images _site/images
           cp -r assets _site/assets
           cp -r data _site/data
           echo "=== Files in _site ==="
           ls -la _site/
+
+      - name: Build the Fall 2025 archive (frozen notebooks + past papers)
+        run: |
+          mkdir -p _site/archive/fall25/exams
+
+          # Frozen notebooks: same read page / slides / raw triplet as the live
+          # ones, but built from archive/fall25 so they never change.
+          for nb in archive/fall25/*.ipynb; do
+            [ -e "$nb" ] || continue
+            jupyter nbconvert --to slides "$nb" --output-dir _site/archive/fall25
+            jupyter nbconvert --to html "$nb" --output-dir _site/archive/fall25 \
+              --HTMLExporter.theme=light
+            cp "$nb" "_site/archive/fall25/$(basename "$nb")"
+          done
+
+          # Past papers: PDFs served as-is, exam notebooks also get a read page.
+          for nb in archive/fall25/exams/*.ipynb; do
+            [ -e "$nb" ] || continue
+            jupyter nbconvert --to html "$nb" --output-dir _site/archive/fall25/exams \
+              --HTMLExporter.theme=light
+          done
+          find archive/fall25/exams -maxdepth 1 -type f \
+            \( -name '*.pdf' -o -name '*.ipynb' \) \
+            -exec cp {} _site/archive/fall25/exams/ \;
+
+          echo "=== Files in _site/archive/fall25 ==="
+          ls -la _site/archive/fall25/ _site/archive/fall25/exams/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
