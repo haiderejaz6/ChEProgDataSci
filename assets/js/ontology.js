@@ -36,8 +36,10 @@
 
   var NOTEBOOK_EXAMPLES = {
     // reactor temperature readings, density, °C/°F/K conversions, ideal gas law,
-    // mole fractions
-    T1_ChemEng_Intro_Commented: ['T-03.01.01', 'T-03.01.02', 'T-03.01.03', 'T-04.02.02'],
+    // Q = m·Cp·ΔT, mole fractions
+    T1_ChemEng_Intro_Commented: [
+      'T-03.01.01', 'T-03.01.02', 'T-03.01.03', 'T-03.04.01', 'T-04.02.02',
+    ],
     // density from user input, mole fraction, Q = m·Cp·ΔT, component molar mass
     T2_Python_Programming_Basics: ['T-03.01.02', 'T-03.01.03', 'T-03.04.01'],
     // density algorithm and flowchart, phase of water from temperature
@@ -54,7 +56,7 @@
   };
 
   var NOTEBOOK_LABEL = {
-    T1_ChemEng_Intro_Commented: 'T1 · Intro to ChemEng & Python',
+    T1_ChemEng_Intro_Commented: 'T1 · Intro to Computers & Python',
     T2_Python_Programming_Basics: 'T2 · Python Basics',
     T3_Programming_Logic_and_Control_Statements: 'T3 · Control Statements',
     T4_Functions_in_Python: 'T4 · Functions',
