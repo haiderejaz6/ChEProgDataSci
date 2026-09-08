@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Reference Ontology · CHE-226</title>
-<meta name="description" content="Reference ontology for CHE-226 Programming & Data Science — the department's body-of-knowledge map for chemical engineering, used to ground new examples and to show students how this course connects to the rest of the curriculum." />
+<meta name="description" content="A map of what chemical engineering covers — 16 knowledge areas — and where the CHE-226 notebooks sit on it: which topic each notebook teaches, and which engineering topics its worked examples borrow." />
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
@@ -62,38 +62,61 @@
       What chemical engineering covers — and where this course fits
     </h1>
     <p class="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
-      This is the School's reference body-of-knowledge for chemical engineering: 16 knowledge areas, grounded
-      in the PEC 2023–2024 accreditation guidelines read alongside AIChE/ABET programme criteria, broken down
-      into knowledge units and topics. It's maintained separately from any one course's syllabus, so it can be
-      used as a yardstick — a map of the discipline, not a description of what's already being taught.
+      This is a map of what you are expected to know by the time you graduate as a chemical engineer:
+      16 knowledge areas, broken into units and topics, drawn from the PEC 2023–2024 accreditation
+      guidelines alongside AIChE/ABET programme criteria. No single course covers it — each one you take
+      fills in a part of it. It is kept separate from any course syllabus on purpose, so it stays a map of
+      the discipline rather than a list of what happens to be taught this term.
     </p>
     <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
-      On this site it does two jobs. For a new notebook, it's a place to find a real chemical-engineering topic
-      — a reactor, a distillation column, a heat exchanger — to build a programming example around, instead of
-      reaching for a generic dataset. For students, it's a map back from "why am I learning NumPy in a
-      programming course" to the rest of the curriculum this feeds into.
+      CHE-226 lives in KA-01, but the notebooks do not walk this map one topic at a time. Each notebook
+      teaches a piece of Python — variables, loops, functions, arrays — and then takes the examples that
+      carry it from wherever they fit here: a density calculation, an energy balance, the Reynolds number
+      for water in a pipe, an Arrhenius rate constant. One notebook therefore turns up against several
+      topics below, and one topic can be reached by several notebooks. There is no plan to write a separate
+      notebook per topic, and a topic with no notebook against it is not a gap in your Python.
+    </p>
+    <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+      Use it to place what you are doing. When you write a function for the Arrhenius equation in T4, the
+      chip on that topic tells you the same equation is core to Reaction Engineering later; the loop you
+      write over temperature readings is the arithmetic behind an energy balance. Knowing where something
+      lands is most of what makes it stay.
     </p>
     <div id="ont-stats" class="ont-stats mt-5"></div>
   </section>
 
   <!-- ── Spotlight: KA-01, where CHE-226 lives ── -->
   <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
-    <h2 class="section-label">This course's home area</h2>
+    <h2 class="section-label">Where this course sits</h2>
     <div id="ont-spotlight" class="ont-spotlight">
       <p class="ont-empty">Loading…</p>
     </div>
   </section>
 
-  <!-- ── Adding a new example ── -->
+  <!-- ── How to read the map ── -->
   <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
-    <h2 class="section-label">Adding a new example</h2>
+    <h2 class="section-label">How to read this page</h2>
     <div class="rounded-lg border border-border bg-surface p-4 text-sm leading-relaxed text-muted">
-      <p>Pick a topic above still marked <span class="ont-topic-link" style="opacity:.6;cursor:default;border-style:dashed;">no notebook yet</span>,
-      then search the domain areas below for a concrete process context to hang it on — a unit operation, a
-      reaction, a property calculation. Build the notebook around that pairing, add it to the catalog on the
-      <a class="text-accent hover:underline" href="index.html#notebooks">course home page</a>, and register the
-      pairing in <code class="font-mono text-xs">assets/js/ontology.js</code> (the <code class="font-mono text-xs">NOTEBOOK_TOPICS</code> map
-      near the top) so it shows up here and the coverage count updates.</p>
+      <p>Every topic can carry chips telling you which notebook to open:</p>
+      <ul class="mt-3 flex flex-col gap-2">
+        <li class="flex flex-wrap items-center gap-2">
+          <span class="ont-topic-link">T4 · Functions ↗</span>
+          <span>the notebook that <span class="text-ink">teaches</span> this topic — this is course material.</span>
+        </li>
+        <li class="flex flex-wrap items-center gap-2">
+          <span class="ont-topic-link example">T4 · Functions · example ↗</span>
+          <span>a notebook whose <span class="text-ink">worked example</span> uses this topic. The engineering
+          is the vehicle, the Python is the lesson — but the calculation is real, and you will meet it again.</span>
+        </li>
+        <li class="flex flex-wrap items-center gap-2">
+          <span class="ont-topic-link placeholder">not covered this term</span>
+          <span>nothing in CHE-226 reaches it. Still part of your degree, and still worth reading.</span>
+        </li>
+      </ul>
+      <p class="mt-3">Most topics carry no chip at all, which is normal — this is the whole discipline, and
+      one programming course touches a corner of it. Search below to find a topic, use
+      <span class="text-ink">Core units only</span> to hide the electives, and open an area to see the units
+      and topics inside it.</p>
     </div>
   </section>
 
@@ -127,10 +150,10 @@
     <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-accent hover:underline">View source on GitHub ↗</a>
   </div>
   <p class="mt-4 max-w-3xl text-[0.7rem] leading-relaxed text-muted">
-    Reference ontology data (<code class="font-mono">data/reference_ontology.json</code>) is maintained in the
-    department's curriculum project and generated independently of any course's CLOs, from the PEC 2023–2024
-    guidelines and AIChE/ABET programme criteria — it is a first-pass, pending-validation reference for faculty
-    review, not an accredited standard on its own.
+    The map itself (<code class="font-mono">data/reference_ontology.json</code>) is maintained in the
+    department's curriculum project, built from the PEC 2023–2024 guidelines and AIChE/ABET programme criteria
+    independently of any course's CLOs. It is a first draft still under departmental review — useful for
+    finding your bearings, not an accredited standard to quote back at anyone.
   </p>
 </footer>
 
