@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fall 2025 Archive · CHE-226</title>
+<meta name="description" content="Fall 2025 archive for CHE-226 Programming & Data Science — past exam papers and the notebooks exactly as they were taught in Fall 2025, kept for practice while the live notebooks are revised." />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
+<script>
+  (function () {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (stored ? stored === 'dark' : prefersDark) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="min-h-screen bg-bg font-sans font-light text-ink antialiased">
+
+<header class="sticky top-0 z-30 border-b border-border bg-surface/90 backdrop-blur">
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="index.html" class="truncate font-mono text-[0.65rem] uppercase tracking-widest text-accent">CHE-226 · SCME · NUST Islamabad</a>
+    <div class="flex shrink-0 items-center gap-3">
+      <a href="index.html" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        ← Course home
+      </a>
+      <a href="outline.html" class="hidden font-mono text-xs text-muted transition-colors hover:text-accent sm:inline">
+        Course Outline
+      </a>
+      <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        GitHub ↗
+      </a>
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle color theme"
+        class="flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted transition-colors hover:border-accent/50 hover:text-accent"
+      >
+        <svg class="block h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="hidden h-4 w-4 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="archive-body">
+
+  <!-- ── Intro ── -->
+  <section class="mx-auto max-w-5xl px-4 pb-4 pt-10 sm:px-6">
+    <p class="font-mono text-[0.68rem] uppercase tracking-widest text-accent">Archive · Fall 2025</p>
+    <h1 class="mt-3 text-2xl font-semibold leading-tight text-ink sm:text-3xl">
+      Past papers &amp; <span class="text-accent2">Fall 2025 notebooks</span>
+    </h1>
+    <p id="archive-note" class="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
+      Frozen copies of the notebooks as they were taught in Fall 2025, kept for practice.
+    </p>
+    <div class="mt-6 w-full sm:max-w-xs">
+      <label for="archive-search" class="sr-only">Search the archive</label>
+      <input
+        id="archive-search"
+        type="search"
+        placeholder="Search papers &amp; notebooks…"
+        class="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent/40"
+      />
+    </div>
+  </section>
+
+  <!-- ── Past papers ── -->
+  <section id="exams" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-6 sm:px-6">
+    <h2 class="section-label">Past papers</h2>
+    <p class="mb-4 max-w-2xl text-xs leading-relaxed text-muted">
+      Each paper is here twice. The <span class="text-ink">PDF</span> is the paper exactly as it was
+      sat — same wording, same marks, same time limit. The <span class="text-ink">notebook</span> holds
+      the same questions as cells you can run, with every output cleared and no answers filled in, so
+      you predict what a snippet prints and then run it to find out. Sit the PDF under time first, then
+      work through the notebook. Worked solutions are not published: a paper you read the answers to
+      first is revision you have already failed.
+    </p>
+    <div id="exam-grid" class="grid gap-3 sm:grid-cols-2"></div>
+    <p id="exam-empty" class="mt-2 text-sm text-muted">No past papers have been published yet.</p>
+  </section>
+
+  <!-- ── Archived notebooks ── -->
+  <section id="notebooks" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-6 sm:px-6">
+    <h2 class="section-label">Fall 2025 notebooks</h2>
+    <p class="mb-4 max-w-2xl text-xs leading-relaxed text-muted">
+      These copies do not change. The versions on the
+      <a href="index.html#notebooks" class="text-accent hover:underline">course home page</a> are the
+      ones being taught and revised this term — check there first, and use these when you want the
+      material the Fall 2025 papers were set from.
+    </p>
+    <div id="archive-nb-grid" class="grid gap-3 sm:grid-cols-2"></div>
+    <p id="archive-nb-empty" class="mt-2 hidden text-sm text-muted">No notebooks match your search.</p>
+  </section>
+
+</main>
+
+<footer class="mx-auto mt-10 max-w-5xl border-t border-border px-4 py-8 sm:px-6">
+  <div class="flex flex-col gap-3 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+    <span>School of Chemical &amp; Materials Engineering · NUST Islamabad</span>
+    <a href="https://github.com/haiderejaz6/ChEProgDataSci/tree/main/archive/fall25" target="_blank" rel="noopener" class="font-mono text-accent hover:underline">Archive folder on GitHub ↗</a>
+  </div>
+  <p class="mt-4 max-w-3xl text-[0.7rem] leading-relaxed text-muted">
+    Course content is based on <em>"Intro to Python for Computer Science and Data Science"</em> by Paul &amp; Harvey Deitel. Prepared solely for educational use by students of this course; provided for non-commercial use only — please do not redistribute without attribution to the original authors.
+  </p>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/archive.js" defer></script>
+</body>
+</html>
