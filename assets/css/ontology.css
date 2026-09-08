@@ -246,6 +246,25 @@
   color: rgb(var(--color-colab-hover-text));
 }
 
+/* A notebook whose worked example borrows this topic, rather than teaching it. */
+.ont-topic-link.example {
+  border-color: rgb(var(--color-tag-border));
+  color: rgb(var(--color-tag-text));
+}
+.ont-topic-link.example:hover {
+  background: rgb(var(--color-tag-bg));
+  color: rgb(var(--color-tag-text));
+}
+
+/* A KA-01 topic no notebook reaches this term. */
+.ont-topic-link.placeholder {
+  opacity: 0.45;
+  cursor: default;
+  border-style: dashed;
+  border-color: rgb(var(--color-border2));
+  color: rgb(var(--color-muted));
+}
+
 .ont-empty {
   font-size: 0.8rem;
   color: rgb(var(--color-muted));

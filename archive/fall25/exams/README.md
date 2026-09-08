@@ -13,6 +13,11 @@ Worked solutions are deliberately not published with the paper. If you want to
 release them later, add a `<Paper>_solutions.ipynb` and point the `solutions`
 key at it (see below) — the card grows a "Solutions" link automatically.
 
+The Fall 2025 midterm and final were prepared this way: the PDFs are the papers as sat, and the
+notebooks were rebuilt from the question text — question as a markdown cell, snippet as an empty
+code cell — rather than by clearing outputs from the solved copies, so no answer can survive in
+cell metadata.
+
 ## Adding a paper
 
 1. Drop the files in this folder, e.g.

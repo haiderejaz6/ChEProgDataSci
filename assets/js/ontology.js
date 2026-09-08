@@ -3,23 +3,54 @@
 
   var DATA_URL = 'data/reference_ontology.json';
 
-  // Which reference-ontology topics each notebook already gives students a
-  // worked example of. Keyed by the notebook's base filename (the part
-  // shared by the .ipynb / .html / .slides.html triplet in index.html).
-  // Edit this map whenever a new notebook is added — see the "Adding a new
-  // example" note on this page for the workflow.
-  var NOTEBOOK_TOPICS = {
-    T1_ChemEng_Intro_Commented: [],
+  // How the notebooks sit against the reference ontology.
+  //
+  // A notebook is not built around one ontology topic. Each one teaches a slice
+  // of Python — variables, control flow, functions, arrays — and then borrows the
+  // worked examples that carry it from wherever on the map they fit: a density
+  // calculation, an energy balance, the Reynolds number, an Arrhenius constant.
+  // So there are two maps, and most notebooks appear in both:
+  //
+  //   NOTEBOOK_TEACHES  — the programming / data-science topic the notebook is
+  //                       actually teaching (nearly always inside KA-01).
+  //   NOTEBOOK_EXAMPLES — the engineering topics its examples borrow, anywhere on
+  //                       the map. Empty means the notebook still runs on generic
+  //                       examples; that is a gap to fill on the next revision,
+  //                       not a topic that needs its own new notebook.
+  //
+  // Keyed by the notebook's base filename (the part shared by the .ipynb /
+  // .html / .slides.html triplet in index.html).
+  var NOTEBOOK_TEACHES = {
+    T1_ChemEng_Intro_Commented: ['T-01.06.01'],
     T2_Python_Programming_Basics: ['T-01.06.01'],
-    T3_Programming_Logic_and_Control_Statements: ['T-01.06.01'],
+    T3_Programming_Logic_and_Control_Statements: ['T-01.06.01', 'T-01.09.02'],
     T4_Functions_in_Python: ['T-01.06.01'],
     T5_Sequences_Lists_and_Tuples: ['T-01.06.01'],
     T6_Dictionaries_and_Sets: ['T-01.06.01'],
     T7_Array_Oriented_Programming_with_NumPy: ['T-01.06.02'],
     T8_Strings_Processing: ['T-01.06.01'],
-    T9_Files_and_Exceptions: ['T-01.06.03'],
-    T10_Linear_Regression: ['T-01.05.03'],
-    T15_Machine_Learning: ['T-01.08.01', 'T-01.08.02', 'T-01.08.03'],
+    T9_Files_and_Exceptions: ['T-01.06.01', 'T-01.06.03'],
+    T10_Linear_Regression: ['T-01.05.03', 'T-01.06.03', 'T-01.09.04'],
+    T15_Machine_Learning: ['T-01.08.01', 'T-01.08.02', 'T-01.08.03', 'T-01.08.04'],
+  };
+
+  var NOTEBOOK_EXAMPLES = {
+    // reactor temperature readings, density, °C/°F/K conversions, ideal gas law,
+    // mole fractions
+    T1_ChemEng_Intro_Commented: ['T-03.01.01', 'T-03.01.02', 'T-03.01.03', 'T-04.02.02'],
+    // density from user input, mole fraction, Q = m·Cp·ΔT, component molar mass
+    T2_Python_Programming_Basics: ['T-03.01.02', 'T-03.01.03', 'T-03.04.01'],
+    // density algorithm and flowchart, phase of water from temperature
+    T3_Programming_Logic_and_Control_Statements: ['T-03.01.03', 'T-04.02.01'],
+    // Reynolds number for water in a pipe, Arrhenius rate constant
+    T4_Functions_in_Python: ['T-05.02.03', 'T-08.01.02'],
+    T5_Sequences_Lists_and_Tuples: [],
+    T6_Dictionaries_and_Sets: [],
+    T7_Array_Oriented_Programming_with_NumPy: [],
+    T8_Strings_Processing: [],
+    T9_Files_and_Exceptions: [],
+    T10_Linear_Regression: [],
+    T15_Machine_Learning: [],
   };
 
   var NOTEBOOK_LABEL = {
@@ -36,18 +67,52 @@
     T15_Machine_Learning: 'T15 · Machine Learning',
   };
 
-  // topic id -> [ { code, label, href } ]
+  // topic id -> [ { code, label, read, kind } ], kind: 'teaches' | 'example'
   var TOPIC_NOTEBOOKS = {};
-  Object.keys(NOTEBOOK_TOPICS).forEach(function (code) {
-    NOTEBOOK_TOPICS[code].forEach(function (topicId) {
-      (TOPIC_NOTEBOOKS[topicId] = TOPIC_NOTEBOOKS[topicId] || []).push({
-        code: code,
-        label: NOTEBOOK_LABEL[code] || code,
-        href: 'index.html#notebooks',
-        read: code + '.html',
+  [['teaches', NOTEBOOK_TEACHES], ['example', NOTEBOOK_EXAMPLES]].forEach(function (pair) {
+    var kind = pair[0];
+    var map = pair[1];
+    Object.keys(map).forEach(function (code) {
+      map[code].forEach(function (topicId) {
+        (TOPIC_NOTEBOOKS[topicId] = TOPIC_NOTEBOOKS[topicId] || []).push({
+          code: code,
+          label: NOTEBOOK_LABEL[code] || code,
+          read: code + '.html',
+          kind: kind,
+        });
       });
     });
   });
+
+  // Notebook chips shown against one topic. A topic can collect several: the
+  // notebook that teaches it, plus any whose examples borrow it.
+  function topicLinks(topicId, showPlaceholder) {
+    var nbs = TOPIC_NOTEBOOKS[topicId] || [];
+    if (!nbs.length) {
+      return showPlaceholder
+        ? '<span class="ont-topic-link placeholder">not covered this term</span>'
+        : '';
+    }
+    return nbs
+      .map(function (nb) {
+        var isExample = nb.kind === 'example';
+        return (
+          '<a class="ont-topic-link' +
+          (isExample ? ' example' : '') +
+          '" href="' +
+          nb.read +
+          '" target="_blank" rel="noopener" title="' +
+          (isExample
+            ? 'A worked example in this notebook uses this topic'
+            : 'This notebook teaches this topic') +
+          '">' +
+          escapeHtml(nb.label) +
+          (isExample ? ' · example ↗' : ' ↗') +
+          '</a>'
+        );
+      })
+      .join(' ');
+  }
 
   var RAW = null;
   var QUERY = '';
@@ -104,7 +169,7 @@
       stat(RAW.areas.length, 'knowledge areas') +
       stat(units.length, 'units (' + core + ' core)') +
       stat(topics.length, 'topics') +
-      stat(covered, 'topics with a notebook so far');
+      stat(covered, 'topics the notebooks reach');
   }
 
   function stat(n, label) {
@@ -131,20 +196,7 @@
       .map(function (u) {
         var topicsHtml = (u.topics || [])
           .map(function (t) {
-            var nbs = TOPIC_NOTEBOOKS[t.id] || [];
-            var link = nbs.length
-              ? nbs
-                  .map(function (nb) {
-                    return (
-                      '<a class="ont-topic-link" href="' +
-                      nb.read +
-                      '" target="_blank" rel="noopener">' +
-                      escapeHtml(nb.label) +
-                      ' ↗</a>'
-                    );
-                  })
-                  .join(' ')
-              : '<span class="ont-topic-link" style="opacity:.45;cursor:default;border-style:dashed;">no notebook yet</span>';
+            var link = topicLinks(t.id, true);
             return (
               '<div class="ont-topic" id="topic-' +
               t.id +
@@ -186,10 +238,11 @@
       ' · where this course lives</div>' +
       '<p style="font-size:.82rem;line-height:1.6;color:rgb(var(--color-muted));max-width:60ch;">' +
       escapeHtml(area.description || '') +
-      ' CHE-226 is the course’s primary vehicle for this area — every notebook below teaches ' +
-      'one or more of these units. When picking a new example, look for a topic still marked ' +
-      '“no notebook yet”, then pair it with a real process context from one of the domain areas ' +
-      'further down the page.</p><div style="margin-top:.75rem;">' +
+      ' This is the area CHE-226 belongs to, so the topics below are the ones the course ' +
+      'teaches you directly. A topic marked “not covered this term” is still part of your ' +
+      'degree — you will meet it in another course, or you can read ahead on your own. ' +
+      'Look further down the page for the engineering topics the notebook examples borrow.' +
+      '</p><div style="margin-top:.75rem;">' +
       unitsHtml +
       '</div>';
   }
@@ -217,20 +270,7 @@
           .map(function (u) {
             var topicsHtml = (u.topics || [])
               .map(function (t) {
-                var nbs = TOPIC_NOTEBOOKS[t.id] || [];
-                var link = nbs.length
-                  ? nbs
-                      .map(function (nb) {
-                        return (
-                          '<a class="ont-topic-link" href="' +
-                          nb.read +
-                          '" target="_blank" rel="noopener">' +
-                          escapeHtml(nb.label) +
-                          ' ↗</a>'
-                        );
-                      })
-                      .join(' ')
-                  : '';
+                var link = topicLinks(t.id, false);
                 return (
                   '<div class="ont-topic" id="topic-' +
                   t.id +

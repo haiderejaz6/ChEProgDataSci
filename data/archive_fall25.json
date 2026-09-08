@@ -7,14 +7,40 @@
   "repo": "haiderejaz6/ChEProgDataSci",
   "branch": "main",
   "path": "archive/fall25",
-  "exams": [],
+  "exams": [
+    {
+      "code": "Midterm",
+      "title": "Midterm Examination",
+      "date": "Fall 2025",
+      "meta": "2 hours · 100 marks",
+      "topics": "T1–T6",
+      "blurb": "Objective questions, code tracing, debugging, and two paper-based reasoning problems — variables and arithmetic through control flow, functions, lists and tuples, comprehensions, lambda and filter.",
+      "pdf": "exams/Midterm_Fall25.pdf",
+      "notebook": "exams/Midterm_Fall25.ipynb",
+      "keywords": "midterm mid term code tracing debugging conceptual reasoning lists tuples functions loops lambda filter"
+    },
+    {
+      "code": "Final",
+      "title": "Final Term Examination",
+      "date": "Fall 2025",
+      "meta": "3 hours · 100 marks",
+      "topics": "T6–T10 · T15",
+      "blurb": "Thirty MCQs, sixty one-mark output questions across dictionaries, sets, NumPy, pandas, strings and file handling, then a climate-trend script to read and explain block by block.",
+      "pdf": "exams/Final_Fall25.pdf",
+      "notebook": "exams/Final_Fall25.ipynb",
+      "keywords": "final term end semester numpy pandas dictionaries sets strings files exceptions linear regression sklearn climate trend linregress"
+    }
+  ],
   "notebooks": [
     {
       "code": "T1",
       "file": "T1_ChemEng_Intro_Commented",
       "title": "Introduction to Chemical Engineering & Python",
       "blurb": "Python environment, Jupyter basics, and the ChE context",
-      "tags": ["python", "jupyter"],
+      "tags": [
+        "python",
+        "jupyter"
+      ],
       "keywords": "introduction chemical engineering python environment jupyter basics"
     },
     {
@@ -22,7 +48,10 @@
       "file": "T2_Python_Programming_Basics",
       "title": "Python Programming Basics",
       "blurb": "Variables, data types, operators, expressions",
-      "tags": ["data-types", "operators"],
+      "tags": [
+        "data-types",
+        "operators"
+      ],
       "keywords": "python programming basics variables data types operators expressions"
     },
     {
@@ -30,7 +59,10 @@
       "file": "T3_Programming_Logic_and_Control_Statements",
       "title": "Programming Logic & Control Statements",
       "blurb": "if/elif/else, for loops, while loops, break and continue",
-      "tags": ["loops", "conditionals"],
+      "tags": [
+        "loops",
+        "conditionals"
+      ],
       "keywords": "programming logic control statements if elif else for while loops break continue conditionals"
     },
     {
@@ -38,7 +70,9 @@
       "file": "T4_Functions_in_Python",
       "title": "Functions in Python",
       "blurb": "Defining functions, arguments, return values, lambda, scope",
-      "tags": ["functions"],
+      "tags": [
+        "functions"
+      ],
       "keywords": "functions in python defining arguments return values lambda scope"
     },
     {
@@ -46,7 +80,10 @@
       "file": "T5_Sequences_Lists_and_Tuples",
       "title": "Sequences — Lists & Tuples",
       "blurb": "Creating, indexing, slicing, and manipulating sequences",
-      "tags": ["lists", "tuples"],
+      "tags": [
+        "lists",
+        "tuples"
+      ],
       "keywords": "sequences lists and tuples creating indexing slicing manipulating"
     },
     {
@@ -54,7 +91,10 @@
       "file": "T6_Dictionaries_and_Sets",
       "title": "Dictionaries & Sets",
       "blurb": "Key-value stores, set operations, comprehensions",
-      "tags": ["dicts", "sets"],
+      "tags": [
+        "dicts",
+        "sets"
+      ],
       "keywords": "dictionaries and sets key value stores set operations comprehensions"
     },
     {
@@ -62,7 +102,9 @@
       "file": "T7_Array_Oriented_Programming_with_NumPy",
       "title": "Array-Oriented Programming with NumPy",
       "blurb": "Arrays, broadcasting, vectorised operations, linear algebra",
-      "tags": ["numpy"],
+      "tags": [
+        "numpy"
+      ],
       "keywords": "array oriented programming with numpy arrays broadcasting vectorised operations linear algebra"
     },
     {
@@ -70,7 +112,9 @@
       "file": "T8_Strings_Processing",
       "title": "String Processing",
       "blurb": "String methods, formatting, parsing, regular expressions",
-      "tags": ["strings"],
+      "tags": [
+        "strings"
+      ],
       "keywords": "string processing methods formatting parsing regular expressions"
     },
     {
@@ -78,7 +122,10 @@
       "file": "T9_Files_and_Exceptions",
       "title": "Files & Exceptions",
       "blurb": "Reading/writing files, CSV, error handling, try/except",
-      "tags": ["file-io", "exceptions"],
+      "tags": [
+        "file-io",
+        "exceptions"
+      ],
       "keywords": "files and exceptions reading writing csv error handling try except file io"
     },
     {
@@ -86,7 +133,10 @@
       "file": "T10_Linear_Regression",
       "title": "Linear Regression",
       "blurb": "Fitting models to data, R², residuals, sklearn, ChE applications",
-      "tags": ["regression", "sklearn"],
+      "tags": [
+        "regression",
+        "sklearn"
+      ],
       "keywords": "linear regression fitting models r squared residuals sklearn che applications"
     },
     {
@@ -94,7 +144,10 @@
       "file": "T15_Machine_Learning",
       "title": "Machine Learning",
       "blurb": "Classification, clustering, decision trees, Random Forest — process data examples",
-      "tags": ["ML", "sklearn"],
+      "tags": [
+        "ML",
+        "sklearn"
+      ],
       "keywords": "machine learning classification clustering decision trees random forest process data examples"
     }
   ]
