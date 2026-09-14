@@ -5,3 +5,7 @@ ipykernel
 numpy
 matplotlib
 pandas
+seaborn
+scipy
+scikit-learn
+ipywidgets

@@ -36,6 +36,29 @@ there. To publish a past paper, see `archive/fall25/exams/README.md`. To freeze 
 term, copy the notebooks into `archive/<term>/`, add a matching JSON file and page, and
 extend the archive step in `.github/workflows/deploy.yml`.
 
+## Run and present notebooks live (Binder + RISE)
+
+Each notebook card's "Open in Binder" link launches the repo on mybinder.org straight
+into that file in the classic Jupyter Notebook interface, with a live kernel — students
+and TAs can run cells, not just read a static export. `requirements.txt` and
+`runtime.txt` at the repo root pin the environment mybinder.org builds
+(`notebook==6.5.7` + `rise==5.7.1`, since RISE's slideshow toolbar button only ships for
+the classic notebook UI, plus the scientific stack the notebooks import: numpy, pandas,
+matplotlib, seaborn, scipy, scikit-learn, ipywidgets).
+
+RISE reads the same `slideshow.slide_type` cell metadata that `deploy.yml` already feeds
+to `jupyter nbconvert --to slides` for the static `.slides.html` pages, so a notebook
+opened in Binder presents identically — just live. Click the toolbar's slideshow icon
+(or press Alt+R) to enter/exit presentation mode.
+
+When adding a new top-level notebook, add its "Open in Binder" link alongside the
+existing "Open in Colab" one (same `nb-action nb-action-binder` pattern in `index.html`),
+pointing at
+`https://mybinder.org/v2/gh/haiderejaz6/ChEProgDataSci/main?urlpath=notebooks%2F<file>.ipynb`.
+If it imports a new third-party package, add it to `requirements.txt` too — Binder only
+rebuilds the environment image when that file changes, so a missing dependency fails
+silently as an import error inside the launched notebook, not at build time.
+
 ## Disclaimer
 
 These lecture materials are prepared for the course **Programming and Data Science** for undergraduate students of Chemical Engineering. 

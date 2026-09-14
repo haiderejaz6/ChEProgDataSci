@@ -34,6 +34,12 @@ module.exports = {
           'hover-bg': withOpacity('--color-colab-hover-bg'),
           'hover-text': withOpacity('--color-colab-hover-text'),
         },
+        binder: {
+          text: withOpacity('--color-binder-text'),
+          border: withOpacity('--color-binder-border'),
+          'hover-bg': withOpacity('--color-binder-hover-bg'),
+          'hover-text': withOpacity('--color-binder-hover-text'),
+        },
 
         plo5: { bg: withOpacity('--color-plo5-bg'), text: withOpacity('--color-plo5-text') },
         plo4: { bg: withOpacity('--color-plo4-bg'), text: withOpacity('--color-plo4-text') },
