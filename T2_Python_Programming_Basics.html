@@ -7796,652 +7796,66 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6a8ea30e-553b-4149-a2a4-b2821daccc26">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b92fe219">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Topic-2-%E2%80%94-Python-Programming-Basics-for-Chemical-Engineers">Topic 2 — Python Programming Basics for Chemical Engineers<a class="anchor-link" href="#Topic-2-%E2%80%94-Python-Programming-Basics-for-Chemical-Engineers">¶</a></h1><p><strong>Topics:</strong> variables, assignment, arithmetic operators, <code>print()</code>, strings, user input</p>
-<p><strong>Learning objectives</strong></p>
-<ul>
-<li>Explain what a <em>variable</em> is and how assignment works in Python.</li>
-<li>Perform arithmetic with Python and interpret operator precedence.</li>
-<li>Format readable results with <code>print()</code>.</li>
-<li>Manipulate simple text (strings).</li>
-<li>Read user input and convert it to numbers.</li>
-<li>Apply the above to <strong>chemical engineering</strong> mini-problems (density, ideal-gas law, mole fractions).</li>
-</ul>
-<blockquote>
-<p>Tip: Run a cell with <strong>Shift + Enter</strong>.</p>
-</blockquote>
+<h1 id="T2:-Python-Programming-Basics-for-Chemical-Engineers">T2: Python Programming Basics for Chemical Engineers<a class="anchor-link" href="#T2:-Python-Programming-Basics-for-Chemical-Engineers">¶</a></h1><p>CHE-226, Programming and Data Science</p>
+<p><strong>Learning objective:</strong> represent process quantities as variables, compute with them using Python's arithmetic operators and basic data structures, and produce clear, user-driven output.</p>
+<p><strong>Teaches:</strong> (KA-01)</p>
+<p><em>Spans two class meetings; see the class break marker partway through.</em></p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ee9cafd">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e3da94dc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div align="center">
-<h3 id="Python-Basics"><strong>Python Basics</strong><a class="anchor-link" href="#Python-Basics">¶</a></h3></div>
+<h2 id="Agenda:-This-Class">Agenda: This Class<a class="anchor-link" href="#Agenda:-This-Class">¶</a></h2><ol>
+<li>Variables and assignment</li>
+<li>Arithmetic operators and precedence</li>
+<li>Storing multiple values: lists and tuples</li>
+<li>The math module and unit conversions</li>
+</ol>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a5e707b4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d15e79d9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Variable Types</strong></p>
+<h1 id="1.-Variables-and-Assignment">1. Variables and Assignment<a class="anchor-link" href="#1.-Variables-and-Assignment">¶</a></h1>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3e208253-60c6-4213-8e00-114b0627fb49">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eef311e8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Concept">Concept<a class="anchor-link" href="#Concept">¶</a></h3><p>A variable is a name that stores a value in memory. Use <code>=</code> to assign. Names should be descriptive: <code>temperature_K</code>, not <code>x</code>.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=437d5b62">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Numeric variable</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="c1"># String variable</span>
-<span class="n">y</span> <span class="o">=</span> <span class="s2">"string"</span>
-
-<span class="c1"># Listing variable and their types</span>
-<span class="o">%</span><span class="k">whos</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Variable   Type    Data/Info
-----------------------------
-x          int     1
-y          str     string
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1510981">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Variable Assignment</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1fa1d5a2-0861-4201-8554-6cfd995619cf">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Assigning a value to a variable</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>  
-
-<span class="c1"># Trying to assign a variable 'b' that is not defined will cause an error</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">b</span>   <span class="c1"># ❌ NameError: name 'b' is not defined</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[1]</span><span class="ansi-green-fg">, line 5</span>
-<span class="ansi-green-fg">      2</span> a = <span class="ansi-green-fg">4</span>  
-<span class="ansi-green-fg">      4</span> <span style="color: rgb(95,135,135)"># Trying to assign a variable 'b' that is not defined will cause an error</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">5</span> a = <span class="ansi-yellow-bg">b</span>   <span style="color: rgb(95,135,135)"># ❌ NameError: name 'b' is not defined</span>
-
-<span class="ansi-red-fg">NameError</span>: name 'b' is not defined</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5c6431a5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Multiple Assignment</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d660a7eb-1ce2-4828-a3eb-604a48caba09">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Assigning the same value to multiple variables in one line</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>  <span class="c1"># 8</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>  <span class="c1"># 8</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>8
-8
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3586bf48">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Strings and Type Conversion</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bcafe2ff-b9a7-4a73-b74d-967db0b64827">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># A variable holding a string</span>
-<span class="n">var</span> <span class="o">=</span> <span class="s1">'5'</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">))</span>   <span class="c1"># &lt;class 'str'&gt;</span>
-
-<span class="c1"># Converting string to integer</span>
-<span class="n">str_var_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">str_var_int</span><span class="p">))</span>   <span class="c1"># &lt;class 'int'&gt;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'str'&gt;
-&lt;class 'int'&gt;
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9653286b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Numbers and Operations</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=22b8cea4-1dba-44d5-996b-5b3fdfa08aaf">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Floats</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">))</span>   <span class="c1"># &lt;class 'float'&gt;</span>
-
-<span class="c1"># Incrementing values</span>
-<span class="n">w</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">+</span> <span class="mi">1</span>   <span class="c1"># equivalent to w += 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>    <span class="c1"># 3</span>
-
-<span class="c1"># Adding another variable</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>    <span class="c1"># 8</span>
-<span class="n">w</span> <span class="o">+=</span> <span class="n">v</span>      <span class="c1"># 3 + 8</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>    <span class="c1"># 11</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'float'&gt;
-3
-8
-11
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9e933637">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Arithmetic Operators</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b6124a73-5bc6-441a-9f93-12fc8d5720ab">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="c1"># Basic arithmetic</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'a+b ='</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># 6</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'a-b ='</span><span class="p">,</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'a*b ='</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># 8</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'a/b ='</span><span class="p">,</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># 2.0</span>
-
-<span class="c1"># Exponentiation</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'a**b ='</span><span class="p">,</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># 16</span>
-
-<span class="c1"># Modulo (remainder)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'b</span><span class="si">%a</span><span class="s1"> ='</span><span class="p">,</span> <span class="n">b</span><span class="o">%</span><span class="k">a</span>)    # 2
-<span class="nb">print</span><span class="p">(</span><span class="s1">'a%b ='</span><span class="p">,</span> <span class="n">a</span><span class="o">%</span><span class="k">b</span>)    # 0
-
-<span class="c1"># Floor division</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'a//b ='</span><span class="p">,</span> <span class="mi">9</span><span class="o">//</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># 4</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>a+b = 6
-a-b = 2
-a*b = 8
-a/b = 2.0
-a**b = 16
-b%a = 2
-a%b = 0
-a//b = 4
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=066cc203">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Lists</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b1a088ea-99d1-4589-8bd1-318a77a7292c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Creating and modifying lists</span>
-<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>               <span class="c1"># [1, 2, 3]</span>
-
-<span class="n">list1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">45</span>              <span class="c1"># update element at index 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>               <span class="c1"># [1, 2, 45]</span>
-
-<span class="n">list1</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>       <span class="c1"># add multiple elements</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>               <span class="c1"># [1, 2, 45, 8, 5]</span>
-
-<span class="c1"># Another list with strings</span>
-<span class="n">second_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">second_list</span><span class="p">)</span>         <span class="c1"># ['a', 'b', 'c']</span>
-
-<span class="n">second_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">])</span>  <span class="c1"># append as a sublist</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">second_list</span><span class="p">)</span>             <span class="c1"># ['a', 'b', 'c', ['d', 'e']]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">second_list</span><span class="p">))</span>       <span class="c1"># &lt;class 'list'&gt;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[1, 2, 3]
-[1, 2, 45]
-[1, 2, 45, 8, 5]
-['a', 'b', 'c']
-['a', 'b', 'c', ['d', 'e']]
-&lt;class 'list'&gt;
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=15092f27">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Tuples</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=19a08c36-0b60-49aa-bf6b-d2cfca345389">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Tuples are immutable sequences</span>
-<span class="n">first_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">first_tuple</span><span class="p">)</span>      <span class="c1"># (1, 'a', 2, 'f')</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">first_tuple</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>   <span class="c1"># f</span>
-
-<span class="c1"># Tuple unpacking</span>
-<span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">=</span> <span class="n">first_tuple</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>                <span class="c1"># 'a'</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(1, 'a', 2, 'f')
-f
-a
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6ca8a310">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Using Math module</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fd9fd96f-c2ca-46a6-b091-9ef9519b87e6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-
-<span class="c1"># Example: sine function (input in radians)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">1.2</span><span class="p">))</span>   <span class="c1"># 0.932...</span>
-
-<span class="c1"># Get help/documentation on a function</span>
-<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>
-
-<span class="c1"># List available functions/constants in the module</span>
-<span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0.9320390859672263
-Help on built-in function sin in module math:
-
-sin(x, /)
-    Return the sine of x (measured in radians).
-
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>['__doc__',
- '__loader__',
- '__name__',
- '__package__',
- '__spec__',
- 'acos',
- 'acosh',
- 'asin',
- 'asinh',
- 'atan',
- 'atan2',
- 'atanh',
- 'cbrt',
- 'ceil',
- 'comb',
- 'copysign',
- 'cos',
- 'cosh',
- 'degrees',
- 'dist',
- 'e',
- 'erf',
- 'erfc',
- 'exp',
- 'exp2',
- 'expm1',
- 'fabs',
- 'factorial',
- 'floor',
- 'fma',
- 'fmod',
- 'frexp',
- 'fsum',
- 'gamma',
- 'gcd',
- 'hypot',
- 'inf',
- 'isclose',
- 'isfinite',
- 'isinf',
- 'isnan',
- 'isqrt',
- 'lcm',
- 'ldexp',
- 'lgamma',
- 'log',
- 'log10',
- 'log1p',
- 'log2',
- 'modf',
- 'nan',
- 'nextafter',
- 'perm',
- 'pi',
- 'pow',
- 'prod',
- 'radians',
- 'remainder',
- 'sin',
- 'sinh',
- 'sqrt',
- 'sumprod',
- 'tan',
- 'tanh',
- 'tau',
- 'trunc',
- 'ulp']</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cec809fe">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div align="center">
-<h3 id="Python-for-Chemical-Engineering"><strong>Python for Chemical Engineering</strong><a class="anchor-link" href="#Python-for-Chemical-Engineering">¶</a></h3></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9fe04f68-86f8-4a12-b57c-c1fdebf22098">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Why-Python-for-Chemical-Engineering?">Why Python for Chemical Engineering?<a class="anchor-link" href="#Why-Python-for-Chemical-Engineering?">¶</a></h2><ul>
-<li>Plants and labs generate <strong>time-series data</strong> (T, P, flow, composition).</li>
-<li>Python lets us <strong>store</strong>, <strong>analyze</strong>, and <strong>visualize</strong> data repeatably.</li>
-<li>Today we’ll connect the basics to small ChemEng problems.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=174fc9cf-7f01-4619-9260-ee95fbf38f6e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Always good to know your Python version</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Python:"</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Python: 3.13.0
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=90064a85-f4ee-42ca-8d29-beb45e020196">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-Variables-&amp;-Assignment">1) Variables &amp; Assignment<a class="anchor-link" href="#1)-Variables-&amp;-Assignment">¶</a></h2><p>A <strong>variable</strong> is a name that stores a value in memory.</p>
-<ul>
-<li>Use <code>=</code> to assign.</li>
-<li>Names should be descriptive: <code>temperature_K</code>, <code>mass_kg</code>.</li>
-</ul>
-<p>We’ll store some simple process values.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f9ddffdf-3cbd-4410-91e0-08aa6eae43c8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Variables for a stream</span>
-<span class="n">temperature_K</span> <span class="o">=</span> <span class="mf">350.0</span>    <span class="c1"># Kelvin</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">temperature_K</span> <span class="o">=</span> <span class="mf">350.0</span>    <span class="c1"># Kelvin</span>
 <span class="n">pressure_bar</span> <span class="o">=</span> <span class="mf">5.0</span>       <span class="c1"># bar</span>
 <span class="n">flow_mol_s</span> <span class="o">=</span> <span class="mf">2.5</span>         <span class="c1"># mol/s</span>
 
@@ -8451,397 +7865,465 @@ sin(x, /)
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>350.0 5.0 2.5
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9e7d4814-942e-4ff4-be03-c12ba013056c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3d93a987">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Quick-Check">Quick Check<a class="anchor-link" href="#Quick-Check">¶</a></h3><ul>
-<li>Reassign a variable: <code>temperature_K = 365.0</code></li>
-<li>Variables are case-sensitive: <code>Flow_mol_s</code> ≠ <code>flow_mol_s</code></li>
-</ul>
+<p><em>Ties to T-03.01.01/02 Units and Composition (KA-03)</em></p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6b1cbea1-1464-4117-8bc5-f006a9c65de0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4bc150a7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Example:-Create-and-print-variables">Example: Create and print variables<a class="anchor-link" href="#Example:-Create-and-print-variables">¶</a></h3>
+<h3 id="Activity:-predict-then-run">Activity: predict then run<a class="anchor-link" href="#Activity:-predict-then-run">¶</a></h3><p><code>temperature_K</code> was set above. What happens when we run this?</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a6826b2b-451e-4373-ad7a-d7bbf81c905f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b637d126">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example</span>
-<span class="c1"># 1) Create variables: reactor_volume_m3, mass_kg</span>
-<span class="c1"># 2) Print them on one line.</span>
-<span class="c1"># 3) Reassign mass_kg to a new value and print again.</span>
-
-<span class="n">reactor_volume_m3</span> <span class="o">=</span> <span class="mf">1.2</span>
-<span class="n">mass_kg</span> <span class="o">=</span> <span class="mf">500.0</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"V ="</span><span class="p">,</span> <span class="n">reactor_volume_m3</span><span class="p">,</span> <span class="s2">"m^3; m ="</span><span class="p">,</span> <span class="n">mass_kg</span><span class="p">,</span> <span class="s2">"kg"</span><span class="p">)</span>
-
-<span class="n">mass_kg</span> <span class="o">=</span> <span class="mf">520.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Updated mass ="</span><span class="p">,</span> <span class="n">mass_kg</span><span class="p">,</span> <span class="s2">"kg"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">temperature_K</span> <span class="o">=</span> <span class="mf">365.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temperature_K</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Temperature_K</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>V = 1.2 m^3; m = 500.0 kg
-Updated mass = 520.0 kg
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e92a27ba-5f6c-487b-9a85-50678dd3268f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3fe113d4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-Arithmetic-Operators-&amp;-Precedence">2) Arithmetic Operators &amp; Precedence<a class="anchor-link" href="#2)-Arithmetic-Operators-&amp;-Precedence">¶</a></h2><ul>
-<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>**</code> (power), <code>%</code> (mod)</li>
-<li>Precedence: <code>**</code> → <code>*</code> <code>/</code> → <code>+</code> <code>-</code> (use parentheses to be explicit)</li>
-</ul>
-<p><strong>ChemEng focus:</strong> quick property and balance calculations.</p>
+<p>Answer: the second print raises NameError. Python is case-sensitive, so <code>Temperature_K</code> was never defined. Reinforces that <code>flow_mol_s</code> and <code>Flow_mol_s</code> are different names.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=714d3e9c-029b-4ddb-920b-c0425372799a">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bc652e8a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="2.-Arithmetic-Operators-and-Precedence">2. Arithmetic Operators and Precedence<a class="anchor-link" href="#2.-Arithmetic-Operators-and-Precedence">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fe5ecf92">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Concept">Concept<a class="anchor-link" href="#Concept">¶</a></h3><p><code>+ - * / ** %</code> are the core operators. Precedence follows math convention: <code>**</code> first, then <code>* /</code>, then <code>+ -</code>. Use parentheses to make intent explicit.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=55a98797">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Basic arithmetic</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mass_water</span> <span class="o">=</span> <span class="mf">40.0</span>    <span class="c1"># kg</span>
+<span class="n">mass_salt</span> <span class="o">=</span> <span class="mf">10.0</span>     <span class="c1"># kg</span>
 
-<span class="c1"># Parentheses matter</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># 11</span>
-<span class="nb">print</span><span class="p">((</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># 16</span>
+<span class="n">mass_total</span> <span class="o">=</span> <span class="n">mass_water</span> <span class="o">+</span> <span class="n">mass_salt</span>
+<span class="n">x_salt</span> <span class="o">=</span> <span class="n">mass_salt</span> <span class="o">/</span> <span class="n">mass_total</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Salt mass fraction = </span><span class="si">{</span><span class="n">x_salt</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>7 3 10 2.5 25
-11
-16
-</pre>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=08051413">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><em>Ties to T-03.01.01/02 Units and Composition (KA-03)</em></p>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3bcb1504-3af7-4316-9ca8-4a4a905fd9eb">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=469b4534">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Activity:-predict-then-run">Activity: predict then run<a class="anchor-link" href="#Activity:-predict-then-run">¶</a></h3><p>Precedence check. What does this print?</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=afafbc76">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example: Density</span>
-<span class="c1"># ρ = m / V</span>
-<span class="n">mass_kg</span> <span class="o">=</span> <span class="mf">500.0</span>
-<span class="n">volume_m3</span> <span class="o">=</span> <span class="mf">0.65</span>
-<span class="n">rho</span> <span class="o">=</span> <span class="n">mass_kg</span> <span class="o">/</span> <span class="n">volume_m3</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Density ="</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="s2">"kg/m^3"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Density = 769.2307692307692 kg/m^3
-</pre>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a5b413f9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Answer: 11, then 16. Multiplication runs before addition unless parentheses force the addition first.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6c207855-6878-466b-9580-a479b71d5c84">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e4bc9b2b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="3.-Storing-Multiple-Values:-Lists-and-Tuples">3. Storing Multiple Values: Lists and Tuples<a class="anchor-link" href="#3.-Storing-Multiple-Values:-Lists-and-Tuples">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e160b9f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Concept">Concept<a class="anchor-link" href="#Concept">¶</a></h3><p>A list <code>[...]</code> holds an ordered, changeable sequence. A tuple <code>(...)</code> is similar but immutable, once created it cannot be changed. Both can be unpacked into named variables.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1ed83ce9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example: Temperature Conversions</span>
-<span class="c1"># T(K) = T(°C) + 273.15 ; T(°F) = T(°C) * 9/5 + 32</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Benzene"</span><span class="p">,</span> <span class="s2">"Toluene"</span><span class="p">,</span> <span class="s2">"Xylene"</span><span class="p">]</span>
+<span class="n">components</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Phenol"</span>     <span class="c1"># lists can be edited</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">components</span><span class="p">)</span>
+
+<span class="n">feed</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Feed-1"</span><span class="p">,</span> <span class="mf">350.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)</span>   <span class="c1"># (name, T_K, P_bar)</span>
+<span class="n">name</span><span class="p">,</span> <span class="n">T_K</span><span class="p">,</span> <span class="n">P_bar</span> <span class="o">=</span> <span class="n">feed</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">T_K</span><span class="p">,</span> <span class="n">P_bar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ee4bd240">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><em>Ties to T-03.01.01/02 Units and Composition (KA-03)</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3db05347">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Activity:-spot-the-bug">Activity: spot the bug<a class="anchor-link" href="#Activity:-spot-the-bug">¶</a></h3><p>This should swap <code>T_K</code> and <code>P_bar</code> and print both. What is actually wrong with it?</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1a70d20f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">T_K</span> <span class="o">=</span> <span class="mf">350.0</span>
+<span class="n">P_bar</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">T_K</span><span class="p">,</span> <span class="n">P_bar</span> <span class="o">=</span> <span class="n">P_bar</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T_K</span><span class="p">,</span> <span class="n">P_bar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e2064532">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Answer: raises TypeError, cannot unpack a single float into two names. The swap needs <code>T_K, P_bar = P_bar, T_K</code> (a tuple on the right).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9c5b3e25">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="4.-The-Math-Module-and-Unit-Conversions">4. The Math Module and Unit Conversions<a class="anchor-link" href="#4.-The-Math-Module-and-Unit-Conversions">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1b4b31de">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Concept">Concept<a class="anchor-link" href="#Concept">¶</a></h3><p><code>import math</code> gives access to functions like <code>math.sin</code> and constants like <code>math.pi</code>. Useful for unit and property conversions beyond basic arithmetic.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1ef54539">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
 <span class="n">T_C</span> <span class="o">=</span> <span class="mf">80.0</span>
 <span class="n">T_K</span> <span class="o">=</span> <span class="n">T_C</span> <span class="o">+</span> <span class="mf">273.15</span>
-<span class="n">T_F</span> <span class="o">=</span> <span class="n">T_C</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Celsius:"</span><span class="p">,</span> <span class="n">T_C</span><span class="p">,</span> <span class="s2">"-&gt; Kelvin:"</span><span class="p">,</span> <span class="n">T_K</span><span class="p">,</span> <span class="s2">"-&gt; Fahrenheit:"</span><span class="p">,</span> <span class="n">T_F</span><span class="p">)</span>
+<span class="n">T_F</span> <span class="o">=</span> <span class="n">T_C</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">T_C</span><span class="si">}</span><span class="s2"> C -&gt; </span><span class="si">{</span><span class="n">T_K</span><span class="si">}</span><span class="s2"> K -&gt; </span><span class="si">{</span><span class="n">T_F</span><span class="si">}</span><span class="s2"> F"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Celsius: 80.0 -&gt; Kelvin: 353.15 -&gt; Fahrenheit: 176.0
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=501dd03a-fa26-4430-83a5-e9ad24ddca43">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example: Ideal Gas Law</span>
-<span class="c1"># PV = nRT  -&gt;  n = PV / (RT)</span>
-<span class="n">P_bar</span> <span class="o">=</span> <span class="mf">5.0</span>
-<span class="n">V_m3</span>  <span class="o">=</span> <span class="mf">2.0</span>
-<span class="n">T_K</span>   <span class="o">=</span> <span class="mf">300.0</span>
-<span class="n">R_barL</span> <span class="o">=</span> <span class="mf">0.08314</span>  <span class="c1"># bar·L/(mol·K)</span>
-
-<span class="n">V_L</span> <span class="o">=</span> <span class="n">V_m3</span> <span class="o">*</span> <span class="mf">1000.0</span>
-<span class="n">n_mol</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_bar</span> <span class="o">*</span> <span class="n">V_L</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R_barL</span> <span class="o">*</span> <span class="n">T_K</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Moles of gas ="</span><span class="p">,</span> <span class="n">n_mol</span><span class="p">,</span> <span class="s2">"mol"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Moles of gas = 400.9301579664822 mol
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8121ffe1-f304-4a1f-a348-3855a5350bf2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7b29e0d7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Energy-Balance-Snippet">Energy Balance Snippet<a class="anchor-link" href="#Energy-Balance-Snippet">¶</a></h3><p>Assume constant heat capacity <code>Cp</code> and a temperature rise ΔT.</p>
-<ol>
-<li>Given <code>Cp = 4.18 kJ/(kg·K)</code>, <code>m = 2.0 kg</code>, <code>ΔT = 15 K</code>, compute <code>Q = m·Cp·ΔT</code>.</li>
-<li>Convert <code>Q</code> to <strong>Joules</strong>.</li>
-<li>Print a nice, readable line with units.</li>
+<p><em>Ties to T-03.01.01/02 Units and Composition (KA-03), unit conversion is anchor content for this week</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a2a85433">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Activity:-predict-then-run">Activity: predict then run<a class="anchor-link" href="#Activity:-predict-then-run">¶</a></h3><p><code>math.sin</code> takes radians. What does this print, roughly?</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bd7acad8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">1.2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a90e422f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Answer: about 0.932, then a value extremely close to 0 (not exactly 0, due to floating point rounding). Good moment to mention floating point is approximate.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9f229caf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Class-Break">Class Break<a class="anchor-link" href="#Class-Break">¶</a></h2><p>Covered so far: variables, arithmetic and precedence, lists and tuples, the math module.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7b0bfe6c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Agenda:-Next-Class">Agenda: Next Class<a class="anchor-link" href="#Agenda:-Next-Class">¶</a></h2><ol start="5">
+<li>print() and f-string formatting</li>
+<li>Strings and concatenation</li>
+<li>Getting input from the user</li>
+<li>Putting it together: a vessel report</li>
 </ol>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9671e69f-bd01-431e-88e8-6f3b4fabbff5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">Cp_kJ_per_kgK</span> <span class="o">=</span> <span class="mf">4.18</span>
-<span class="n">m_kg</span> <span class="o">=</span> <span class="mf">2.0</span>         
-<span class="n">dT_K</span> <span class="o">=</span> <span class="mf">15.0</span>
-
-<span class="n">Q_kJ</span> <span class="o">=</span> <span class="n">m_kg</span> <span class="o">*</span> <span class="n">Cp_kJ_per_kgK</span> <span class="o">*</span> <span class="n">dT_K</span>
-<span class="n">Q_J</span> <span class="o">=</span> <span class="n">Q_kJ</span> <span class="o">*</span> <span class="mf">1000.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Heat added Q = </span><span class="si">{</span><span class="n">Q_kJ</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kJ (</span><span class="si">{</span><span class="n">Q_J</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> J)"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Heat added Q = 125.40 kJ (125400 J)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ebccf60b-6acf-4040-9213-20e38838baef">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=21a0565f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-print()-and-String-Formatting">3) <code>print()</code> and String Formatting<a class="anchor-link" href="#3)-print()-and-String-Formatting">¶</a></h2><ul>
-<li><code>print(value1, value2, ...)</code></li>
-<li>f-strings: <code>f"Density = {rho:.1f} kg/m^3"</code> (format numbers nicely)</li>
-<li><code>\n</code> for new line, <code>\t</code> for tab</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=10963642-6c27-4439-a3d2-c5b9db0a9a0e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="mf">769.230769</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Density ="</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="s2">"kg/m^3"</span><span class="p">)</span>      <span class="c1"># simple</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Density = </span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg/m^3"</span><span class="p">)</span>   <span class="c1"># formatted to 2 decimals</span>
-
-<span class="c1"># Multi-line print</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">"Benzene"</span>
-<span class="n">mw</span> <span class="o">=</span> <span class="mf">78.11</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Component: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s2">MW: </span><span class="si">{</span><span class="n">mw</span><span class="si">}</span><span class="s2"> g/mol"</span><span class="p">)</span>
-</pre></div>
+<h1 id="5.-print()-and-f-string-Formatting">5. print() and f-string Formatting<a class="anchor-link" href="#5.-print()-and-f-string-Formatting">¶</a></h1>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Density = 769.230769 kg/m^3
-Density = 769.23 kg/m^3
-Component: Benzene
-MW: 78.11 g/mol
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d09cd38f-aa3d-4b08-85ff-1c3aeb272ae5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=057e4aea">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Strings-(text)">4) Strings (text)<a class="anchor-link" href="#4)-Strings-(text)">¶</a></h2><ul>
-<li>Strings are quoted text: <code>"Water"</code>, <code>'Reactor-1'</code></li>
-<li>You can <strong>concatenate</strong> strings with <code>+</code> or f-strings.</li>
-<li>Useful for labels, filenames, short reports.</li>
-</ul>
+<h3 id="Concept">Concept<a class="anchor-link" href="#Concept">¶</a></h3><p><code>print()</code> joins values with spaces by default. An f-string, <code>f"...{value:.2f}..."</code>, formats a number inline, here to 2 decimal places.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b7a613aa-c8a7-4c51-a296-79669d16da23">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a2880fb0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">comp1</span> <span class="o">=</span> <span class="s2">"Benzene"</span>
-<span class="n">comp2</span> <span class="o">=</span> <span class="s2">"Phenol"</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Mixture:"</span><span class="p">,</span> <span class="n">comp1</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="n">comp2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Mixture:"</span><span class="p">,</span> <span class="n">comp1</span> <span class="o">+</span> <span class="s2">" + "</span> <span class="o">+</span> <span class="n">comp2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Mixture: "</span> <span class="o">+</span> <span class="n">comp1</span> <span class="o">+</span> <span class="s2">" + "</span> <span class="o">+</span> <span class="n">comp2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mixture: </span><span class="si">{</span><span class="n">comp1</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">comp2</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mass_kg</span> <span class="o">=</span> <span class="mf">500.0</span>
+<span class="n">volume_m3</span> <span class="o">=</span> <span class="mf">0.65</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">mass_kg</span> <span class="o">/</span> <span class="n">volume_m3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Density ="</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="s2">"kg/m^3"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Density = </span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg/m^3"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Mixture: Benzene + Phenol
-Mixture: Benzene + Phenol
-Mixture: Benzene + Phenol
-Mixture: Benzene + Phenol
-</pre>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8a1cfb7c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Activity:-predict-then-run">Activity: predict then run<a class="anchor-link" href="#Activity:-predict-then-run">¶</a></h3><p><code>rho</code> above is about 769.23. What does each line print?</p>
 </div>
 </div>
 </div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=93b9ae2a-8bcc-4f68-be9c-40c77cc8b4a5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=320e5af9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example: Small report line</span>
-<span class="n">stream_id</span> <span class="o">=</span> <span class="s2">"Feed-1"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s2">8.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a2e2adf1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Answer: 769, then 769.2, then '  769.23' (the 8 sets a minimum field width, padding with spaces on the left).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1c3149df">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="6.-Strings-and-Concatenation">6. Strings and Concatenation<a class="anchor-link" href="#6.-Strings-and-Concatenation">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=901da2ec">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Concept">Concept<a class="anchor-link" href="#Concept">¶</a></h3><p>Strings are quoted text. Join them with <code>+</code>, or prefer an f-string when numbers are involved, it is easier to read.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=83c04f27">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">stream_id</span> <span class="o">=</span> <span class="s2">"Feed-1"</span>
 <span class="n">T_K</span> <span class="o">=</span> <span class="mf">360.0</span>
 <span class="n">P_bar</span> <span class="o">=</span> <span class="mf">3.2</span>
+
 <span class="n">report</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s2">] T=</span><span class="si">{</span><span class="n">T_K</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> K, P=</span><span class="si">{</span><span class="n">P_bar</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> bar"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
 </pre></div>
@@ -8849,839 +8331,247 @@ Mixture: Benzene + Phenol
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[Feed-1] T=360.0 K, P=3.2 bar
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=47d996b0-0654-40d6-b744-8bca216483be">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=394e9eb9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Example:-Mini-%E2%80%9Cproperty-line%E2%80%9D">Example: Mini “property line”<a class="anchor-link" href="#Example:-Mini-%E2%80%9Cproperty-line%E2%80%9D">¶</a></h3><p>Create variables for a stream:</p>
-<ul>
-<li><code>name</code>, <code>T_K</code>, <code>P_bar</code>, <code>flow_mol_s</code></li>
-<li>Print a <strong>single line</strong>: <code>[name] T=?, P=?, flow=?</code> with 1 decimal place for numbers.</li>
+<p><em>Ties to T-03.01.01/02 Units and Composition (KA-03)</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1c683c73">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Activity:-spot-the-bug">Activity: spot the bug<a class="anchor-link" href="#Activity:-spot-the-bug">¶</a></h3><p>This should print <code>Mixture: Benzene + Phenol (2 parts)</code>. What is wrong?</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e9a7f14a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">comp1</span> <span class="o">=</span> <span class="s2">"Benzene"</span>
+<span class="n">comp2</span> <span class="o">=</span> <span class="s2">"Phenol"</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Mixture: "</span> <span class="o">+</span> <span class="n">comp1</span> <span class="o">+</span> <span class="s2">" + "</span> <span class="o">+</span> <span class="n">comp2</span> <span class="o">+</span> <span class="s2">" ("</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="s2">" parts)"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=25cde09f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Answer: raises TypeError, cannot concatenate str and int with +. Needs str(n), or better, an f-string: f'... ({n} parts)'.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=47dc4405">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="7.-Getting-Input-from-the-User">7. Getting Input from the User<a class="anchor-link" href="#7.-Getting-Input-from-the-User">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9741b493">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Concept">Concept<a class="anchor-link" href="#Concept">¶</a></h3><p><code>input()</code> always returns a string, even if the user types a number. Convert with <code>float()</code> or <code>int()</code> before doing arithmetic on it.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1fb92bc3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mass_A</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Mass of water, g: "</span><span class="p">))</span>
+<span class="n">mass_B</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Mass of ethanol, g: "</span><span class="p">))</span>
+
+<span class="n">n_A</span><span class="p">,</span> <span class="n">n_B</span> <span class="o">=</span> <span class="n">mass_A</span> <span class="o">/</span> <span class="mf">18.0</span><span class="p">,</span> <span class="n">mass_B</span> <span class="o">/</span> <span class="mf">46.0</span>
+<span class="n">x_A</span> <span class="o">=</span> <span class="n">n_A</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_A</span> <span class="o">+</span> <span class="n">n_B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"x_water = </span><span class="si">{</span><span class="n">x_A</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2bdffe7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><em>Ties to T-03.01.01/02 Units and Composition (KA-03)</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0b11ddab">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Activity:-spot-the-bug">Activity: spot the bug<a class="anchor-link" href="#Activity:-spot-the-bug">¶</a></h3><p>A student wrote this to read a flow rate. Running it crashes as soon as the user enters a number. Why?</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=16bc11d2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">flow_mol_s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter flow, mol/s: "</span><span class="p">)</span>
+<span class="n">flow_kmol_s</span> <span class="o">=</span> <span class="n">flow_mol_s</span> <span class="o">/</span> <span class="mi">1000</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flow_kmol_s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d0b888a3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Answer: input() returns a string, so flow_mol_s / 1000 raises TypeError. Needs float(input(...)) before the division.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e061a6c9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="8.-Putting-It-Together:-A-Vessel-Report">8. Putting It Together: A Vessel Report<a class="anchor-link" href="#8.-Putting-It-Together:-A-Vessel-Report">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d61ad651">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Concept">Concept<a class="anchor-link" href="#Concept">¶</a></h3><p>A real script combines variables, arithmetic, and formatted output together, exactly what the lab exercise will ask you to build.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1835d828">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">stream_id</span> <span class="o">=</span> <span class="s2">"Feed-2"</span>
+<span class="n">mass_water</span><span class="p">,</span> <span class="n">mass_salt</span> <span class="o">=</span> <span class="mf">40.0</span><span class="p">,</span> <span class="mf">10.0</span>
+<span class="n">x_salt</span> <span class="o">=</span> <span class="n">mass_salt</span> <span class="o">/</span> <span class="p">(</span><span class="n">mass_water</span> <span class="o">+</span> <span class="n">mass_salt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s2">] x_salt=</span><span class="si">{</span><span class="n">x_salt</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, total=</span><span class="si">{</span><span class="n">mass_water</span><span class="o">+</span><span class="n">mass_salt</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> kg"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=05e2bff4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><em>Ties to T-03.01.01/02 Units and Composition (KA-03)</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=970a1030">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Activity:-cold-call">Activity: cold call<a class="anchor-link" href="#Activity:-cold-call">¶</a></h3><p>If <code>mass_salt</code> doubled and <code>mass_water</code> stayed the same, what happens to <code>x_salt</code>? Explain in one sentence before we check.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3de1aef3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mass_salt</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="n">x_salt</span> <span class="o">=</span> <span class="n">mass_salt</span> <span class="o">/</span> <span class="p">(</span><span class="n">mass_water</span> <span class="o">+</span> <span class="n">mass_salt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"x_salt = </span><span class="si">{</span><span class="n">x_salt</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ce2c1397">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Answer: x_salt rises from 0.20 to 0.33, less than double, since the total mass grows too. Good check for whether students see that a fraction does not scale linearly with one of its inputs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=00c318e2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Recap-and-Lab-Practice">Recap and Lab Practice<a class="anchor-link" href="#Recap-and-Lab-Practice">¶</a></h2><ul>
+<li>Variables, arithmetic, lists/tuples, and math cover the first class; printing, strings, and input cover the second.</li>
+<li>Real scripts combine all of it: variables, arithmetic, and formatted output together.</li>
 </ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=230fa85e-726f-4dde-bf01-a4fd8071dea0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Possible Solution</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">"Vapor-2"</span>
-<span class="n">T_K</span> <span class="o">=</span> <span class="mf">402.3</span>
-<span class="n">P_bar</span> <span class="o">=</span> <span class="mf">1.78</span>
-<span class="n">flow_mol_s</span> <span class="o">=</span> <span class="mf">4.25</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">] T=</span><span class="si">{</span><span class="n">T_K</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> K, P=</span><span class="si">{</span><span class="n">P_bar</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> bar, flow=</span><span class="si">{</span><span class="n">flow_mol_s</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> mol/s"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[Vapor-2] T=402.3 K, P=1.8 bar, flow=4.2 mol/s
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=67a5b36d-5da5-4a3f-a07f-f870bc68dd02">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-User-Input">5) User Input<a class="anchor-link" href="#5)-User-Input">¶</a></h2><p>Use <code>input()</code> to read text from the user. Convert to numbers with <code>float()</code> or <code>int()</code>.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=15f776e3-3d34-4462-870c-119b38d9dc8d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">"S1"</span>
-<span class="n">flow_mol_s</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mf">20.252</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Stream </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> has flow </span><span class="si">{</span><span class="n">flow_mol_s</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mol/s."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Stream S1 has flow 20.25 mol/s.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9344e96b-c752-429b-80fd-7f6d0d56bb7d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter stream name: "</span><span class="p">)</span>
-<span class="n">flow_mol_s</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter flow (mol/s): "</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Stream </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> has flow </span><span class="si">{</span><span class="n">flow_mol_s</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mol/s."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Enter stream name: S1
-Enter flow (mol/s): 20.222
-Stream S1 has flow 20.22 mol/s.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aa0e3d60">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Example:-Mole-fraction-from-user-input">Example: Mole fraction from user input<a class="anchor-link" href="#Example:-Mole-fraction-from-user-input">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=523a6bf7-1070-443b-9f2b-c57b494c76fe">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Ask for masses and compute mole fractions for a binary mixture</span>
-<span class="c1"># A: water (MW 18), B: ethanol (MW 46) as simple example</span>
-
-<span class="c1"># Solution without input</span>
-<span class="n">mass_A</span> <span class="o">=</span> <span class="mf">36.0</span>  <span class="c1"># g</span>
-<span class="n">mass_B</span> <span class="o">=</span> <span class="mf">92.0</span>  <span class="c1"># g</span>
-
-<span class="n">MW_A</span> <span class="o">=</span> <span class="mf">18.0</span>
-<span class="n">MW_B</span> <span class="o">=</span> <span class="mf">46.0</span>
-
-<span class="n">n_A</span> <span class="o">=</span> <span class="n">mass_A</span> <span class="o">/</span> <span class="n">MW_A</span>
-<span class="n">n_B</span> <span class="o">=</span> <span class="n">mass_B</span> <span class="o">/</span> <span class="n">MW_B</span>
-<span class="n">total</span> <span class="o">=</span> <span class="n">n_A</span> <span class="o">+</span> <span class="n">n_B</span>
-<span class="n">x_A</span> <span class="o">=</span> <span class="n">n_A</span> <span class="o">/</span> <span class="n">total</span>
-<span class="n">x_B</span> <span class="o">=</span> <span class="n">n_B</span> <span class="o">/</span> <span class="n">total</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"n_A = </span><span class="si">{</span><span class="n">n_A</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mol, n_B = </span><span class="si">{</span><span class="n">n_B</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mol, total = </span><span class="si">{</span><span class="n">total</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mol"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mole fractions: x_A = </span><span class="si">{</span><span class="n">x_A</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, x_B = </span><span class="si">{</span><span class="n">x_B</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>n_A = 2.000 mol, n_B = 2.000 mol, total = 4.000 mol
-Mole fractions: x_A = 0.500, x_B = 0.500
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=51c470a0-0e73-4c3b-8e45-331d56dccd9b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">mass_A</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter mass of component A (g): "</span><span class="p">))</span>
-<span class="n">mass_B</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter mass of component B (g): "</span><span class="p">))</span>
-
-
-<span class="n">MW_A</span> <span class="o">=</span> <span class="mf">18.0</span>
-<span class="n">MW_B</span> <span class="o">=</span> <span class="mf">46.0</span>
-
-<span class="n">n_A</span> <span class="o">=</span> <span class="n">mass_A</span> <span class="o">/</span> <span class="n">MW_A</span>
-<span class="n">n_B</span> <span class="o">=</span> <span class="n">mass_B</span> <span class="o">/</span> <span class="n">MW_B</span>
-<span class="n">total</span> <span class="o">=</span> <span class="n">n_A</span> <span class="o">+</span> <span class="n">n_B</span>
-<span class="n">x_A</span> <span class="o">=</span> <span class="n">n_A</span> <span class="o">/</span> <span class="n">total</span>
-<span class="n">x_B</span> <span class="o">=</span> <span class="n">n_B</span> <span class="o">/</span> <span class="n">total</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"n_A = </span><span class="si">{</span><span class="n">n_A</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mol, n_B = </span><span class="si">{</span><span class="n">n_B</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mol, total = </span><span class="si">{</span><span class="n">total</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mol"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mole fractions: x_A = </span><span class="si">{</span><span class="n">x_A</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, x_B = </span><span class="si">{</span><span class="n">x_B</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Enter mass of component A (g): 20
-Enter mass of component B (g): 50
-n_A = 1.111 mol, n_B = 1.087 mol, total = 2.198 mol
-Mole fractions: x_A = 0.505, x_B = 0.495
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bad112f0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Example:-Density-from-User-Input">Example: Density from User Input<a class="anchor-link" href="#Example:-Density-from-User-Input">¶</a></h3><ol>
-<li>Prompt the user for <code>mass_kg</code> and <code>volume_m3</code>.</li>
-<li>Compute <code>rho = m / V</code>.</li>
-<li>Print <strong>with units</strong> and <strong>2 decimals</strong>.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cb4cd171-7e25-415d-bd1f-d044ab4ce38b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Solution without input</span>
-<span class="n">mass_kg</span> <span class="o">=</span> <span class="mf">250.0</span>
-<span class="n">volume_m3</span> <span class="o">=</span> <span class="mf">0.48</span>
-
-<span class="n">rho</span> <span class="o">=</span> <span class="n">mass_kg</span> <span class="o">/</span> <span class="n">volume_m3</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Density = </span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg/m^3"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Density = 520.83 kg/m^3
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a8735e10-4f70-4518-a4c8-7e84408a255f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">mass_kg</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Mass (kg): "</span><span class="p">))</span>
-<span class="n">volume_m3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Volume (m^3): "</span><span class="p">))</span>
-
-<span class="n">rho</span> <span class="o">=</span> <span class="n">mass_kg</span> <span class="o">/</span> <span class="n">volume_m3</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Density = </span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> kg/m^3"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Mass (kg): 250
-Volume (m^3): 0.48
-Density = 520.83 kg/m^3
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a0df7f88-fa2a-48c1-86e7-9a636492c1f1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Activity:-Report-Line">6) Activity: Report Line<a class="anchor-link" href="#6)-Activity:-Report-Line">¶</a></h2><p><strong>Calculate gas moles</strong> for a vessel and print a short report line.</p>
-<p>Inputs:</p>
-<ul>
-<li><code>P_bar</code>, <code>V_m3</code>, <code>T_K</code>, <code>R = 0.08314 bar·L/(mol·K)</code></li>
-</ul>
-<p>Tasks:</p>
-<ol>
-<li>Convert <code>V_m3</code> to liters.</li>
-<li>Compute <code>n = PV / (RT)</code>.</li>
-<li>Print: <code>"[Vessel-1] n = ? mol at P=?, T=?"</code></li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=345761ac-951e-4fe4-9791-15d90165c5c7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Possible Solution</span>
-<span class="n">P_bar</span> <span class="o">=</span> <span class="mf">2.5</span>
-<span class="n">V_m3</span>  <span class="o">=</span> <span class="mf">0.8</span>
-<span class="n">T_K</span>   <span class="o">=</span> <span class="mf">320.0</span>
-<span class="n">R_barL</span> <span class="o">=</span> <span class="mf">0.08314</span>
-
-<span class="n">V_L</span> <span class="o">=</span> <span class="n">V_m3</span> <span class="o">*</span> <span class="mf">1000.0</span>
-<span class="n">n_mol</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_bar</span> <span class="o">*</span> <span class="n">V_L</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R_barL</span> <span class="o">*</span> <span class="n">T_K</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[Vessel-1] n = </span><span class="si">{</span><span class="n">n_mol</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mol at P=</span><span class="si">{</span><span class="n">P_bar</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> bar, T=</span><span class="si">{</span><span class="n">T_K</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> K"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[Vessel-1] n = 75.17 mol at P=2.50 bar, T=320.0 K
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=96ae51c8-1bd9-4b8d-8f0f-7a635292736b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7)-Quick-Knowledge-Check-(1%E2%80%932-min)">7) Quick Knowledge Check (1–2 min)<a class="anchor-link" href="#7)-Quick-Knowledge-Check-(1%E2%80%932-min)">¶</a></h2><ol>
-<li>What does <code>=</code> do in Python?</li>
-<li>What does <code>**</code> do?</li>
-<li>How do you print to 2 decimal places with an f-string?</li>
-<li>How do you convert user text input to a float?</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=40e2a233-a6cb-4333-af69-5b6e7687c9b7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8)-Summary-&amp;-Next-Steps">8) Summary &amp; Next Steps<a class="anchor-link" href="#8)-Summary-&amp;-Next-Steps">¶</a></h2><ul>
-<li>Variables store numbers/text.</li>
-<li>Arithmetic + units give quick engineering computations.</li>
-<li><code>print()</code> + f-strings make results readable.</li>
-<li><code>input()</code> lets you interact with users.</li>
-<li>Next lecture: <strong>logic (if/else)</strong> and <strong>loops</strong> to automate repeated calculations.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6ee16239">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div align="center">
-<h3 id="Extra-Exercises"><strong>Extra Exercises</strong><a class="anchor-link" href="#Extra-Exercises">¶</a></h3></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81c731e7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.1-Introduction---Extra-Exercises">2.1 Introduction - Extra Exercises<a class="anchor-link" href="#2.1-Introduction---Extra-Exercises">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d0eaf8dc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Try simple arithmetic in interactive mode</span>
-<span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
-
-<span class="c1"># What happens if we mix operations?</span>
-<span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7e9cb470">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.2-Variables-and-Assignment-Statements---Extra-Exercises">2.2 Variables and Assignment Statements - Extra Exercises<a class="anchor-link" href="#2.2-Variables-and-Assignment-Statements---Extra-Exercises">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4b2b564e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Assign a string to a variable</span>
-<span class="n">student_name</span> <span class="o">=</span> <span class="s2">"Alice"</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">student_name</span><span class="p">)</span>
-
-<span class="c1"># Swapping variables</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Before swap:"</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="c1"># Swap values</span>
-<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"After swap:"</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=daec5146">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.3-Arithmetic---Extra-Exercises">2.3 Arithmetic - Extra Exercises<a class="anchor-link" href="#2.3-Arithmetic---Extra-Exercises">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=97fdf5d8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the area of a circle</span>
-<span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">area</span> <span class="o">=</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Area of circle:"</span><span class="p">,</span> <span class="n">area</span><span class="p">)</span>
-
-<span class="c1"># Check if sum of two numbers is even</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"The sum is even."</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"The sum is odd."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=acdd2054">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.4-print-and-Strings---Extra-Exercises">2.4 print and Strings - Extra Exercises<a class="anchor-link" href="#2.4-print-and-Strings---Extra-Exercises">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7d40da41">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Single and double quotes</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Hello with single quotes'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Hello with double quotes"</span><span class="p">)</span>
-
-<span class="c1"># Print both together</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"She said 'Python is fun!'"</span><span class="p">)</span>
-
-<span class="c1"># Combine text and number</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"My favorite number is"</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"42 is my favorite number"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca411e2c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.5-Triple-Quoted-Strings---Extra-Exercises">2.5 Triple-Quoted Strings - Extra Exercises<a class="anchor-link" href="#2.5-Triple-Quoted-Strings---Extra-Exercises">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=33b30397">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Triple-quoted string (multiline)</span>
-<span class="n">poem</span> <span class="o">=</span> <span class="s2">"""Roses are red,</span>
-<span class="s2">Violets are blue,</span>
-<span class="s2">Python is awesome,</span>
-<span class="s2">And so are you."""</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">poem</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=134989d6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.6-Getting-Input-from-the-User---Extra-Exercises">2.6 Getting Input from the User - Extra Exercises<a class="anchor-link" href="#2.6-Getting-Input-from-the-User---Extra-Exercises">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=736e0e76">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Ask for age</span>
-<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your age: "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"You are"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s2">"years old."</span><span class="p">)</span>
-
-<span class="c1"># Add two numbers</span>
-<span class="n">num1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter first number: "</span><span class="p">))</span>
-<span class="n">num2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter second number: "</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The sum is:"</span><span class="p">,</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8599079f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.7-if-Statement-and-Comparisons---Extra-Exercises">2.7 if Statement and Comparisons - Extra Exercises<a class="anchor-link" href="#2.7-if-Statement-and-Comparisons---Extra-Exercises">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ae9ce687">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Positive, negative, or zero</span>
-<span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a number: "</span><span class="p">))</span>
-<span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Positive"</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Negative"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Zero"</span><span class="p">)</span>
-
-<span class="c1"># Pass or Fail</span>
-<span class="n">grade</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your grade (0-100): "</span><span class="p">))</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Pass"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Fail"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2bb37d10">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.8-Objects-and-Dynamic-Typing---Extra-Exercises">2.8 Objects and Dynamic Typing - Extra Exercises<a class="anchor-link" href="#2.8-Objects-and-Dynamic-Typing---Extra-Exercises">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9a7657b0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Dynamic typing</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="s2">"Hello"</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-
-<span class="c1"># Invalid operation</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="s2">"Hello"</span>
-<span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Error:"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bce6437c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.9-Basic-Descriptive-Statistics---Extra-Exercises">2.9 Basic Descriptive Statistics - Extra Exercises<a class="anchor-link" href="#2.9-Basic-Descriptive-Statistics---Extra-Exercises">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7f8b957b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Manual average</span>
-<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
-<span class="n">average</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Average:"</span><span class="p">,</span> <span class="n">average</span><span class="p">)</span>
-
-<span class="c1"># Using statistics module</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">statistics</span>
-
-<span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">85</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Mean:"</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Median:"</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Mode:"</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3157b0fe">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.10-Wrap-Up">2.10 Wrap-Up<a class="anchor-link" href="#2.10-Wrap-Up">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=02254c36">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Mini project</span>
-<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What is your name? "</span><span class="p">)</span>
-<span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How old are you? "</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Hello,"</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">"!"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"In 5 years, you will be"</span><span class="p">,</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">"years old."</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"You are an adult."</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"You are a minor."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=99a6c793-a860-42f3-9800-69bd227a2ab0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Activity:-Simple-Grading-System">Activity: Simple Grading System<a class="anchor-link" href="#Activity:-Simple-Grading-System">¶</a></h2><p><strong>Problem Statement:</strong><br/>
-Write a Python program that:</p>
-<ol>
-<li>Asks the user to enter three test scores (integers).</li>
-<li>Stores them in variables.</li>
-<li>Calculates the average.</li>
-<li>Prints the minimum, maximum, and average score.</li>
-<li>Uses an <code>if</code> statement to print <strong>"Pass"</strong> if the average is ≥ 50, otherwise print <strong>"Fail"</strong>.</li>
-<li>Show the type of one of your variables using <code>type()</code>.</li>
-</ol>
-<p><strong>Hints:</strong></p>
-<ul>
-<li>Use <code>int(input("Enter score: "))</code> to get numbers.</li>
-<li>Use <code>min()</code>, <code>max()</code>, <code>sum()</code>, and <code>len()</code> to do calculations.</li>
-<li>Remember that <code>if</code> statements can check conditions like <code>average &gt;= 50</code>.</li>
-</ul>
-<p><strong>Expected Output Example:</strong></p>
-<ul>
-<li>Enter score 1: 65</li>
-<li>Enter score 2: 40</li>
-<li>Enter score 3: 55</li>
-<li>Minimum = 40, Maximum = 65, Average = 53.33</li>
-<li>Pass</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c5ababe6-56a3-4fcb-b943-4174bcdf8d41">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Activity:-Reactor-Conversion-Calculation">Activity: Reactor Conversion Calculation<a class="anchor-link" href="#Activity:-Reactor-Conversion-Calculation">¶</a></h2><p><strong>Problem Statement:</strong><br/>
-In a chemical reactor, the <strong>conversion</strong> of a reactant is defined as:</p>
-<p>$$
-X = \frac{F_{A0} - F_A}{F_{A0}}
-$$</p>
-<p>Where:</p>
-<ul>
-<li>$F_{A0}$ = initial molar flow rate of A (mol/s)</li>
-<li>$F_A$ = outlet molar flow rate of A (mol/s)</li>
-<li>$X$ = conversion (fraction of A reacted)</li>
-</ul>
-<p>Write a Python program that:</p>
-<ol>
-<li>Prompts the user to enter the initial flow rate ($F_{A0}$) and outlet flow rate ($F_A$).</li>
-<li>Calculates the conversion $X$.</li>
-<li>Prints the result as a percentage (for example, "Conversion = 60.00%").</li>
-<li>Uses an <code>if</code> statement:<ul>
-<li>If conversion $\ge 50\%$, print <strong>"Good conversion"</strong>.</li>
-<li>Otherwise, print <strong>"Low conversion"</strong>.</li>
-</ul>
-</li>
-<li>Finally, print the type of the variable <code>X</code>.</li>
-</ol>
-<p><strong>Hints:</strong></p>
-<ul>
-<li>Use <code>float(input("Enter value: "))</code> for numerical inputs.</li>
-<li>Conversion is a fraction; multiply by 100 to get percentage.</li>
-<li>Use formatted printing, e.g. <code>print(f"Conversion = {X*100:.2f}%")</code>.</li>
-</ul>
-<p><strong>Expected Output Example:</strong></p>
-<ul>
-<li>Enter F_A0 (mol/s): 10</li>
-<li>Enter F_A (mol/s): 4</li>
-<li>Conversion = 60.00%</li>
-<li>Good conversion</li>
-</ul>
+<p>Lab practice: the grading-system and reactor-conversion problems from the original T2 materials fit this week's lab session better than this lecture; ask if you want them turned into a lab worksheet.</p>
+<p>Next lecture: T3, programming logic and control statements.</p>
 </div>
 </div>
 </div>
