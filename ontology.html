@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reference Ontology · CHE-226</title>
+<meta name="description" content="A map of what chemical engineering covers — 16 knowledge areas — and where the CHE-226 notebooks sit on it: which topic each notebook teaches, and which engineering topics its worked examples borrow." />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
+<script>
+  (function () {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (stored ? stored === 'dark' : prefersDark) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+<link rel="stylesheet" href="assets/css/site.css?v=2" />
+<link rel="stylesheet" href="assets/css/ontology.css?v=2" />
+</head>
+<body class="min-h-screen bg-bg font-sans font-light text-ink antialiased">
+
+<header class="sticky top-0 z-30 border-b border-border bg-surface/90 backdrop-blur">
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="index.html" class="truncate font-mono text-[0.65rem] uppercase tracking-widest text-accent">CHE-226 · SCME · NUST Islamabad</a>
+    <div class="flex shrink-0 items-center gap-3">
+      <a href="index.html" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        ← Course home
+      </a>
+      <a href="outline.html" class="hidden font-mono text-xs text-muted transition-colors hover:text-accent sm:inline">
+        Course Outline
+      </a>
+      <a href="archive.html" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        Archive
+      </a>
+      <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        GitHub ↗
+      </a>
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle color theme"
+        class="flex h-8 w-8 items-center justify-center rounded-md border border-border text-muted transition-colors hover:border-accent/50 hover:text-accent"
+      >
+        <svg class="block h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="hidden h-4 w-4 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Intro ── -->
+  <section class="mx-auto max-w-5xl px-4 pb-6 pt-10 sm:px-6">
+    <p class="font-mono text-[0.68rem] uppercase tracking-widest text-accent">Reference ontology</p>
+    <h1 class="mt-3 text-2xl font-semibold leading-tight text-ink sm:text-3xl">
+      What chemical engineering covers — and where this course fits
+    </h1>
+    <p class="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
+      This is a map of what you are expected to know by the time you graduate as a chemical engineer:
+      16 knowledge areas, broken into units and topics, drawn from the PEC 2023–2024 accreditation
+      guidelines alongside AIChE/ABET programme criteria. No single course covers it — each one you take
+      fills in a part of it. It is kept separate from any course syllabus on purpose, so it stays a map of
+      the discipline rather than a list of what happens to be taught this term.
+    </p>
+    <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+      CHE-226 lives in KA-01, but the notebooks do not walk this map one topic at a time. Each notebook
+      teaches a piece of Python — variables, loops, functions, arrays — and then takes the examples that
+      carry it from wherever they fit here: a density calculation, an energy balance, the Reynolds number
+      for water in a pipe, an Arrhenius rate constant. One notebook therefore turns up against several
+      topics below, and one topic can be reached by several notebooks. There is no plan to write a separate
+      notebook per topic, and a topic with no notebook against it is not a gap in your Python.
+    </p>
+    <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+      Use it to place what you are doing. When you write a function for the Arrhenius equation in T4, the
+      chip on that topic tells you the same equation is core to Reaction Engineering later; the loop you
+      write over temperature readings is the arithmetic behind an energy balance. Knowing where something
+      lands is most of what makes it stay.
+    </p>
+    <div id="ont-stats" class="ont-stats mt-5"></div>
+  </section>
+
+  <!-- ── Spotlight: KA-01, where CHE-226 lives ── -->
+  <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
+    <h2 class="section-label">Where this course sits</h2>
+    <div id="ont-spotlight" class="ont-spotlight">
+      <p class="ont-empty">Loading…</p>
+    </div>
+  </section>
+
+  <!-- ── How to read the map ── -->
+  <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
+    <h2 class="section-label">How to read this page</h2>
+    <div class="rounded-lg border border-border bg-surface p-4 text-sm leading-relaxed text-muted">
+      <p>Every topic can carry chips telling you which notebook to open:</p>
+      <ul class="mt-3 flex flex-col gap-2">
+        <li class="flex flex-wrap items-center gap-2">
+          <span class="ont-topic-link">T4 · Functions ↗</span>
+          <span>the notebook that <span class="text-ink">teaches</span> this topic — this is course material.</span>
+        </li>
+        <li class="flex flex-wrap items-center gap-2">
+          <span class="ont-topic-link example">T4 · Functions · example ↗</span>
+          <span>a notebook whose <span class="text-ink">worked example</span> uses this topic. The engineering
+          is the vehicle, the Python is the lesson — but the calculation is real, and you will meet it again.</span>
+        </li>
+        <li class="flex flex-wrap items-center gap-2">
+          <span class="ont-topic-link placeholder">not covered this term</span>
+          <span>nothing in CHE-226 reaches it. Still part of your degree, and still worth reading.</span>
+        </li>
+      </ul>
+      <p class="mt-3">Most topics carry no chip at all, which is normal — this is the whole discipline, and
+      one programming course touches a corner of it. Search below to find a topic, use
+      <span class="text-ink">Core units only</span> to hide the electives, and open an area to see the units
+      and topics inside it.</p>
+    </div>
+  </section>
+
+  <!-- ── Full outline ── -->
+  <section class="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+    <h2 class="section-label">Full reference ontology (16 areas)</h2>
+
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div class="ont-search-wrap w-full sm:max-w-xs">
+        <input id="ont-search" class="ont-search" type="search" placeholder="Search areas, units, topics…" autocomplete="off" />
+      </div>
+      <span id="ont-hits" class="ont-hits"></span>
+    </div>
+
+    <div class="ont-toolbar">
+      <button id="ont-expand-btn" class="ont-btn" type="button">Expand all</button>
+      <button id="ont-collapse-btn" class="ont-btn" type="button">Collapse all</button>
+      <button id="ont-core-btn" class="ont-btn" type="button">Core units only</button>
+    </div>
+
+    <div id="ont-outline" class="mt-3">
+      <p class="ont-empty">Loading reference ontology…</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mx-auto mt-10 max-w-5xl border-t border-border px-4 py-8 sm:px-6">
+  <div class="flex flex-col gap-3 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+    <span>School of Chemical &amp; Materials Engineering · NUST Islamabad</span>
+    <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-accent hover:underline">View source on GitHub ↗</a>
+  </div>
+  <p class="mt-4 max-w-3xl text-[0.7rem] leading-relaxed text-muted">
+    The map itself (<code class="font-mono">data/reference_ontology.json</code>) is maintained in the
+    department's curriculum project, built from the PEC 2023–2024 guidelines and AIChE/ABET programme criteria
+    independently of any course's CLOs. It is a first draft still under departmental review — useful for
+    finding your bearings, not an accredited standard to quote back at anyone.
+  </p>
+</footer>
+
+<script src="assets/js/site.js?v=2" defer></script>
+<script src="assets/js/ontology.js?v=2" defer></script>
+</body>
+</html>

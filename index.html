@@ -17,7 +17,7 @@
     }
   })();
 </script>
-<link rel="stylesheet" href="assets/css/site.css" />
+<link rel="stylesheet" href="assets/css/site.css?v=2" />
 </head>
 <body class="min-h-screen bg-bg font-sans font-light text-ink antialiased">
 
@@ -29,6 +29,15 @@
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
     <p class="truncate font-mono text-[0.65rem] uppercase tracking-widest text-accent">CHE-226 · SCME · NUST Islamabad</p>
     <div class="flex shrink-0 items-center gap-3">
+      <a href="outline.html" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        Course Outline
+      </a>
+      <a href="archive.html" class="font-mono text-xs text-muted transition-colors hover:text-accent">
+        Archive
+      </a>
+      <a href="ontology.html" class="hidden font-mono text-xs text-muted transition-colors hover:text-accent sm:inline">
+        Reference Ontology
+      </a>
       <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-xs text-muted transition-colors hover:text-accent">
         GitHub ↗
       </a>
@@ -77,61 +86,30 @@
     </dl>
   </section>
 
-  <!-- ── CLOs ── -->
-  <section class="mx-auto max-w-5xl px-4 py-6 sm:px-6">
-    <h2 class="section-label">Course Learning Outcomes</h2>
-    <div class="flex flex-col gap-px overflow-hidden rounded-lg border border-border bg-border">
-
-      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
-        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">C-2</span>
-        <span class="plo-badge hidden bg-plo5-bg text-plo5-text sm:inline-block">PLO-5</span>
-        <span class="level-badge hidden border-level-low-border bg-level-low-bg text-level-low-text sm:inline-block">Low</span>
-        <div>
-          <div class="text-[0.82rem] leading-relaxed text-ink">Comprehend the fundamentals of introductory programming, data science concepts, and the application of associated tools.</div>
-          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Cognitive · Remember / Understand</div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
-        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">C-3</span>
-        <span class="plo-badge hidden bg-plo4-bg text-plo4-text sm:inline-block">PLO-4</span>
-        <span class="level-badge hidden border-level-med-border bg-level-med-bg text-level-med-text sm:inline-block">Medium</span>
-        <div>
-          <div class="text-[0.82rem] leading-relaxed text-ink">Compute engineering problems and mathematical results using Python for chemical engineering data.</div>
-          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Cognitive · Apply</div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
-        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">C-6</span>
-        <span class="plo-badge hidden bg-plo5-bg text-plo5-text sm:inline-block">PLO-5</span>
-        <span class="level-badge hidden border-level-high-border bg-level-high-bg text-level-high-text sm:inline-block">High</span>
-        <div>
-          <div class="text-[0.82rem] leading-relaxed text-ink">Write Python programs for data analysis and visualization of chemical processes data sets.</div>
-          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Cognitive · Create</div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
-        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">A-2</span>
-        <span class="plo-badge hidden bg-plo9-bg text-plo9-text sm:inline-block">PLO-9</span>
-        <span class="level-badge hidden border-level-low-border bg-level-low-bg text-level-low-text sm:inline-block">Low</span>
-        <div>
-          <div class="text-[0.82rem] leading-relaxed text-ink">Perform assigned programming and data analysis lab tasks effectively.</div>
-          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Affective · Respond</div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-[2.5rem_1fr] items-start gap-3 bg-surface p-4 sm:grid-cols-[2.5rem_4.5rem_4.5rem_1fr]">
-        <span class="pt-0.5 font-mono text-xs font-semibold text-accent">P-3</span>
-        <span class="plo-badge hidden bg-plo2-bg text-plo2-text sm:inline-block">PLO-2</span>
-        <span class="level-badge hidden border-level-med-border bg-level-med-bg text-level-med-text sm:inline-block">Medium</span>
-        <div>
-          <div class="text-[0.82rem] leading-relaxed text-ink">Follow standard algorithms and coding practices in chemical engineering applications.</div>
-          <div class="mt-1 font-mono text-[0.6rem] text-muted">Bloom's Psychomotor · Guided Response</div>
-        </div>
-      </div>
-
+  <!-- ── Course pages ── -->
+  <section class="mx-auto max-w-5xl px-4 py-2 sm:px-6">
+    <div class="grid gap-3 sm:grid-cols-2">
+      <a href="outline.html" class="flex items-center justify-between gap-3 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/40 hover:bg-surface-hover">
+        <span class="text-sm text-ink">
+          <span class="font-medium">Course outline</span>
+          <span class="text-muted"> — outcomes, weekly schedule, assessment and texts.</span>
+        </span>
+        <span class="nb-action shrink-0">Open ↗</span>
+      </a>
+      <a href="ontology.html" class="flex items-center justify-between gap-3 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/40 hover:bg-surface-hover">
+        <span class="text-sm text-ink">
+          <span class="font-medium">Reference ontology</span>
+          <span class="text-muted"> — where each notebook, and the examples in it, sit in the wider degree.</span>
+        </span>
+        <span class="nb-action shrink-0">Browse ↗</span>
+      </a>
+      <a href="archive.html" class="flex items-center justify-between gap-3 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/40 hover:bg-surface-hover sm:col-span-2">
+        <span class="text-sm text-ink">
+          <span class="font-medium">Fall 2025 archive</span>
+          <span class="text-muted"> — past exam papers to practise on, and the notebooks as they were taught in Fall 2025.</span>
+        </span>
+        <span class="nb-action shrink-0">Open ↗</span>
+      </a>
     </div>
   </section>
 
@@ -159,6 +137,12 @@
       </div>
     </div>
 
+    <p class="mt-4 max-w-2xl text-xs leading-relaxed text-muted">
+      These notebooks are being revised topic by topic this term. The Fall 2025 versions stay online
+      unchanged in the <a href="archive.html#notebooks" class="text-accent hover:underline">Fall 2025 archive</a>,
+      alongside that term's <a href="archive.html#exams" class="text-accent hover:underline">past papers</a>.
+    </p>
+
     <p id="nb-empty" class="mt-6 hidden text-sm text-muted">No notebooks match your search.</p>
 
     <!-- Introduction -->
@@ -166,16 +150,17 @@
       <h3 class="mb-3 font-mono text-xs uppercase tracking-wide text-muted">Introduction</h3>
       <div class="grid gap-3 sm:grid-cols-2">
 
-        <article class="nb-card flex flex-col gap-2 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/40 hover:bg-surface-hover" data-group="intro" data-search="t1 introduction to chemical engineering and python environment jupyter basics">
+        <article class="nb-card flex flex-col gap-2 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/40 hover:bg-surface-hover" data-group="intro" data-search="t1 introduction to computers python and data science hardware software data hierarchy jupyter setup libraries big data iot ai chemical engineering examples">
           <div class="flex items-center justify-between gap-3">
             <span class="font-mono text-xs font-semibold text-accent">T1</span>
-            <div class="flex flex-wrap justify-end gap-1"><span class="tag-pill">python</span><span class="tag-pill">jupyter</span></div>
+            <div class="flex flex-wrap justify-end gap-1"><span class="tag-pill">intro</span><span class="tag-pill">python</span><span class="tag-pill">jupyter</span></div>
           </div>
-          <h4 class="text-sm font-semibold leading-snug"><a href="T1_ChemEng_Intro_Commented.slides.html" target="_blank" rel="noopener" class="text-ink transition-colors hover:text-accent">Introduction to Chemical Engineering &amp; Python</a></h4>
-          <p class="text-xs leading-relaxed text-muted">Python environment, Jupyter basics, and the ChE context</p>
+          <h4 class="text-sm font-semibold leading-snug"><a href="T1_ChemEng_Intro_Commented.slides.html" target="_blank" rel="noopener" class="text-ink transition-colors hover:text-accent">Introduction to Computers, Python &amp; Data Science</a></h4>
+          <p class="text-xs leading-relaxed text-muted">Course overview, hardware/software and the data hierarchy, why Python, worked ChE problems, and where Big Data and AI fit in</p>
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T1_ChemEng_Intro_Commented.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T1_ChemEng_Intro_Commented.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.06.01" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
@@ -197,6 +182,7 @@
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T2_Python_Programming_Basics.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T2_Python_Programming_Basics.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.06.01" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
@@ -210,6 +196,7 @@
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T3_Programming_Logic_and_Control_Statements.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T3_Programming_Logic_and_Control_Statements.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.06.01" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
@@ -223,6 +210,7 @@
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T4_Functions_in_Python.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T4_Functions_in_Python.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.06.01" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
@@ -244,6 +232,7 @@
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T5_Sequences_Lists_and_Tuples.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T5_Sequences_Lists_and_Tuples.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.06.01" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
@@ -257,6 +246,7 @@
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T6_Dictionaries_and_Sets.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T6_Dictionaries_and_Sets.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.06.01" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
@@ -278,6 +268,7 @@
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T7_Array_Oriented_Programming_with_NumPy.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T7_Array_Oriented_Programming_with_NumPy.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.06.02" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
@@ -299,6 +290,7 @@
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T8_Strings_Processing.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T8_Strings_Processing.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.06.01" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
@@ -312,6 +304,7 @@
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T9_Files_and_Exceptions.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T9_Files_and_Exceptions.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.06.03" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
@@ -333,6 +326,7 @@
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T10_Linear_Regression.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T10_Linear_Regression.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.05.03" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
@@ -346,12 +340,36 @@
           <div class="mt-1 flex flex-wrap gap-2">
             <a href="T15_Machine_Learning.html" target="_blank" rel="noopener" class="nb-action">Read</a>
             <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/T15_Machine_Learning.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+            <a href="ontology.html#T-01.08.01" class="nb-action">Ontology ↗</a>
           </div>
         </article>
 
       </div>
     </div>
 
+  </section>
+
+  <!-- ── Office hours ── -->
+  <section id="office-hours" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-8 sm:px-6">
+    <h2 class="section-label">Office hours</h2>
+    <div class="flex flex-col gap-4 rounded-lg border border-border bg-surface p-5 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p class="text-sm font-medium text-ink">Dr. Haider Ejaz</p>
+        <p class="mt-1 font-mono text-xs text-muted">Office 220 · School of Chemical &amp; Materials Engineering</p>
+        <p class="mt-2 max-w-xl text-[0.82rem] leading-relaxed text-muted">
+          Questions on the lectures, the notebooks or the project? Book a slot and the meeting invite
+          reaches you automatically — or drop by office 220.
+        </p>
+      </div>
+      <a
+        href="https://outlook.office.com/bookwithme/user/728ff09128fe4c2383aa8979be54f802@scme.nust.edu.pk/meetingtype/YV4ue-tEFk6kyAszXORPxw2?anonymous&amp;ismsaljsauthenabled&amp;ep=mlink"
+        target="_blank"
+        rel="noopener"
+        class="shrink-0 self-start rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:self-auto"
+      >
+        Book office hours ↗
+      </a>
+    </div>
   </section>
 
 </main>
@@ -366,6 +384,6 @@
   </p>
 </footer>
 
-<script src="assets/js/site.js" defer></script>
+<script src="assets/js/site.js?v=2" defer></script>
 </body>
 </html>
