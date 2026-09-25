@@ -42,17 +42,31 @@
     ],
     // density from user input, mole fraction, Q = m·Cp·ΔT, component molar mass
     T2_Python_Programming_Basics: ['T-03.01.02', 'T-03.01.03', 'T-03.04.01'],
-    // density algorithm and flowchart, phase of water from temperature
-    T3_Programming_Logic_and_Control_Statements: ['T-03.01.03', 'T-04.02.01'],
-    // Reynolds number for water in a pipe, Arrhenius rate constant
-    T4_Functions_in_Python: ['T-05.02.03', 'T-08.01.02'],
-    T5_Sequences_Lists_and_Tuples: [],
-    T6_Dictionaries_and_Sets: [],
-    T7_Array_Oriented_Programming_with_NumPy: [],
-    T8_Strings_Processing: [],
-    T9_Files_and_Exceptions: [],
-    T10_Linear_Regression: [],
-    T15_Machine_Learning: [],
+    // Sneak peeks: Reynolds number flow regime, Stokes' law terminal
+    // velocity, friction F = uN
+    T3_Programming_Logic_and_Control_Statements: [
+      'T-05.02.03', 'T-09.02.01', 'T-15.01.03',
+    ],
+    // Sneak peeks: ideal gas law n = PV/RT, Arrhenius rate constant
+    T4_Functions_in_Python: ['T-02.01.01', 'T-08.01.02'],
+    // mass fractions and a stream composition table, reactor readings
+    T5_Sequences_Lists_and_Tuples: ['T-03.01.02', 'T-03.01.03'],
+    // stream compositions as dicts, mole fractions, mixer component balance
+    T6_Dictionaries_and_Sets: ['T-03.01.02'],
+    // Sneak peeks: vectorized Newton-Raphson, series resistances for U
+    T7_Array_Oriented_Programming_with_NumPy: ['T-01.04.01', 'T-06.04.01'],
+    // parsing a composition string into a dictionary
+    T8_Strings_Processing: ['T-03.01.02'],
+    // Sneak peeks: fuel heating values, relative volatility from K-values
+    T9_Files_and_Exceptions: ['T-16.03.01', 'T-07.02.02'],
+    // Sneak peeks: ideal vs. van der Waals P-V curves, steel strength
+    // regression
+    T10_Linear_Regression: ['T-04.02.01', 'T-12.01.02'],
+    // Sneak peeks: first-order response, six-tenths rule capital cost,
+    // hazard classification, ethics of relying on a model
+    T15_Machine_Learning: [
+      'T-10.01.03', 'T-11.04.01', 'T-13.02.01', 'T-14.01.02',
+    ],
   };
 
   var NOTEBOOK_LABEL = {
@@ -65,7 +79,7 @@
     T7_Array_Oriented_Programming_with_NumPy: 'T7 · NumPy',
     T8_Strings_Processing: 'T8 · Strings',
     T9_Files_and_Exceptions: 'T9 · Files & Exceptions',
-    T10_Linear_Regression: 'T10 · Linear Regression',
+    T10_Linear_Regression: 'T10 · Visualization & Regression',
     T15_Machine_Learning: 'T15 · Machine Learning',
   };
 
