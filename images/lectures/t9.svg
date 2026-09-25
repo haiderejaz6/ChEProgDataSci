@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" role="img" aria-label="A stack of files read into a table, with an exception warning">
+<title>A stack of files read into a table, with an exception warning</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#3b82f6" stop-opacity="0.13"/>
+<stop offset="1" stop-color="#8b5cf6" stop-opacity="0.13"/>
+</linearGradient>
+<pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+<circle cx="2" cy="2" r="0.9" fill="#64748b" fill-opacity="0.22"/>
+</pattern>
+</defs>
+<rect width="400" height="120" fill="url(#bg)"/>
+<rect width="400" height="120" fill="url(#dots)"/>
+<path d="M24 18 H82 L98 34 V98 H24 Z" fill="#3b82f6" fill-opacity="0.06" stroke="#3b82f6" stroke-width="1.8"/><path d="M34 26 H92 L108 42 V106 H34 Z" fill="#3b82f6" fill-opacity="0.11" stroke="#3b82f6" stroke-width="1.8"/><path d="M44 34 H102 L118 50 V114 H44 Z" fill="#3b82f6" fill-opacity="0.16" stroke="#3b82f6" stroke-width="1.8"/><text x="52" y="72" font-size="10" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#3b82f6">.csv</text><path d="M124 60 H156" stroke="#64748b" stroke-width="2"/><path d="M150 54 L158 60 L150 66" fill="none" stroke="#64748b" stroke-width="2"/><rect x="168" y="20" width="42" height="19" fill="#8b5cf6" fill-opacity="0.3" stroke="#8b5cf6" stroke-width="1.2"/><rect x="212" y="20" width="42" height="19" fill="#8b5cf6" fill-opacity="0.3" stroke="#8b5cf6" stroke-width="1.2"/><rect x="256" y="20" width="42" height="19" fill="#8b5cf6" fill-opacity="0.3" stroke="#8b5cf6" stroke-width="1.2"/><rect x="168" y="41" width="42" height="19" fill="#14b8a6" fill-opacity="0.08" stroke="#14b8a6" stroke-width="1.2"/><rect x="212" y="41" width="42" height="19" fill="#14b8a6" fill-opacity="0.08" stroke="#14b8a6" stroke-width="1.2"/><rect x="256" y="41" width="42" height="19" fill="#14b8a6" fill-opacity="0.08" stroke="#14b8a6" stroke-width="1.2"/><rect x="168" y="62" width="42" height="19" fill="#14b8a6" fill-opacity="0.08" stroke="#14b8a6" stroke-width="1.2"/><rect x="212" y="62" width="42" height="19" fill="#14b8a6" fill-opacity="0.08" stroke="#14b8a6" stroke-width="1.2"/><rect x="256" y="62" width="42" height="19" fill="#14b8a6" fill-opacity="0.08" stroke="#14b8a6" stroke-width="1.2"/><rect x="168" y="83" width="42" height="19" fill="#14b8a6" fill-opacity="0.08" stroke="#14b8a6" stroke-width="1.2"/><rect x="212" y="83" width="42" height="19" fill="#14b8a6" fill-opacity="0.08" stroke="#14b8a6" stroke-width="1.2"/><rect x="256" y="83" width="42" height="19" fill="#14b8a6" fill-opacity="0.08" stroke="#14b8a6" stroke-width="1.2"/><path d="M346 26 L378 84 H314 Z" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="2.2" stroke-linejoin="round"/><text x="346" y="76" font-size="26" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#f59e0b" text-anchor="middle" font-weight="600">!</text><text x="346" y="106" font-size="10" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#f59e0b" text-anchor="middle">except</text>
+</svg>
