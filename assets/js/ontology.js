@@ -83,6 +83,21 @@
     T15_Machine_Learning: 'T15 · Machine Learning',
   };
 
+  // Full lecture titles, for the "what each lecture covers" cards.
+  var NOTEBOOK_TITLE = {
+    T1_ChemEng_Intro_Commented: 'Introduction to Computers, Python & Data Science',
+    T2_Python_Programming_Basics: 'Python Programming Basics',
+    T3_Programming_Logic_and_Control_Statements: 'Programming Logic & Control Statements',
+    T4_Functions_in_Python: 'Functions in Python',
+    T5_Sequences_Lists_and_Tuples: 'Sequences: Lists & Tuples',
+    T6_Dictionaries_and_Sets: 'Dictionaries & Sets',
+    T7_Array_Oriented_Programming_with_NumPy: 'Array-Oriented Programming with NumPy',
+    T8_Strings_Processing: 'Strings: A Deeper Look',
+    T9_Files_and_Exceptions: 'Files & Exceptions',
+    T10_Linear_Regression: 'Data Visualization & Linear Regression',
+    T15_Machine_Learning: 'Machine Learning with scikit-learn',
+  };
+
   // topic id -> [ { code, label, read, kind } ], kind: 'teaches' | 'example'
   var TOPIC_NOTEBOOKS = {};
   [['teaches', NOTEBOOK_TEACHES], ['example', NOTEBOOK_EXAMPLES]].forEach(function (pair) {
@@ -147,10 +162,18 @@
         RAW = data;
         buildColors();
         renderStats();
-        renderSpotlight();
+        renderLectures();
         renderOutline();
         wireControls();
+        window.CHE226Ontology = {
+          data: RAW,
+          areaColor: AREA_COLOR,
+          topicNotebooks: TOPIC_NOTEBOOKS,
+          showInOutline: showInOutline,
+        };
+        document.dispatchEvent(new CustomEvent('ontology:ready'));
         handleHash();
+        window.addEventListener('hashchange', handleHash);
       })
       .catch(function (err) {
         var el = document.getElementById('ont-outline');
@@ -179,13 +202,18 @@
     var topics = flat(units, 'topics');
     var core = units.filter(function (u) { return u.core; }).length;
     var covered = Object.keys(TOPIC_NOTEBOOKS).length;
+    var areasReached = {};
+    Object.keys(TOPIC_NOTEBOOKS).forEach(function (id) {
+      areasReached[id.slice(2, 4)] = true;
+    });
     var el = document.getElementById('ont-stats');
     if (!el) return;
     el.innerHTML =
       stat(RAW.areas.length, 'knowledge areas') +
       stat(units.length, 'units (' + core + ' core)') +
       stat(topics.length, 'topics') +
-      stat(covered, 'topics the notebooks reach');
+      stat(covered, 'topics the lectures reach') +
+      stat(Object.keys(areasReached).length + ' of ' + RAW.areas.length, 'areas the lectures reach');
   }
 
   function stat(n, label) {
@@ -200,67 +228,84 @@
     return out;
   }
 
-  /* ── KA-01 spotlight: the area this course actually lives in ────── */
+  /* ── What each lecture covers ───────────────────────────────────── */
 
-  function renderSpotlight() {
-    var host = document.getElementById('ont-spotlight');
+  // topic id -> { topic, unit, area }
+  function topicIndex() {
+    var idx = {};
+    RAW.areas.forEach(function (a) {
+      a.units.forEach(function (u) {
+        (u.topics || []).forEach(function (t) {
+          idx[t.id] = { topic: t, unit: u, area: a };
+        });
+      });
+    });
+    return idx;
+  }
+
+  function lectureChip(entry, kind) {
+    var t = entry.topic;
+    return (
+      '<a class="lec-chip ' + kind + '" href="#' + t.id + '" style="--area-color:' +
+      AREA_COLOR[entry.area.id] + '" title="' + escapeHtml(entry.area.id + ' ' +
+      entry.area.name + ' / ' + entry.unit.name) + '">' +
+      '<span class="lec-chip-id">' + t.id + '</span>' + escapeHtml(t.name) + '</a>'
+    );
+  }
+
+  function renderLectures() {
+    var host = document.getElementById('ont-lectures');
     if (!host) return;
-    var area = RAW.areas.filter(function (a) { return a.id === 'KA-01'; })[0];
-    if (!area) return;
+    var idx = topicIndex();
 
-    var unitsHtml = area.units
-      .map(function (u) {
-        var topicsHtml = (u.topics || [])
-          .map(function (t) {
-            var link = topicLinks(t.id, true);
-            return (
-              '<div class="ont-topic" id="topic-' +
-              t.id +
-              '"><span class="ont-topic-id">' +
-              t.id +
-              '</span><span class="ont-topic-name">' +
-              escapeHtml(t.name) +
-              '</span>' +
-              link +
-              '<span class="ont-topic-desc">' +
-              escapeHtml(t.description || '') +
-              '</span></div>'
-            );
-          })
-          .join('');
+    host.innerHTML = Object.keys(NOTEBOOK_LABEL)
+      .map(function (code) {
+        var num = code.split('_')[0];
+        var teaches = (NOTEBOOK_TEACHES[code] || []).filter(function (id) { return idx[id]; });
+        var examples = (NOTEBOOK_EXAMPLES[code] || []).filter(function (id) { return idx[id]; });
+
+        // Group worked examples by knowledge area, in area order.
+        var byArea = {};
+        examples.forEach(function (id) {
+          var aid = idx[id].area.id;
+          (byArea[aid] = byArea[aid] || []).push(id);
+        });
+        var exampleHtml = Object.keys(byArea).sort().map(function (aid) {
+          var area = idx[byArea[aid][0]].area;
+          return (
+            '<div class="lec-area"><span class="lec-area-id" style="--area-color:' +
+            AREA_COLOR[aid] + '">' + aid + '</span><span class="lec-area-name">' +
+            escapeHtml(area.name) + '</span></div><div class="lec-chips">' +
+            byArea[aid].map(function (id) { return lectureChip(idx[id], 'example'); }).join('') +
+            '</div>'
+          );
+        }).join('');
+
         return (
-          '<div class="ont-unit open" id="unit-' +
-          u.id +
-          '"><div class="ont-unit-head"><span class="ont-unit-id">' +
-          u.id +
-          '</span><span class="ont-unit-name">' +
-          escapeHtml(u.name) +
-          '</span><span class="ont-badge ' +
-          (u.core ? 'core">CORE' : 'elective">elective') +
-          '</span><span class="ont-badge bloom">' +
-          escapeHtml(u.expected_bloom || '') +
-          '</span></div><div class="ont-unit-body" style="display:block;"><div class="ont-unit-desc">' +
-          escapeHtml(u.description || '') +
+          '<article class="lec-card" id="lec-' + code + '">' +
+          '<img class="lec-art" src="images/lectures/' + num.toLowerCase() +
+          '.svg" alt="" loading="lazy" width="400" height="120" />' +
+          '<div class="lec-body">' +
+          '<div class="lec-head"><span class="lec-num">' + num + '</span>' +
+          '<a class="lec-title" href="' + code + '.html" target="_blank" rel="noopener">' +
+          escapeHtml(NOTEBOOK_TITLE[code] || NOTEBOOK_LABEL[code]) + '</a></div>' +
+          '<div class="lec-label">Teaches</div><div class="lec-chips">' +
+          teaches.map(function (id) { return lectureChip(idx[id], 'teaches'); }).join('') +
           '</div>' +
-          topicsHtml +
-          '</div></div>'
+          (exampleHtml
+            ? '<div class="lec-label">Worked examples borrowed from</div>' + exampleHtml
+            : '<div class="lec-label">Worked examples</div><p class="lec-none">General ' +
+              'programming examples only; no topic tagged yet.</p>') +
+          '</div></article>'
         );
       })
       .join('');
+  }
 
-    host.innerHTML =
-      '<div class="ont-spotlight-label">' +
-      area.id +
-      ' · where this course lives</div>' +
-      '<p style="font-size:.82rem;line-height:1.6;color:rgb(var(--color-muted));max-width:60ch;">' +
-      escapeHtml(area.description || '') +
-      ' This is the area CHE-226 belongs to, so the topics below are the ones the course ' +
-      'teaches you directly. A topic marked “not covered this term” is still part of your ' +
-      'degree — you will meet it in another course, or you can read ahead on your own. ' +
-      'Look further down the page for the engineering topics the notebook examples borrow.' +
-      '</p><div style="margin-top:.75rem;">' +
-      unitsHtml +
-      '</div>';
+  // Open the area and unit holding a topic in the full outline, then scroll to it.
+  function showInOutline(id) {
+    if (history.replaceState) history.replaceState(null, '', '#' + id);
+    handleHash();
   }
 
   /* ── Full outline (all 16 areas) ─────────────────────────────────── */
@@ -286,7 +331,7 @@
           .map(function (u) {
             var topicsHtml = (u.topics || [])
               .map(function (t) {
-                var link = topicLinks(t.id, false);
+                var link = topicLinks(t.id, a.id === 'KA-01');
                 return (
                   '<div class="ont-topic" id="topic-' +
                   t.id +
@@ -412,6 +457,16 @@
       }, 180));
     }
 
+    var lectures = document.getElementById('ont-lectures');
+    if (lectures) {
+      lectures.addEventListener('click', function (e) {
+        var chip = e.target.closest && e.target.closest('.lec-chip');
+        if (!chip) return;
+        e.preventDefault();
+        showInOutline(chip.getAttribute('href').slice(1));
+      });
+    }
+
     if (coreBtn) {
       coreBtn.addEventListener('click', function () {
         CORE_ONLY = !CORE_ONLY;
@@ -436,8 +491,17 @@
   }
 
   function handleHash() {
-    var id = (location.hash || '').replace('#', '');
+    var id = decodeURIComponent((location.hash || '').replace('#', ''));
     if (!id) return;
+    if (id === 'graph') {
+      if (window.OntologyGraph) window.OntologyGraph.open();
+      return;
+    }
+    if (id.indexOf('lec-') === 0) {
+      var lec = document.getElementById(id);
+      if (lec) lec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
     // Expand the area/unit chain for a topic or unit id landed on directly.
     RAW.areas.forEach(function (a) {
       a.units.forEach(function (u) {

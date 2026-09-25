@@ -127,6 +127,11 @@
     @apply font-mono text-[0.6rem] rounded border px-1.5 py-0.5 text-center whitespace-nowrap;
   }
 
+  .nb-art {
+    @apply -mx-4 -mt-4 mb-1 block h-auto w-[calc(100%+2rem)] max-w-none rounded-t-lg border-b border-border;
+    aspect-ratio: 400 / 120;
+  }
+
   .filter-chip {
     @apply inline-flex items-center rounded-full border border-border bg-surface px-3 py-1 text-xs font-mono text-muted transition-colors hover:border-accent/50;
   }

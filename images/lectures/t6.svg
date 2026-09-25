@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" role="img" aria-label="Key-value pairs for a stream composition and a Venn diagram of two sets">
+<title>Key-value pairs for a stream composition and a Venn diagram of two sets</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#3b82f6" stop-opacity="0.13"/>
+<stop offset="1" stop-color="#8b5cf6" stop-opacity="0.13"/>
+</linearGradient>
+<pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+<circle cx="2" cy="2" r="0.9" fill="#64748b" fill-opacity="0.22"/>
+</pattern>
+</defs>
+<rect width="400" height="120" fill="url(#bg)"/>
+<rect width="400" height="120" fill="url(#dots)"/>
+<rect x="20" y="22" width="92" height="22" rx="4" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.8"/><text x="66" y="37" font-size="11" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#3b82f6" text-anchor="middle">"water"</text><path d="M116 33 H146" stroke="#64748b" stroke-width="1.8"/><circle cx="146" cy="33" r="2.5" fill="#64748b"/><rect x="150" y="22" width="56" height="22" rx="4" fill="none" stroke="#8b5cf6" stroke-width="1.8"/><text x="178" y="37" font-size="11" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#8b5cf6" text-anchor="middle">0.60</text><rect x="20" y="52" width="92" height="22" rx="4" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.8"/><text x="66" y="67" font-size="11" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#3b82f6" text-anchor="middle">"ethanol"</text><path d="M116 63 H146" stroke="#64748b" stroke-width="1.8"/><circle cx="146" cy="63" r="2.5" fill="#64748b"/><rect x="150" y="52" width="56" height="22" rx="4" fill="none" stroke="#8b5cf6" stroke-width="1.8"/><text x="178" y="67" font-size="11" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#8b5cf6" text-anchor="middle">0.30</text><rect x="20" y="82" width="92" height="22" rx="4" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.8"/><text x="66" y="97" font-size="11" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#3b82f6" text-anchor="middle">"methanol"</text><path d="M116 93 H146" stroke="#64748b" stroke-width="1.8"/><circle cx="146" cy="93" r="2.5" fill="#64748b"/><rect x="150" y="82" width="56" height="22" rx="4" fill="none" stroke="#8b5cf6" stroke-width="1.8"/><text x="178" y="97" font-size="11" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#8b5cf6" text-anchor="middle">0.10</text><circle cx="286" cy="60" r="40" fill="#14b8a6" fill-opacity="0.15" stroke="#14b8a6" stroke-width="2"/><circle cx="336" cy="60" r="40" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="2"/><text x="266" y="64" font-size="10" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#14b8a6" text-anchor="middle">feed</text><text x="311" y="64" font-size="10" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#64748b" text-anchor="middle">&amp;</text><text x="358" y="64" font-size="10" font-family="'IBM Plex Mono',ui-monospace,monospace" fill="#f59e0b" text-anchor="middle">prod</text>
+</svg>
