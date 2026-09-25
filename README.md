@@ -13,7 +13,7 @@ keyed by notebook filename:
 * `NOTEBOOK_TEACHES` — the programming/data-science topic the notebook actually teaches
   (nearly always inside KA-01). Rendered as an amber chip on that topic.
 * `NOTEBOOK_EXAMPLES` — the engineering topics its examples borrow, anywhere on the map
-  (T1's ideal-gas law, T2's `Q = m·Cp·ΔT`, T4's Reynolds number and Arrhenius constant).
+  (T1's ideal-gas law, T2's `Q = m·Cp·ΔT`, T3's Reynolds number, T4's Arrhenius constant).
   Rendered as a blue "example" chip.
 
 An empty `NOTEBOOK_EXAMPLES` entry means that notebook still runs on generic examples —
