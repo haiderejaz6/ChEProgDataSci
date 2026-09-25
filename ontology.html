@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Reference Ontology · CHE-226</title>
-<meta name="description" content="A map of what chemical engineering covers — 16 knowledge areas — and where the CHE-226 notebooks sit on it: which topic each notebook teaches, and which engineering topics its worked examples borrow." />
+<meta name="description" content="What each CHE-226 lecture covers, mapped onto the reference ontology of chemical engineering: 16 knowledge areas, their units and topics, as a list or as a radial graph." />
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
@@ -17,8 +17,8 @@
     }
   })();
 </script>
-<link rel="stylesheet" href="assets/css/site.css?v=2" />
-<link rel="stylesheet" href="assets/css/ontology.css?v=2" />
+<link rel="stylesheet" href="assets/css/site.css?v=3" />
+<link rel="stylesheet" href="assets/css/ontology.css?v=3" />
 </head>
 <body class="min-h-screen bg-bg font-sans font-light text-ink antialiased">
 
@@ -62,36 +62,33 @@
   <section class="mx-auto max-w-5xl px-4 pb-6 pt-10 sm:px-6">
     <p class="font-mono text-[0.68rem] uppercase tracking-widest text-accent">Reference ontology</p>
     <h1 class="mt-3 text-2xl font-semibold leading-tight text-ink sm:text-3xl">
-      What chemical engineering covers — and where this course fits
+      What each lecture covers, on the map of chemical engineering
     </h1>
     <p class="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
-      This is a map of what you are expected to know by the time you graduate as a chemical engineer:
-      16 knowledge areas, broken into units and topics, drawn from the PEC 2023–2024 accreditation
-      guidelines alongside AIChE/ABET programme criteria. No single course covers it — each one you take
-      fills in a part of it. It is kept separate from any course syllabus on purpose, so it stays a map of
-      the discipline rather than a list of what happens to be taught this term.
+      The reference ontology is a map of what you are expected to know by the time you graduate as a
+      chemical engineer: 16 knowledge areas, broken into units and topics, drawn from the PEC 2023–2024
+      accreditation guidelines alongside AIChE/ABET programme criteria. It is kept separate from any
+      course syllabus on purpose, so it stays a map of the discipline.
     </p>
     <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
-      CHE-226 lives in KA-01, but the notebooks do not walk this map one topic at a time. Each notebook
-      teaches a piece of Python — variables, loops, functions, arrays — and then takes the examples that
-      carry it from wherever they fit here: a density calculation, an energy balance, the Reynolds number
-      for water in a pipe, an Arrhenius rate constant. One notebook therefore turns up against several
-      topics below, and one topic can be reached by several notebooks. There is no plan to write a separate
-      notebook per topic, and a topic with no notebook against it is not a gap in your Python.
-    </p>
-    <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
-      Use it to place what you are doing. When you write a function for the Arrhenius equation in T4, the
-      chip on that topic tells you the same equation is core to Reaction Engineering later; the loop you
-      write over temperature readings is the arithmetic behind an energy balance. Knowing where something
-      lands is most of what makes it stay.
+      Each CHE-226 lecture teaches a piece of Python, which sits in KA-01, and carries it with worked
+      examples borrowed from across the map: the Reynolds number in T3, the Arrhenius equation in T4, heat
+      transfer resistances in T7, capital cost estimation in T15. Those examples are previews of courses
+      still ahead of you. The first section below lists, lecture by lecture, the topics each one touches;
+      the full ontology after it shows every topic, as a list or as a graph.
     </p>
     <div id="ont-stats" class="ont-stats mt-5"></div>
   </section>
 
-  <!-- ── Spotlight: KA-01, where CHE-226 lives ── -->
-  <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
-    <h2 class="section-label">Where this course sits</h2>
-    <div id="ont-spotlight" class="ont-spotlight">
+  <!-- ── What each lecture covers ── -->
+  <section id="lectures" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-4 sm:px-6">
+    <h2 class="section-label">What each lecture covers</h2>
+    <p class="mb-4 max-w-2xl text-xs leading-relaxed text-muted">
+      <span class="text-ink">Teaches</span> is the programming topic the lecture is built around.
+      <span class="text-ink">Worked examples</span> are the engineering topics its examples borrow,
+      grouped by knowledge area. Click any topic to find it in the full ontology.
+    </p>
+    <div id="ont-lectures" class="lec-grid">
       <p class="ont-empty">Loading…</p>
     </div>
   </section>
@@ -100,7 +97,7 @@
   <section class="mx-auto max-w-5xl px-4 py-4 sm:px-6">
     <h2 class="section-label">How to read this page</h2>
     <div class="rounded-lg border border-border bg-surface p-4 text-sm leading-relaxed text-muted">
-      <p>Every topic can carry chips telling you which notebook to open:</p>
+      <p>In the full ontology below, a topic can carry chips telling you which lecture to open:</p>
       <ul class="mt-3 flex flex-col gap-2">
         <li class="flex flex-wrap items-center gap-2">
           <span class="ont-topic-link">T4 · Functions ↗</span>
@@ -113,11 +110,12 @@
         </li>
         <li class="flex flex-wrap items-center gap-2">
           <span class="ont-topic-link placeholder">not covered this term</span>
-          <span>nothing in CHE-226 reaches it. Still part of your degree, and still worth reading.</span>
+          <span>a KA-01 topic nothing in CHE-226 reaches. Still part of your degree, and still worth reading.</span>
         </li>
       </ul>
       <p class="mt-3">Most topics carry no chip at all, which is normal — this is the whole discipline, and
-      one programming course touches a corner of it. Search below to find a topic, use
+      one programming course touches a corner of it. Search below to find a topic, open the
+      <span class="text-ink">graph view</span> to see the whole map at once, use
       <span class="text-ink">Core units only</span> to hide the electives, and open an area to see the units
       and topics inside it.</p>
     </div>
@@ -126,6 +124,23 @@
   <!-- ── Full outline ── -->
   <section class="mx-auto max-w-5xl px-4 py-6 sm:px-6">
     <h2 class="section-label">Full reference ontology (16 areas)</h2>
+
+    <button id="ont-graph-btn" type="button" class="og-open">
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+        <g stroke="currentColor" stroke-width="1.4" fill="none">
+          <path d="M12 9V4M14.6 10.5 19 8M14.6 13.5 19 16M12 15v5M9.4 13.5 5 16M9.4 10.5 5 8"/>
+        </g>
+        <g fill="currentColor">
+          <circle cx="12" cy="3" r="1.6"/><circle cx="20" cy="7.5" r="1.6"/><circle cx="20" cy="16.5" r="1.6"/>
+          <circle cx="12" cy="21" r="1.6"/><circle cx="4" cy="16.5" r="1.6"/><circle cx="4" cy="7.5" r="1.6"/>
+        </g>
+      </svg>
+      <span>
+        <span class="og-open-title">Open the graph view</span>
+        <span class="og-open-sub">Chemical engineering at the centre, the 16 areas branching out, then units and topics. Zoom, pan, and click to expand.</span>
+      </span>
+    </button>
 
     <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
       <div class="ont-search-wrap w-full sm:max-w-xs">
@@ -147,6 +162,27 @@
 
 </main>
 
+<!-- ── Graph view overlay (assets/js/ontology-graph.js) ── -->
+<div id="og-overlay" class="og-overlay" role="dialog" aria-modal="true" aria-labelledby="og-title" hidden>
+  <div class="og-bar">
+    <span id="og-title" class="og-title">Reference ontology · graph view</span>
+    <div class="og-tools">
+      <button id="og-areas" type="button" class="ont-btn">Areas</button>
+      <button id="og-units" type="button" class="ont-btn">Units</button>
+      <button id="og-topics" type="button" class="ont-btn">All topics</button>
+      <button id="og-coverage" type="button" class="ont-btn" aria-pressed="false">CHE-226 coverage</button>
+      <span class="og-sep"></span>
+      <button id="og-zoom-out" type="button" class="ont-btn" aria-label="Zoom out">−</button>
+      <button id="og-zoom-in" type="button" class="ont-btn" aria-label="Zoom in">+</button>
+      <button id="og-fit" type="button" class="ont-btn">Fit</button>
+      <button id="og-close" type="button" class="ont-btn" aria-label="Close graph view">Close ✕</button>
+    </div>
+  </div>
+  <svg class="og-svg" role="img" aria-label="Radial graph of the reference ontology"></svg>
+  <p class="og-hint">Scroll or pinch to zoom · drag to pan · click an area or unit to expand it · a ringed dot is a topic a lecture reaches</p>
+  <div class="og-panel" hidden></div>
+</div>
+
 <footer class="mx-auto mt-10 max-w-5xl border-t border-border px-4 py-8 sm:px-6">
   <div class="flex flex-col gap-3 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
     <span>School of Chemical &amp; Materials Engineering · NUST Islamabad</span>
@@ -161,6 +197,7 @@
 </footer>
 
 <script src="assets/js/site.js?v=2" defer></script>
-<script src="assets/js/ontology.js?v=2" defer></script>
+<script src="assets/js/ontology.js?v=3" defer></script>
+<script src="assets/js/ontology-graph.js?v=3" defer></script>
 </body>
 </html>

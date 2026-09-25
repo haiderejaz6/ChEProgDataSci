@@ -21,6 +21,17 @@ the gap to close on its next revision, by weaving a context in, not by writing a
 notebook for the topic. Update both maps when a notebook gains or loses an example; the
 "topics the notebooks reach" count on the page comes from them.
 
+The page opens with **What each lecture covers**: one card per notebook, listing the topic it teaches
+and the example topics grouped by knowledge area; each topic links into the full outline. The full
+outline has a **graph view** (`assets/js/ontology-graph.js`, plain SVG with no library): chemical
+engineering at the centre, the 16 areas around it, then units and topics, with zoom, pan, click to
+expand, and a "CHE-226 coverage" mode. `ontology.html#graph` opens it directly. Both views read the
+same two maps, so updating `NOTEBOOK_TEACHES` / `NOTEBOOK_EXAMPLES` updates everything.
+
+Each notebook card on the home page, and on the ontology page, carries a banner illustration from
+`images/lectures/t<n>.svg`. When adding a notebook, add its SVG (400 x 120 viewBox, mid-tone colours
+on a faint tint so it reads in both themes) and its entry in `NOTEBOOK_TITLE` in `ontology.js`.
+
 ## Fall 2025 archive
 
 `archive.html` is the students' practice page: past exam papers, plus the notebooks
