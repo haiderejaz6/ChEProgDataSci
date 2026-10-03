@@ -72,6 +72,20 @@ jobs:
           echo "=== Files in _site/archive/fall25 ==="
           ls -la _site/archive/fall25/ _site/archive/fall25/exams/
 
+      - name: Publish assignments (PDF, notebook and a read page)
+        run: |
+          mkdir -p _site/assignments
+          for nb in assignments/*.ipynb; do
+            [ -e "$nb" ] || continue
+            jupyter nbconvert --to html "$nb" --output-dir _site/assignments \
+              --HTMLExporter.theme=light
+          done
+          find assignments -maxdepth 1 -type f \
+            \( -name '*.pdf' -o -name '*.ipynb' \) \
+            -exec cp {} _site/assignments/ \;
+          echo "=== Files in _site/assignments ==="
+          ls -la _site/assignments/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
