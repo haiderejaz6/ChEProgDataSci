@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fall 2025 Archive · CHE-226</title>
-<meta name="description" content="Fall 2025 archive for CHE-226 Programming & Data Science — past exam papers and the notebooks exactly as they were taught in Fall 2025, kept for practice while the live notebooks are revised." />
+<title>Resources · CHE-226</title>
+<meta name="description" content="Resource lectures for the CHE-226 semester project: GitHub for group work, with slides, a read page and a live notebook." />
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
@@ -17,7 +17,7 @@
     }
   })();
 </script>
-<link rel="stylesheet" href="assets/css/site.css?v=3" />
+<link rel="stylesheet" href="assets/css/site.css?v=2" />
 </head>
 <body class="min-h-screen bg-bg font-sans font-light text-ink antialiased">
 
@@ -28,8 +28,8 @@
       <a href="index.html" class="font-mono text-xs text-muted transition-colors hover:text-accent">
         ← Course home
       </a>
-      <a href="resources.html" class="hidden font-mono text-xs text-muted transition-colors hover:text-accent sm:inline">
-        Resources
+      <a href="archive.html" class="hidden font-mono text-xs text-muted transition-colors hover:text-accent sm:inline">
+        Archive
       </a>
       <a href="outline.html" class="hidden font-mono text-xs text-muted transition-colors hover:text-accent sm:inline">
         Course Outline
@@ -58,54 +58,40 @@
   </div>
 </header>
 
-<main id="archive-body">
+<main>
 
   <!-- ── Intro ── -->
   <section class="mx-auto max-w-5xl px-4 pb-4 pt-10 sm:px-6">
-    <p class="font-mono text-[0.68rem] uppercase tracking-widest text-accent">Archive · Fall 2025</p>
+    <p class="font-mono text-[0.68rem] uppercase tracking-widest text-accent">Resources · Semester project</p>
     <h1 class="mt-3 text-2xl font-semibold leading-tight text-ink sm:text-3xl">
-      Past papers &amp; <span class="text-accent2">Fall 2025 notebooks</span>
+      Extra lectures for your <span class="text-accent2">group project</span>
     </h1>
-    <p id="archive-note" class="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
-      Frozen copies of the notebooks as they were taught in Fall 2025, kept for practice.
+    <p class="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
+      These sit outside the weekly topic sequence. They cover the tools you need to build, share and
+      defend your semester project as a group.
     </p>
-    <div class="mt-6 w-full sm:max-w-xs">
-      <label for="archive-search" class="sr-only">Search the archive</label>
-      <input
-        id="archive-search"
-        type="search"
-        placeholder="Search papers &amp; notebooks…"
-        class="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent/40"
-      />
+  </section>
+
+  <!-- ── Resource lectures ── -->
+  <section id="lectures" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-6 sm:px-6">
+    <h2 class="section-label">Lectures</h2>
+    <div class="grid gap-3 sm:grid-cols-2">
+
+      <article class="nb-card flex flex-col gap-2 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/40 hover:bg-surface-hover">
+        <div class="flex items-center justify-between gap-3">
+          <span class="font-mono text-xs font-semibold text-accent">R1</span>
+          <div class="flex flex-wrap justify-end gap-1"><span class="tag-pill">git</span><span class="tag-pill">github</span><span class="tag-pill">teamwork</span></div>
+        </div>
+        <h4 class="text-sm font-semibold leading-snug"><a href="R1_GitHub_for_Semester_Projects.slides.html" target="_blank" rel="noopener" class="text-ink transition-colors hover:text-accent">GitHub for Your Semester Project</a></h4>
+        <p class="text-xs leading-relaxed text-muted">Git basics, branches and pull requests, data science repo layout, and how group contributions are assessed</p>
+        <div class="mt-1 flex flex-wrap gap-2">
+          <a href="R1_GitHub_for_Semester_Projects.html" target="_blank" rel="noopener" class="nb-action">Read</a>
+          <a href="https://colab.research.google.com/github/haiderejaz6/ChEProgDataSci/blob/main/R1_GitHub_for_Semester_Projects.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-colab">Open in Colab</a>
+          <a href="https://mybinder.org/v2/gh/haiderejaz6/ChEProgDataSci/main?urlpath=notebooks%2FR1_GitHub_for_Semester_Projects.ipynb" target="_blank" rel="noopener" class="nb-action nb-action-binder">Open in Binder</a>
+        </div>
+      </article>
+
     </div>
-  </section>
-
-  <!-- ── Past papers ── -->
-  <section id="exams" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-6 sm:px-6">
-    <h2 class="section-label">Past papers</h2>
-    <p class="mb-4 max-w-2xl text-xs leading-relaxed text-muted">
-      Each paper is here twice. The <span class="text-ink">PDF</span> is the paper exactly as it was
-      sat — same wording, same marks, same time limit. The <span class="text-ink">notebook</span> holds
-      the same questions as cells you can run, with every output cleared and no answers filled in, so
-      you predict what a snippet prints and then run it to find out. Sit the PDF under time first, then
-      work through the notebook. Worked solutions are not published: a paper you read the answers to
-      first is revision you have already failed.
-    </p>
-    <div id="exam-grid" class="grid gap-3 sm:grid-cols-2"></div>
-    <p id="exam-empty" class="mt-2 text-sm text-muted">No past papers have been published yet.</p>
-  </section>
-
-  <!-- ── Archived notebooks ── -->
-  <section id="notebooks" class="mx-auto max-w-5xl scroll-mt-16 px-4 py-6 sm:px-6">
-    <h2 class="section-label">Fall 2025 notebooks</h2>
-    <p class="mb-4 max-w-2xl text-xs leading-relaxed text-muted">
-      These copies do not change. The versions on the
-      <a href="index.html#notebooks" class="text-accent hover:underline">course home page</a> are the
-      ones being taught and revised this term — check there first, and use these when you want the
-      material the Fall 2025 papers were set from.
-    </p>
-    <div id="archive-nb-grid" class="grid gap-3 sm:grid-cols-2"></div>
-    <p id="archive-nb-empty" class="mt-2 hidden text-sm text-muted">No notebooks match your search.</p>
   </section>
 
 </main>
@@ -113,7 +99,7 @@
 <footer class="mx-auto mt-10 max-w-5xl border-t border-border px-4 py-8 sm:px-6">
   <div class="flex flex-col gap-3 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
     <span>School of Chemical &amp; Materials Engineering · NUST Islamabad</span>
-    <a href="https://github.com/haiderejaz6/ChEProgDataSci/tree/main/archive/fall25" target="_blank" rel="noopener" class="font-mono text-accent hover:underline">Archive folder on GitHub ↗</a>
+    <a href="https://github.com/haiderejaz6/ChEProgDataSci" target="_blank" rel="noopener" class="font-mono text-accent hover:underline">Repository on GitHub ↗</a>
   </div>
   <p class="mt-4 max-w-3xl text-[0.7rem] leading-relaxed text-muted">
     Course content is based on <em>"Intro to Python for Computer Science and Data Science"</em> by Paul &amp; Harvey Deitel. Prepared solely for educational use by students of this course; provided for non-commercial use only — please do not redistribute without attribution to the original authors.
@@ -121,6 +107,5 @@
 </footer>
 
 <script src="assets/js/site.js?v=2" defer></script>
-<script src="assets/js/archive.js?v=2" defer></script>
 </body>
 </html>

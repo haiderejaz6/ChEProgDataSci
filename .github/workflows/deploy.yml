@@ -38,6 +38,7 @@ jobs:
           cp outline.html _site/outline.html
           cp ontology.html _site/ontology.html
           cp archive.html _site/archive.html
+          cp resources.html _site/resources.html
           cp favicon.png _site/favicon.png
           cp -r images _site/images
           cp -r assets _site/assets

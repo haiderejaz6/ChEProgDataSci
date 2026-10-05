@@ -70,6 +70,10 @@ If it imports a new third-party package, add it to `requirements.txt` too — Bi
 rebuilds the environment image when that file changes, so a missing dependency fails
 silently as an import error inside the launched notebook, not at build time.
 
+## Resources
+
+`resources.html` lists extra lectures that support the semester project and sit outside the T-numbered topic sequence (currently `R1_GitHub_for_Semester_Projects.ipynb`). Resource notebooks live at the repo root like the others, so `deploy.yml` already builds their slides, read page and raw copy; they get a card on `resources.html` instead of `index.html`. Name them `R<n>_<Title>.ipynb`.
+
 ## Disclaimer
 
 These lecture materials are prepared for the course **Programming and Data Science** for undergraduate students of Chemical Engineering. 
